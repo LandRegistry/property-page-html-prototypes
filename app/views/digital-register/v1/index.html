@@ -8,7 +8,34 @@
 
 <main id="content" role="main">
 
-<p>Page 1</p>
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This service is in beta. Please give us your <a href="#">Feedback</a>.</span>
+    </p>
+  </div>
+
+  <form class="form" action="/digital-register/v1/search-results" method="get">
+
+    <h1 class="form-title heading-xlarge">
+      Find a digital register
+    </h1>
+
+    <div class="text">
+      <p>Use this service to access register information on a property in England and Wales.</p>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label-bold" for="search">Search for a digital register</label>
+      <p class="form-hint">eg postcode, street name or town/city</p>
+      <input type="text" class="form-control" id="search">
+    </div>
+
+    <div class="form-group">
+      <input type="submit" class="button" value="Search">
+    </div>
+
+  </form>
 
 </main>
 
