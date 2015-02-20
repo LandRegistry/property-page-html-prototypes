@@ -9,6 +9,7 @@
 @import "design-patterns/buttons";
 
 // Import Land Registry elements
+@import 'land-registry-elements/faux-details';
 @import 'land-registry-elements/typography';
 @import 'land-registry-elements/tags';
 @import 'land-registry-elements/callouts';
@@ -34,4 +35,17 @@
     margin: 0;
     font-weight: 700;
   }
+}
+
+.register-item-listing {
+  li {
+    margin-bottom: 1.25em;
+  }
+}
+
+p.sub-heading-small{
+  @include core-19;
+
+  margin-top: 0;
+  color: $grey-1;
 }
