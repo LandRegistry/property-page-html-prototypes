@@ -80,6 +80,63 @@
 @-o-viewport {
   width: device-width; }
 
+.example-highlight-grid .grid-row {
+  background: #bfc1c3; }
+.example-highlight-grid .column-highlight {
+  background: #dee0e2;
+  width: 100%; }
+
+.example-back-link {
+  display: -moz-inline-stack;
+  display: inline-block;
+  margin-top: 30px; }
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+
+.js-enabled .js-hidden {
+  display: none; }
+
+.js-enabled .js-faux-details > :first-child {
+  cursor: pointer;
+  position: relative;
+  margin-top: 0;
+  padding-left: 0.8em; }
+  .js-enabled .js-faux-details > :first-child:hover {
+    color: #2e8aca; }
+  .js-enabled .js-faux-details > :first-child:focus {
+    outline: 3px solid #ffbf47; }
+  .js-enabled .js-faux-details > :first-child:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    border-top: 0.3464em dotted transparent;
+    border-right: 0.4 solid transparent;
+    border-bottom: 0.3464em dotted transparent;
+    border-left: 0.4em solid #0b0c0c; }
+.js-enabled .js-faux-details-wrapper {
+  display: none;
+  margin-bottom: 1.31579em; }
+  @media (min-width: 641px) {
+    .js-enabled .js-faux-details-wrapper {
+      margin-bottom: 2.36842em; } }
+.js-enabled .js-faux-details--open > :first-child:before {
+  top: 0.35em;
+  border-top: 0.4em solid #0b0c0c;
+  border-right: 0.3464em dotted transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.3464em dotted transparent; }
+.js-enabled .js-faux-details--open .js-faux-details-wrapper {
+  display: block; }
+
 .heading-prefix {
   font-family: "nta", Arial, sans-serif;
   font-size: 27px;
@@ -413,3 +470,19 @@ nav ol, nav ul {
   .pending-changes-flag a {
     margin: 0;
     font-weight: 700; }
+
+.register-item-listing li {
+  margin-bottom: 1.25em; }
+
+p.sub-heading-small {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.3157894737;
+  font-weight: 400;
+  text-transform: none;
+  margin-top: 0;
+  color: #6f777b; }
+  @media (max-width: 640px) {
+    p.sub-heading-small {
+      font-size: 16px;
+      line-height: 1.25; } }
