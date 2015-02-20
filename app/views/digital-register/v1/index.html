@@ -1,20 +1,54 @@
 {{<layout-digital-register-v1}}
 
 {{$pageTitle}}
-  GOV.UK prototyping kit
+	GOV.UK prototyping kit
 {{/pageTitle}}
 
 {{$propositionHeader}}
-  <div class="header-proposition">
-    <div class="content">
-      <a href="/" id="proposition-name">Land Registry Private Beta</a>
-    </div>
-  </div>
+<div class="header-proposition">
+<div class="content">
+ <a href="/" id="proposition-name">Land Registry Private Beta</a>
+</div>
+</div>
 {{/propositionHeader}}
 
 {{$content}}
 
-<a href="/digital-register/v1/search-page">click me</a>
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This service is in beta. Please give us your <a href="#">Feedback</a>.</span>
+    </p>
+  </div>
+
+	<div class="inner-block">
+
+	<p><b>Login</b></p>
+
+	<h1 class="form-title heading-large">Login</h1>
+
+
+    <form action="/digital-register/v1/search-page" method="get" class="form">
+
+    	<div class="form-group">
+    		<label for="username" class="form-label">Username</label>
+    		<input type="text" class="form-control" id="username">
+    	</div>
+
+    	<div class="form-group">
+    		<label for="password" class="form-label">Password</label>
+    		<input type="password" class="form-control" id="password">
+    	</div>
+
+    	<div class="form-group">
+    		<button type="submit" class="button">Login</button>
+    	</div>
+
+    </form>
+  </div>
+</main>
 
 {{/content}}
 
