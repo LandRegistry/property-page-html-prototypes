@@ -43,6 +43,16 @@
   background-color: $yellow-25;
 }
 
+// Download "alert"
+.callout--download {
+  padding: $gutter-half $gutter-half $gutter-half $gutter*2;
+  background-color: $yellow-25;
+  background-image: url(/public/images/icon-download.svg);
+  background-repeat: no-repeat;
+  background-position: $gutter-half $gutter-half;
+  background-size: $gutter;
+}
+
 // When an action is generated - ie "now do this".
 // For example see http://prototypes.landregistryconcept.co.uk/relationship-starts/conveyancer-token
 .callout--action-notice {
