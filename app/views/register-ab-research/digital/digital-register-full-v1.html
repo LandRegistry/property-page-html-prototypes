@@ -7,6 +7,13 @@
 {{$head}}
   {{>includes/head}}
   <link href="/public/stylesheets/register-v1.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    .leaflet-container .leaflet-control-attribution {
+      /*display: none;*/
+      font-size: 9px;
+    }
+  </style>
 {{/head}}
 
 {{$content}}
@@ -41,8 +48,8 @@
       </div>
 
       <figure class="column-third">
-        <div class="title-plan">
-          <a href="#maps-plans"><img src="http://placehold.it/310x207"></a>
+        <div class="title-plan" id="map-location">
+          <img src="http://placehold.it/276x184">
         </div>
       </figure>
 
@@ -336,8 +343,20 @@
   <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
   <script type="text/javascript" src="/public/javascripts/stick-at-top-when-scrolling.js"></script>
   <script type="text/javascript" src="/public/javascripts/stop-scrolling-at-footer.js"></script>
+  <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
   <script type="text/javascript">
     $(function() {
+
+      // initialise map
+      var map = L.map('map-location').setView([50.9093302300135, -1.4162035035567726], 18);
+
+      L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 18
+      }).addTo(map);
+
+      var marker = L.marker([50.9093302300135, -1.4162035035567726]).addTo(map);
+
       // stop the position:fixed subnav rolling into footer
       GOVUK.stopScrollingAtFooter.addEl($('.js-stick-at-top-when-scrolling'), $('.js-stick-at-top-when-scrolling').height());
     });
