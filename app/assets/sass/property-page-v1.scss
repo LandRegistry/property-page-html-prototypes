@@ -1,0 +1,72 @@
+@import "colours";
+@import "typography";
+@import "measurements";
+@import "shims";
+
+
+h1.property-details-title-prefix {
+    margin-top: 0;
+}
+
+.property-details-title-prefix {
+  color: $grey-1;
+  @include core-27;
+  margin-bottom: 1.25em;
+  margin-top: 0.625em;
+}
+
+.address {
+  @include bold-36;
+  margin-bottom: $gutter-half;
+}
+
+.definition-tabular {
+  @extend %contain-floats;
+}
+
+.definition-tabular dt {
+    width: $one-third;
+    clear: left;
+    float: left;
+    margin-bottom: 10px;
+    @include core-19;
+}
+.definition-tabular dd {
+    float: left;
+    @include core-19;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.map-placeholder img{
+  max-width: calc(100% - 8px);
+  display: block;
+  border: 4px solid #dee0e2;
+}
+
+.bottom-section p {
+  @include bold-16;
+}
+
+
+ol {
+  list-style-type: decimal;
+}
+
+ol.lower-roman {
+  list-style-type: lower-roman;
+}
+
+.push-60 {
+  margin-top: $gutter;
+}
+
+.fap-link {
+  margin-top: $gutter-half;
+  padding-top: $gutter-half;
+  border-top: 1px solid $grey-2;
+}
+
+.copyright-notices {
+  @include heading-36;
+}
