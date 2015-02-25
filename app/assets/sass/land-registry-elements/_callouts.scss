@@ -45,12 +45,12 @@
 
 // Download "alert"
 .callout--download {
-  padding: $gutter-half $gutter-half $gutter-half $gutter*2;
+  padding: $gutter-half $gutter-half $gutter-half $gutter+$gutter-half;
   background-color: $yellow-25;
   background-image: url(/public/images/icon-download.svg);
   background-repeat: no-repeat;
   background-position: $gutter-half $gutter-half;
-  background-size: $gutter;
+  background-size: auto 45%;
 }
 
 // When an action is generated - ie "now do this".

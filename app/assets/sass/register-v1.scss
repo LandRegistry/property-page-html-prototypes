@@ -10,6 +10,7 @@
 
 // Import Land Registry elements
 @import 'land-registry-elements/faux-details';
+@import 'land-registry-elements/maps';
 @import 'land-registry-elements/typography';
 @import 'land-registry-elements/tags';
 @import 'land-registry-elements/callouts';
@@ -18,7 +19,7 @@
 
 // Register specific styles
 
-.pending-changes-flag {
+/*.pending-changes-flag {
   margin-top: $gutter-half;
   padding-top: $gutter-half;
   border-top: 1px solid #fff;
@@ -35,7 +36,7 @@
     margin: 0;
     font-weight: 700;
   }
-}
+}*/
 
 .register-item-listing {
   li {
@@ -43,9 +44,17 @@
   }
 }
 
-p.sub-heading-small{
+/*p.sub-heading-small{
   @include core-19;
 
   margin-top: 0;
   color: $grey-1;
+}*/
+
+.heading-download {
+  padding-left: $gutter*2;
+  background-image: url(/public/images/icon-download.svg);
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-size: contain;
 }
