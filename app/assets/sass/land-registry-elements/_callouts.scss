@@ -45,12 +45,19 @@
 
 // Download "alert"
 .callout--download {
-  padding: $gutter-half $gutter-half $gutter-half $gutter+$gutter-half;
-  background-color: $yellow-25;
+  padding: $gutter-half;
   background-image: url(/public/images/icon-download.svg);
   background-repeat: no-repeat;
-  background-position: $gutter-half $gutter-half;
-  background-size: auto 45%;
+  background-position: left center;
+  background-size: contain;
+  background-origin: content-box;
+  text-indent: 1.8em;
+}
+
+.callout--summary-download {
+  display: inline-block;
+  background-color: $white;
+  color: $black;
 }
 
 // When an action is generated - ie "now do this".
