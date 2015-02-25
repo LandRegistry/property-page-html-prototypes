@@ -66,3 +66,7 @@ ol.lower-roman {
   padding-top: $gutter-half;
   border-top: 1px solid $grey-2;
 }
+
+.copyright-notices {
+  @include heading-36;
+}
