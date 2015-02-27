@@ -29,6 +29,16 @@
   margin-bottom: $gutter;
 }
 
+.division--top {
+  margin-top: $gutter;
+  padding-top: $gutter;
+  border-top: 1px solid $grey-3;
+}
+.division--bottom {
+  margin-bottom: $gutter;
+  padding-bottom: $gutter;
+  border-bottom: 1px solid $grey-3;
+}
 
 .legal-division--top {
   margin-top: $gutter;
