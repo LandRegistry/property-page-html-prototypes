@@ -5,7 +5,7 @@ module.exports = {
       res.render('index');
     });
 
-    app.get('/properties/PL20_7HE/25_UNDERWAYS_YELVERTON', function (req, res) {
+    app.get('/property/PL20_7HE/25_UNDERWAYS_YELVERTON', function (req, res) {
       res.render('property-page/demo/index');
     });
 
