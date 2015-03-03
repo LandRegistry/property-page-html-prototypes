@@ -1,0 +1,69 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/property-page-v0.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <h1 class="property-details-title-prefix" style="margin-top: 30px;">Property details</h1>
+  <div class="grid-row">
+
+    <div class="column-half">
+      <div class="text">
+        <h2 class="property-details-title-address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">
+            3a Mandela Way<br>
+          </span>
+          <span itemprop="addressLocality">Southampton</span><br>
+          <span itemprop="postalCode">SO15 5RZ</span>
+        </h2>
+
+        <dl class="definition-tabular--1-3--b">
+          <dt>Property type</dt>
+          <dd>Flat</dd>
+
+          <dt>Tenure</dt>
+          <dd>Leasehold</dd>
+
+          <dt>Price paid</dt>
+          <dd>&pound;188,000 on 3 October 2012</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="column-half">
+      <div class="map-location" id="map-location">
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=50.909009,-1.415412&zoom=17&size=465x310&scale=2&markers=color:blue%7C50.909009,-1.415412&key=AIzaSyCJH9UzP8GtSMDr1PsMwUM0hCLljXcX6aU" alt="Map showing location of property">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text">
+    <h3 class="heading-medium">Further information about this property</h3>
+    <p>The <a href="https://www.gov.uk/government/organisations/land-registry">Land Registry</a> may have detailed information on this property held in a register of title, including</p>
+    <ul class="list-bullet">
+      <li>who the owner is</li>
+      <li>maps and title plan</li>
+      <li>rights and restrictions that affect it</li>
+    </ul>
+    <p><a href="https://www.gov.uk/search-property-information-land-registry">Access the Land Registry service</a></p>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{/govuk_template}}
