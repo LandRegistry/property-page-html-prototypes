@@ -1,0 +1,81 @@
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "measurements";
+@import "conditionals";
+@import "shims";
+@import "typography";
+@import "css3";
+@import "design-patterns/alpha-beta";
+@import "design-patterns/buttons";
+
+// Import Land Registry elements
+@import 'land-registry-elements/maps';
+@import 'land-registry-elements/typography';
+@import 'land-registry-elements/navigation';
+@import 'land-registry-elements/utilities';
+
+// Import GOV.UK styles (only where necessary);
+@import 'alphagov-elements/alphagov-static';
+
+// Breadcrumbs
+.global-breadcrumb {
+
+  ol {
+    padding: 0.75em 0 $gutter 0;
+    @extend %contain-floats;
+  }
+
+  li {
+    @include core-16;
+    float: left;
+
+    &:before {
+      content: '>';
+      color: $grey-2;
+      display: inline-block;
+      margin: 0 0.5em;
+    }
+
+    &:first-child:before {
+      content: '';
+      margin: 0;
+    }
+  }
+
+  a {
+    color: $text-colour;
+  }
+
+  strong {
+    font-weight: normal;
+  }
+}
+
+.property-details-title-prefix {
+  @include core-27;
+  color: $grey-1;
+  margin-bottom: $gutter;
+}
+.property-details-title-address {
+  @include bold-36;
+  margin-bottom: $gutter;
+}
+
+.map-location {
+  height: 310px;
+}
+
+.property-flags {
+  dd {
+    @include bold-48;
+    text-transform: uppercase;
+    margin-top: $gutter-one-third;
+    &.no-data {
+      text-transform: inherit;
+      color: $grey-1;
+    }
+  }
+  a {
+    @include core-16;
+  }
+}
