@@ -1,3 +1,11 @@
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "css3";
+@import "device-pixels";
+@import "measurements";
+@import "shims";
+@import "typography";
+
 //
 //  https://github.com/alphagov/static/
 //
@@ -28,7 +36,6 @@ $is-ie: false !default;
 
 // https://github.com/alphagov/static/blob/master/app/assets/stylesheets/helpers/_header.scss
 
-@import '_shims';
 #global-header {
   .header-wrapper .header-global .site-search {
     @extend %contain-floats;
@@ -197,6 +204,41 @@ $is-ie: false !default;
       }
     }
     &.js-visible { display: block; }
+  }
+}
+
+// Breadcrumbs
+.global-breadcrumb {
+
+  ol {
+    padding: 0.75em 0 $gutter 0;
+    @extend %contain-floats;
+    list-style: none;
+  }
+
+  li {
+    @include core-16;
+    float: left;
+
+    &:before {
+      content: '>';
+      color: $grey-2;
+      display: inline-block;
+      margin: 0 0.5em;
+    }
+
+    &:first-child:before {
+      content: '';
+      margin: 0;
+    }
+  }
+
+  a {
+    color: $text-colour;
+  }
+
+  strong {
+    font-weight: normal;
   }
 }
 

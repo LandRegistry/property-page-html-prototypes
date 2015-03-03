@@ -1,0 +1,144 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/property-page-v0.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$insideHeader}}
+  <a href="#search" class="search-toggle js-header-toggle">Search</a>
+
+  <form id="search" class="site-search" action="/search" method="get" role="search">
+    <div class="content">
+      <label for="site-search-text">Search</label>
+      <input type="search" name="q" id="site-search-text" title="Search" class="js-search-focus">
+      <input class="submit" type="submit" value="Search" />
+    </div>
+  </form>
+{{/insideHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/property-page/prototype-v1/">Property and land</a></li>
+        <!--<li><a href="/property-page/prototype-v1/results-page">Search results</a></li>-->
+        <li><strong>Property details</strong></li>
+      </ol>
+    </nav>
+  </div>
+
+  <h1 class="property-details-title-prefix">Property details</h1>
+  <div class="grid-row">
+
+    <div class="column-half">
+      <div class="text">
+        <h2 class="property-details-title-address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">
+            3 Mandela Way<br>
+          </span>
+          <span itemprop="addressLocality">Southampton</span><br>
+          <span itemprop="postalCode">SO15 5RZ</span>
+        </h2>
+
+        <dl class="definition-tabular--1-3--b">
+          <dt>Property type</dt>
+          <dd>Terraced house</dd>
+
+          <dt>Tenure</dt>
+          <dd>Freehold</dd>
+
+          <dt>Price paid</dt>
+          <dd>&pound;240,000 on 10 January 1986</dd>
+
+          <dt>Local council</dt>
+          <dd><a href="#">Southampton City Council</a></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="column-half">
+      <div class="map-location" id="map-location">
+        <img src="http://placehold.it/465x310" alt="Map showing location of property">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text">
+    <h3 class="heading-medium">Further information about this property</h3>
+    <p>The <a href="https://www.gov.uk/government/organisations/land-registry">Land Registry</a> may have detailed information on this property held in a register of title, including</p>
+    <ul class="list-bullet">
+      <li>who the owner is</li>
+      <li>maps and title plan</li>
+      <li>rights and restrictions that affect it</li>
+    </ul>
+    <p><a href="#">View the register of title for 3 Mandela Way</a></p>
+  </div>
+
+  <div class="division--top">
+    <div class="text">
+      <h4 class="heading-medium collapse-top">Related properties</h4>
+      <ul>
+        <li><a href="/property-page/prototype-v1/property-page-3a">3a Mandela Way, flat, leasehold</a></li>
+        <li><a href="#">3b Mandela Way, flat, leasehold</a></li>
+      </ul>
+      <br><!-- yuck -->
+      <details>
+        <summary>What are related properties?</summary>
+        <div class="panel-indent">
+          <p>Related properties are properties contained by, or containing, the property on this page.</p>
+          <p>For example a leasehold flat is likely to be part of a freehold building which contains other leasehold flats.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$footerTop}}
+  {{>property-page/prototype-v1/includes/footer-top}}
+{{/footerTop}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
+  <script type="text/javascript">
+    $(function() {
+
+      // initialise map
+      var map = L.map('map-location').setView([50.9093302300135, -1.4162035035567726], 18);
+
+      L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 18
+      }).addTo(map);
+
+      var marker = L.marker([50.9093302300135, -1.4162035035567726]).addTo(map);
+
+    });
+  </script>
+
+{{/bodyEnd}}
+
+{{/govuk_template}}

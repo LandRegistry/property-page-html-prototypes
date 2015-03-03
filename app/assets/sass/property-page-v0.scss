@@ -14,43 +14,6 @@
 @import 'land-registry-elements/navigation';
 @import 'land-registry-elements/utilities';
 
-// Import GOV.UK styles (only where necessary);
-@import 'alphagov-elements/alphagov-static';
-
-// Breadcrumbs
-.global-breadcrumb {
-
-  ol {
-    padding: 0.75em 0 $gutter 0;
-    @extend %contain-floats;
-  }
-
-  li {
-    @include core-16;
-    float: left;
-
-    &:before {
-      content: '>';
-      color: $grey-2;
-      display: inline-block;
-      margin: 0 0.5em;
-    }
-
-    &:first-child:before {
-      content: '';
-      margin: 0;
-    }
-  }
-
-  a {
-    color: $text-colour;
-  }
-
-  strong {
-    font-weight: normal;
-  }
-}
-
 .property-details-title-prefix {
   @include core-27;
   color: $grey-1;
