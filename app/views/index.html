@@ -1,7 +1,11 @@
-{{<layout}}
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/head}}
+{{/head}}
 
 {{$pageTitle}}
-	GOV.UK prototyping kit
+	Prototypes
 {{/pageTitle}}
 
 {{$content}}
@@ -69,4 +73,8 @@
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
