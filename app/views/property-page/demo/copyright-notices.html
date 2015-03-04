@@ -1,20 +1,27 @@
-{{<layout-property-page-v1}}
+{{<govuk_template}}
 
 {{$pageTitle}}
 	Property Page Demo - Terms and Conditions
 {{/pageTitle}}
 
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/property-page-v1.css">
+{{/head}}
+
 {{$content}}
 
-<div id="content">
-  <h1 class="copyright-notices">Use of this addressing data is subject to terms and conditions</h1>
-  <ol class="lower-roman">
-    <li> You are granted a non-exclusive, royalty free, revocable licence solely to view the Licensed Data for non-commercial purposes for the period during which [insert name of Licensee] makes it available;</li>
-    <li> You are not permitted to copy, sub-license, distribute, sell or otherwise make available the Licensed Data to third parties in any form; and</li>
-    <li> Third party rights to enforce the terms of this licence shall be reserved to Ordnance Survey;</li>
-  </ol>
-</div>
+<main id="content" role="main">
+  <div class="text">
+    <h1 class="heading-medium">Use of this addressing data is subject to terms and conditions</h1>
+    <ol class="lower-roman">
+      <li> You are granted a non-exclusive, royalty free, revocable licence solely to view the Licensed Data for non-commercial purposes for the period during which [insert name of Licensee] makes it available;</li>
+      <li> You are not permitted to copy, sub-license, distribute, sell or otherwise make available the Licensed Data to third parties in any form; and</li>
+      <li> Third party rights to enforce the terms of this licence shall be reserved to Ordnance Survey;</li>
+    </ol>
+  </div>
+</main>
 
 {{/content}}
 
-{{/layout-property-page-v1}}
+{{/govuk_template}}

@@ -1,37 +1,80 @@
-{{<layout}}
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/head}}
+{{/head}}
 
 {{$pageTitle}}
-	GOV.UK prototyping kit
+	Prototypes
 {{/pageTitle}}
 
 {{$content}}
 
 <main id="content" role="main">
+	<div class="text">
 
-	<h1 class="heading-xlarge">Digital register and property page prototypes</h1>
-	<!-- feel free to change this page to suit your needs -->
+		<h1 class="heading-xlarge">Prototypes</h1>
+		<div class="text">
+			<p>Static HTML prototypes demonstrating journeys and design.</p>
+		</div>
 
-	<h2 class="heading-large">Digital register</h2>
+		<h2 class="heading-large">Digital register</h2>
 
-	<ul>
-		<li>
-			<a href="/digital-register/">Version 1</a>
-		</li>
-	</ul>
+		<h3 class="heading-medium">User journeys</h3>
+		<ul>
+			<li>
+				<a href="/digital-register/journeys/v1/">Digital register journey v1</a>
+			</li>
+		</ul>
 
-	<h2 class="heading-large">Property page</h2>
+	  <h3 class="heading-medium">Digital register view iterations</h3>
 
-	<ul>
-		<li>
-			<a href="/property-page/">Property page index</a>
-		</li>
-	</ul>
+		<h4 class="heading-small">Digital register</h4>
+	  <ul>
+	    <li>
+	      <a href="/digital-register/register-view/digital-register-full-v1">Digital register - full - v1</a>
+	    </li>
+	    <li>
+	      <a href="/digital-register/register-view/digital-register-summary-v1">Digital register - summarised - v1</a>
+	    </li>
+	    <li>
+	      <a href="/digital-register/register-view/digital-register-summary-v1a">Digital register - summarised - v1a</a>
+	    </li>
+	  </ul>
+  
+	  <h4 class="heading-small">PDF documents</h4>
+	  <ul>
+	    <li>
+	      <a href="/public/downloads/pdf/register-new-transport.pdf">Register “view”</a>
+	    </li>
+	    <li>
+	      <a href="/public/downloads/pdf/official-register-new-transport.pdf">Register - official copy</a>
+	    </li>
+	  </ul>
 
-  <h2 class="heading-large">Digital register - view iterations</h2>
-  <p><a href="register-ab-research">Iterations to digital register view (web page) and register downloads (pdf).</a></p>
 
+		<h2 class="heading-large">Property page</h2>
+
+		<h3 class="heading-medium">User journeys</h3>
+		<ul>
+			<li><a href="/property-page/prototype-v1">Property page journey v1</a></li>
+		</ul>
+
+		<h3 class="heading-medium">Property page view iterations</h3>
+		<ul>
+			<li><a href="/property-page/prototype-v0">Property page v0 (alpha baseline showing external data)</a></li>
+			<li><a href="/property/PL20_7HE/25_UNDERWAYS_YELVERTON">Property page (MVP) v0</a></li>
+			<li><a href="/property-page/prototype-mvp/property-page-mvp">Property page (MVP) v1</a></li>
+			<li><a href="/property-page/prototype-v1/property-page-3">Property page v1</a></li>
+		</ul>
+
+	</div>
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

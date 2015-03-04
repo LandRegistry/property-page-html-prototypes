@@ -1,0 +1,78 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/digital-register-v1.css">
+{{/head}}
+
+{{$propositionHeader}}
+  <div class="header-proposition">
+    <div class="content">
+      <a href="/" id="proposition-name">Land Registry Private Beta</a>
+    </div>
+  </div>
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This service is in beta. Please give us your <a href="#">Feedback</a>.</span>
+    </p>
+  </div>
+
+	<div class="inner-block">
+
+	 <h1 class="heading-large">Login</h1>
+
+
+    <form action="/digital-register/journeys/v1/search-page" method="get" class="form">
+
+    	<div class="form-group">
+    		<label for="username" class="form-label">Username</label>
+    		<input type="text" class="form-control" id="username">
+    	</div>
+
+    	<div class="form-group">
+    		<label for="password" class="form-label">Password</label>
+    		<input type="password" class="form-control" id="password">
+    	</div>
+
+    	<div class="form-group">
+    		<button type="submit" class="button">Login</button>
+    	</div>
+
+    </form>
+  </div>
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{$footerSupportLinks}}
+  <h2 class="visuallyhidden">Copyright Notices</h2>
+  <ul>
+    <li><a href="/property-page/demo/copyright-notices">Use of this addressing data is subject to terms and conditions</a></li>
+  </ul>
+  <h2 class="visuallyhidden">Support links</h2>
+  <ul>
+    <li><a href="https://gov.uk/help">Help</a></li>
+    <li><a href="https://gov.uk/help/cookies">Cookies</a></li>
+    <li><a href="https://gov.uk/contact">Contact</a></li>
+    <li>Built by the <a href="https://www.gov.uk/government/organisations/land-registry">Land Registry</a></li>
+  </ul>
+{{/footerSupportLinks}}
+
+{{/govuk_template}}

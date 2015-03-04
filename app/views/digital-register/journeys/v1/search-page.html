@@ -1,0 +1,83 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/digital-register-v1.css">
+{{/head}}
+
+{{$propositionHeader}}
+  <div class="header-proposition">
+    <div class="content">
+      <a href="/" id="proposition-name">Land Registry Private Beta</a>
+    </div>
+  </div>
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This service is in beta. Please give us your <a href="#">Feedback</a>.</span>
+    </p>
+  </div>
+
+  <div class="inner-block">
+
+  <p><b><a href="/digital-register/journeys/v1/index">Login</a></b> > <b>Search</b></p>
+
+  <form class="form" action="/digital-register/journeys/v1/search-results" method="get">
+
+    <h1 class="form-title heading-xlarge">
+      Find a register
+    </h1>
+
+    <div class="text">
+      <p>Use this service to access register information on a property in the Plymouth area.</p>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label-bold" for="search">Search for a digital register</label>
+      <p class="form-hint">eg postcode, street name or town/city</p>
+      <input type="text" class="form-control" id="search">
+    </div>
+
+    <div class="form-group">
+      <input type="submit" class="button" value="Search">
+    </div>
+
+  </form>
+
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{$footerSupportLinks}}
+  <h2 class="visuallyhidden">Copyright Notices</h2>
+  <ul>
+    <li><a href="/property-page/demo/copyright-notices">Use of this addressing data is subject to terms and conditions</a></li>
+  </ul>
+  <h2 class="visuallyhidden">Support links</h2>
+  <ul>
+    <li><a href="https://gov.uk/help">Help</a></li>
+    <li><a href="https://gov.uk/help/cookies">Cookies</a></li>
+    <li><a href="https://gov.uk/contact">Contact</a></li>
+    <li>Built by the <a href="https://www.gov.uk/government/organisations/land-registry">Land Registry</a></li>
+  </ul>
+{{/footerSupportLinks}}
+
+{{/govuk_template}}

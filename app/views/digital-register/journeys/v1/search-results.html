@@ -1,0 +1,82 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/digital-register-v1.css">
+{{/head}}
+
+{{$propositionHeader}}
+  <div class="header-proposition">
+    <div class="content">
+      <a href="/" id="proposition-name">Land Registry Private Beta</a>
+    </div>
+  </div>
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This service is in beta. Please give us your <a href="#">Feedback</a>.</span>
+    </p>
+  </div>
+
+  <div class="inner-block">
+
+  <p><b><a href="/digital-register/journeys/v1/index">Login</a></b> > <b><a href="/digital-register/journeys/v1/search-page">Search</a></b> > <b>Results</b></p>
+
+  <h1 class="heading-large">
+    Search results
+  </h1>
+
+  <div class="text">
+    <ol class="results-list">
+      <li>
+        <a href="http://preview.digital.frontend/titles/DN1000">1 Stenlaway Close, Plymouth, PL8 6TD</a>
+      </li>
+      <li>
+        <a href="http://preview.digital.frontend/titles/DN2000">2 Stenlaway Close, Plymouth, PL8 6TD</a>
+      </li>
+      <li>
+        <a href="http://preview.digital.frontend/titles/DN3000">3 Stenlaway Close, Plymouth, PL8 6TD</a>
+      </li>
+      <li>
+        <a href="http://preview.digital.frontend/titles/DN4000">4 Stenlaway Close, Plymouth, PL8 6TD</a>
+      </li>
+    </ol>
+  </div>
+
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{$footerSupportLinks}}
+  <h2 class="visuallyhidden">Copyright Notices</h2>
+  <ul>
+    <li><a href="/property-page/demo/copyright-notices">Use of this addressing data is subject to terms and conditions</a></li>
+  </ul>
+  <h2 class="visuallyhidden">Support links</h2>
+  <ul>
+    <li><a href="https://gov.uk/help">Help</a></li>
+    <li><a href="https://gov.uk/help/cookies">Cookies</a></li>
+    <li><a href="https://gov.uk/contact">Contact</a></li>
+    <li>Built by the <a href="https://www.gov.uk/government/organisations/land-registry">Land Registry</a></li>
+  </ul>
+{{/footerSupportLinks}}
+
+{{/govuk_template}}

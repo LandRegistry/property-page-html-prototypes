@@ -1,8 +1,15 @@
-{{<layout-property-page-v1}}
+{{<govuk_template}}
 
 {{$pageTitle}}
 	Property Page Demo
 {{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/property-page-v1.css">
+{{/head}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
@@ -53,4 +60,22 @@
 
 {{/content}}
 
-{{/layout-property-page-v1}}
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{$footerSupportLinks}}
+  <h2 class="visuallyhidden">Copyright Notices</h2>
+  <ul>
+    <li><a href="/property-page/demo/copyright-notices">Use of this addressing data is subject to terms and conditions</a></li>
+  </ul>
+  <h2 class="visuallyhidden">Support links</h2>
+  <ul>
+    <li><a href="https://gov.uk/help">Help</a></li>
+    <li><a href="https://gov.uk/help/cookies">Cookies</a></li>
+    <li><a href="https://gov.uk/contact">Contact</a></li>
+    <li>Built by the <a href="https://www.gov.uk/government/organisations/land-registry">Land Registry</a></li>
+  </ul>
+{{/footerSupportLinks}}
+
+{{/govuk_template}}
