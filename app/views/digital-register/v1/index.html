@@ -1,16 +1,23 @@
-{{<digital-register/layout-register-journey-v1}}
+{{<govuk_template}}
 
 {{$pageTitle}}
 	GOV.UK prototyping kit
 {{/pageTitle}}
 
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/digital-register-v1.css">
+{{/head}}
+
 {{$propositionHeader}}
-<div class="header-proposition">
-<div class="content">
- <a href="/" id="proposition-name">Land Registry Private Beta</a>
-</div>
-</div>
+  <div class="header-proposition">
+    <div class="content">
+      <a href="/" id="proposition-name">Land Registry Private Beta</a>
+    </div>
+  </div>
 {{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
@@ -25,9 +32,7 @@
 
 	<div class="inner-block">
 
-	<p><b>Login</b></p>
-
-	<h1 class="form-title heading-large">Login</h1>
+	 <h1 class="heading-large">Login</h1>
 
 
     <form action="/digital-register/v1/search-page" method="get" class="form">
@@ -52,4 +57,22 @@
 
 {{/content}}
 
-{{/digital-register/layout-register-journey-v1}}
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{$footerSupportLinks}}
+  <h2 class="visuallyhidden">Copyright Notices</h2>
+  <ul>
+    <li><a href="/property-page/demo/copyright-notices">Use of this addressing data is subject to terms and conditions</a></li>
+  </ul>
+  <h2 class="visuallyhidden">Support links</h2>
+  <ul>
+    <li><a href="https://gov.uk/help">Help</a></li>
+    <li><a href="https://gov.uk/help/cookies">Cookies</a></li>
+    <li><a href="https://gov.uk/contact">Contact</a></li>
+    <li>Built by the <a href="https://www.gov.uk/government/organisations/land-registry">Land Registry</a></li>
+  </ul>
+{{/footerSupportLinks}}
+
+{{/govuk_template}}
