@@ -5,6 +5,7 @@ module.exports = {
       res.render('index');
     });
 
+    // demo URL - essentially describing what the URL structure could be
     app.get('/property/PL20_7HE/25_UNDERWAYS_YELVERTON', function (req, res) {
       res.render('property-page/demo/index');
     });
