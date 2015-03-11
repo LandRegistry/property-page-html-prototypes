@@ -1,0 +1,116 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Search results | Find a register of title
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="search-page">Find a register of title</a></li>
+        <li><strong>Search results</strong></li>
+      </ol>
+    </nav>
+  </div>
+
+  <form class="form" action="/property-page/prototype-v1/results-page" method="get">
+    <div class="form-group">
+      <label for="search-terms">
+        <h1 class="heading-small">
+          Search results for <span class="visuallyhidden">SO15 5RZ</span>
+        </h1>
+      </label>
+      <input type="text" class="form-control" name="s" id="search-terms" value="SO15 5RZ">
+      <input type="submit" value="Search" class="button">
+    </div>
+  </form>
+
+  <div class="text">
+    <ol>
+      <li>
+        <h2 class="heading-small collapse-bottom">
+          <a href="#">1 Mandela Way, Southampton, SO15 5RZ</a>
+        </h2>
+        <div class="font-xsmall">Terraced house: freehold</div>
+      </li>
+      <li>
+        <h2 class="heading-small collapse-bottom">
+          <a href="#">2 Mandela Way, Southampton, SO15 5RZ</a>
+        </h2>
+        <div class="font-xsmall">Terraced house: freehold</div>
+      </li>
+      <li>
+        <h2 class="heading-small collapse-bottom">
+          <a href="#">3 Mandela Way, Southampton, SO15 5RZ</a>
+        </h2>
+        <div class="font-xsmall">Terraced house: freehold</div>
+      </li>
+      <li>
+        <h2 class="heading-small collapse-bottom">
+          <a href="#">3a Mandela Way, Southampton, SO15 5RZ</a>
+        </h2>
+        <div class="font-xsmall">Flat: leasehold</div>
+      </li>
+      <li>
+        <h2 class="heading-small collapse-bottom">
+          <a href="#">3b Mandela Way, Southampton, SO15 5RZ</a>
+        </h2>
+        <div class="font-xsmall">Flat: leasehold</div>
+      </li>
+      <li>
+        <h2 class="heading-small collapse-bottom">
+          <a href="#">4 Mandela Way, Southampton, SO15 5RZ</a>
+        </h2>
+        <div class="font-xsmall">Terraced house: freehold</div>
+      </li>
+      <li>
+        <h2 class="heading-small collapse-bottom">
+          <a href="#">5 Mandela Way, Southampton, SO15 5RZ</a>
+        </h2>
+        <div class="font-xsmall">Terraced house: freehold</div>
+      </li>
+      <li>
+        <h2 class="heading-small collapse-bottom">
+          <a href="#">6 Mandela Way, Southampton, SO15 5RZ</a>
+        </h2>
+        <div class="font-xsmall">Terraced house: freehold</div>
+      </li>
+      <li>
+        <h2 class="heading-small collapse-bottom">
+          <a href="#">Flat 1, 6 Mandela Way, Southampton, SO15 5RZ</a>
+        </h2>
+        <div class="font-xsmall">Flat: leasehold</div>
+      </li>
+      <li>
+        <h2 class="heading-small collapse-bottom">
+          <a href="#">Flat 2, 6 Mandela Way, Southampton, SO15 5RZ</a>
+        </h2>
+        <div class="font-xsmall">Flat: leasehold</div>
+      </li>
+    </ol>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
