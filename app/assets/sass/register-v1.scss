@@ -57,3 +57,24 @@
   background-position: 0;
   background-size: contain;
 }
+
+.title-extent {
+  margin-bottom: $gutter;
+}
+
+
+.register-datestamp {
+  display: block;
+  border-left: 3px solid $grey-3;
+  padding-left: 8px;
+  margin: $gutter 0 $gutter-half;
+  color: $grey-1;
+}
+
+.register-actions {
+  margin: $gutter-half 0 $gutter-half $gutter-half;
+
+  & > [class*='icon-'] {
+    margin-bottom: 8px;
+  }
+}

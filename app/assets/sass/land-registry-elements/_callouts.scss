@@ -78,3 +78,14 @@
   }
   text-align: center;
 }
+
+// Print "alert"
+.callout--print {
+  padding: $gutter-half;
+  background-image: url(/public/images/icon-print.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  background-origin: content-box;
+  text-indent: 1.8em;
+}
