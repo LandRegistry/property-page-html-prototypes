@@ -241,26 +241,43 @@
   {{>includes/scripts}}
   <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
   <script type="text/javascript">
+
+    var filter = function() {
+      if (!$postal.is(':checked') && !$nopostal.is(':checked')) {
+        $('.postal, .no-postal').show();
+      } else if (!$postal.is(':checked') && $nopostal.is(':checked')) {
+        $('.postal').hide();
+        $('.no-postal').show();
+      } else if ($postal.is(':checked') && !$nopostal.is(':checked')) {
+        $('.postal').show();
+        $('.no-postal').hide();
+      } else if ($postal.is(':checked') && $nopostal.is(':checked')) {
+        $('.postal, .no-postal').show();
+      }
+    }
     
     $(function() {
 
-      var $postal = $('#postal');
-      var $nopostal = $('#no-postal');
+      $postal = $('#postal');
+      $nopostal = $('#no-postal');
 
       $postal.on('click', function(e) {
+        filter();
+        /*alert($postal.is(':checked'));
         if (this.checked) {
           $('.postal').show();
         } else {
           $('.postal').hide();
-        }
+        }*/
       });
 
       $nopostal.on('click', function(e) {
-        if (this.checked) {
+        filter();
+        /*if (this.checked) {
           $('.no-postal').show();
         } else {
           $('.no-postal').hide();
-        }
+        }*/
       });
 
     });
