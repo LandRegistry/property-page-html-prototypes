@@ -205,3 +205,22 @@ pre code {
   font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   font-style: normal;
 }
+
+// Icons - currently print and download
+.icon-print {
+  background-image: url(/public/images/icon-print.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  background-origin: content-box;
+  text-indent: 1.8em;
+}
+
+.icon-download {
+  background-image: url(/public/images/icon-download.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  background-origin: content-box;
+  text-indent: 1.8em;
+}
