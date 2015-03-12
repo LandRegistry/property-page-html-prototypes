@@ -1,0 +1,270 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Search results | Find a register of title
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    .result-filters {
+
+    }
+    .multiple-title-item {
+      margin: 30px 0;
+      padding: 0 15px;
+      border: 1px solid #eee;
+    }
+    .sub-titles {
+      margin-bottom: 15px;
+    }
+    .sub-titles li {
+      margin-bottom: 8px;
+    }
+  </style>
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="search-page">Find a register of title</a></li>
+        <li><strong>Search results</strong></li>
+      </ol>
+    </nav>
+  </div>
+
+  <form class="form" action="search-results" method="get">
+    <div class="form-group">
+      <label for="search-terms">
+        <h1 class="heading-medium">
+          Search results for <span class="visuallyhidden">Mandela Way SO15 5RZ</span>
+        </h1>
+      </label>
+      <input type="text" class="form-control" name="s" id="search-terms" value="Mandela Way SO15 5RZ">
+      <input type="submit" value="Search" class="button">
+    </div>
+  </form>
+
+  
+  <div class="grid-row">
+    <div class="column-third">
+      <form class="form result-filters font-xsmall" id="filters">
+        <h2 class="font-xsmall expand-bottom-half">Filter by:</h2>
+        <div>
+          <input type="checkbox" id="postal">
+          <label for="postal">
+            Results <b>with</b> postal address (27)
+          </label>
+        </div>
+        <div>
+          <input type="checkbox" id="no-postal">
+          <label for="no-postal">
+            Results <b>without</b> postal address (3)
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="column-two-thirds">
+      <h2 class="font-xsmall expand-bottom-half">30 results found</h2>
+      <ol>
+        <li class="postal">
+          <h2 class="heading-small collapse-top collapse-bottom">
+            <a href="#">1 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b> terraced house
+          </div>
+        </li>
+        <li class="postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">2 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b> terraced house
+          </div>
+        </li>
+        <li class="postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">3 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b> terraced house
+          </div>
+        </li>
+        <li class="postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="/digital-register/register-view/digital-register-full-v2">3a Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Leasehold</b> flat
+          </div>
+        </li>
+        <li class="postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">3b Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Leasehold</b> flat
+          </div>
+        </li>
+        <li class="postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">4 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b> terraced house
+          </div>
+        </li>
+        <li class="postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">5 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b> terraced house
+          </div>
+        </li>
+        <li class="postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">6 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b> terraced house
+          </div>
+        </li>
+        <li class="postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Flat 1, 6 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Leasehold</b> flat
+          </div>
+        </li>
+        <li class="postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Flat 2, 6 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Leasehold</b> flat
+          </div>
+        </li>
+        <li class="no-postal multiple-title-item">
+          <h2 class="heading-small">
+            Guesswork thing in Mandela Way with multiple titles
+          </h2>
+          <ul class="font-xsmall sub-titles">
+            <li>
+              <a href="#">Title number HP725748</a><br>
+              <b>Freehold</b> land
+            </li>
+            <li>
+              <a href="#">Title number HP725748</a><br>
+              <b>Freehold</b> land
+            </li>
+            <li>
+              <a href="#">Title number HP725748</a><br>
+              <b>Freehold</b> land
+            </li>
+          </ul>
+        </li>
+        <li class="no-postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Land at Mandela Way, Southampton</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b> land
+          </div>
+        </li>
+        <li class="no-postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Land west of 1 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b> land
+          </div>
+        </li>
+        <li class="no-postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Langstone Court, Hayling Court and Shoring Court, Southampton</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b> land
+          </div>
+        </li>
+      </ol>
+
+      <div class="govuk-previous-and-next-navigation">
+        <ul>
+          <li class="next-page">
+            <a href="#">
+              <span class="pagination-label">Next <span class="visuallyhidden">page</span></span>
+              <span>2 of 2</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript">
+    
+    $(function() {
+
+      var $postal = $('#postal');
+      var $nopostal = $('#no-postal');
+
+      $postal.on('click', function(e) {
+        if (this.checked) {
+          $('.postal').show();
+        } else {
+          $('.postal').hide();
+        }
+      });
+
+      $nopostal.on('click', function(e) {
+        if (this.checked) {
+          $('.no-postal').show();
+        } else {
+          $('.no-postal').hide();
+        }
+      });
+
+    });
+  </script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
