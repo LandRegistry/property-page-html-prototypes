@@ -10,12 +10,13 @@
   <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
   <style type="text/css">
     .result-filters {
-
+      display: block;
+      margin-top: 22px;
     }
     .multiple-title-item {
       margin: 30px 0;
-      padding: 0 15px;
-      border: 1px solid #eee;
+      border-right: 1px solid #eee;
+      border-bottom: 1px solid #eee;
     }
     .sub-titles {
       margin-bottom: 15px;
@@ -56,8 +57,8 @@
   
   <div class="grid-row">
     <div class="column-third">
-      <form class="form result-filters font-xsmall" id="filters">
-        <h2 class="font-xsmall expand-bottom-half">Filter by:</h2>
+      <h2 class="font-xsmall expand-bottom-half">Filter by:</h2>
+      <form class="result-filters font-xsmall" id="filters">
         <div>
           <input type="checkbox" id="postal">
           <label for="postal">
@@ -71,13 +72,17 @@
           </label>
         </div>
       </form>
+      <details class="expand-top-half font-xsmall">
+        <summary>What do these filters mean?</summary>
+        <p>Help text...</p>
+      </details>
     </div>
 
     <div class="column-two-thirds">
       <h2 class="font-xsmall expand-bottom-half">30 results found</h2>
       <ol>
         <li class="postal">
-          <h2 class="heading-small collapse-top collapse-bottom">
+          <h2 class="heading-small collapse-bottom">
             <a href="#">1 Mandela Way, Southampton, SO15 5RZ</a>
           </h2>
           <div class="font-xsmall">
