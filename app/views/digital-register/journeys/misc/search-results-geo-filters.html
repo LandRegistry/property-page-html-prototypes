@@ -9,6 +9,10 @@
   <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
   <style type="text/css">
+    .result-filters {
+      display: block;
+      margin-top: 22px;
+    }
     .multiple-title-item {
       margin: 30px 0;
       border-right: 1px solid #eee;
@@ -32,13 +36,13 @@
   <div class="global-breadcrumb">
     <nav role="navigation">
       <ol>
-        <li><a href="search-page">Find a register of title</a></li>
+        <li><a href="#">Find a register of title</a></li>
         <li><strong>Search results</strong></li>
       </ol>
     </nav>
   </div>
 
-  <form class="form" action="search-results" method="get">
+  <form class="form" action="#" method="get">
     <div class="form-group">
       <label for="search-terms">
         <h1 class="heading-medium">
@@ -51,6 +55,29 @@
   </form>
  
   <div class="grid-row">
+    
+    <div class="column-third">
+      <h2 class="font-xsmall expand-bottom-half">Filter by:</h2>
+      <form class="result-filters font-xsmall" id="filters">
+        <div>
+          <input type="checkbox" id="postal">
+          <label for="postal">
+            Titles <b>with</b> postal address (27)
+          </label>
+        </div>
+        <div>
+          <input type="checkbox" id="no-postal">
+          <label for="no-postal">
+            Titles <b>without</b> postal address (3)
+          </label>
+        </div>
+      </form>
+      <details class="expand-top-half font-xsmall">
+        <summary>What do these filters mean?</summary>
+        <p>Help text!</p>
+      </details>
+    </div>
+
     <div class="column-two-thirds">
       <h2 class="font-xsmall expand-bottom-half">30 results found</h2>
       <ol>
@@ -74,7 +101,7 @@
         </li>
         <li class="postal">
           <h2 class="heading-small collapse-bottom">
-            <a href="freehold-register">3 Mandela Way, Southampton, SO15 5RZ</a>
+            <a href="#">3 Mandela Way, Southampton, SO15 5RZ</a>
           </h2>
           <div class="font-xsmall">
             Title number HP725747<br>
@@ -83,7 +110,7 @@
         </li>
         <li class="postal">
           <h2 class="heading-small collapse-bottom">
-            <a href="/digital-register/register-view/digital-register-full-v2">3a Mandela Way, Southampton, SO15 5RZ</a>
+            <a href="#">3a Mandela Way, Southampton, SO15 5RZ</a>
           </h2>
           <div class="font-xsmall">
             Title number HP725748<br>
@@ -144,6 +171,25 @@
             <b>Leasehold</b> flat
           </div>
         </li>
+        <li class="no-postal multiple-title-item">
+          <h2 class="heading-small">
+            Guesswork thing in Mandela Way with multiple titles
+          </h2>
+          <ul class="font-xsmall sub-titles">
+            <li>
+              <a href="#">Title number HP725748</a><br>
+              <b>Freehold</b> land
+            </li>
+            <li>
+              <a href="#">Title number HP725748</a><br>
+              <b>Freehold</b> land
+            </li>
+            <li>
+              <a href="#">Title number HP725748</a><br>
+              <b>Freehold</b> land
+            </li>
+          </ul>
+        </li>
         <li class="no-postal">
           <h2 class="heading-small collapse-bottom">
             <a href="#">Land at Mandela Way, Southampton</a>
@@ -197,6 +243,38 @@
 
 {{$bodyEnd}}
   {{>includes/scripts}}
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript">
+
+    var filter = function() {
+      if (!$postal.is(':checked') && !$nopostal.is(':checked')) {
+        $('.postal, .no-postal').show();
+      } else if (!$postal.is(':checked') && $nopostal.is(':checked')) {
+        $('.postal').hide();
+        $('.no-postal').show();
+      } else if ($postal.is(':checked') && !$nopostal.is(':checked')) {
+        $('.postal').show();
+        $('.no-postal').hide();
+      } else if ($postal.is(':checked') && $nopostal.is(':checked')) {
+        $('.postal, .no-postal').show();
+      }
+    }
+    
+    $(function() {
+
+      $postal = $('#postal');
+      $nopostal = $('#no-postal');
+
+      $postal.on('click', function(e) {
+        filter();
+      });
+
+      $nopostal.on('click', function(e) {
+        filter();
+      });
+
+    });
+  </script>
 {{/bodyEnd}}
 
 {{/govuk_template}}
