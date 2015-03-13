@@ -24,6 +24,7 @@
       margin-bottom: 30px;
     }
   </style>
+  <link href="/public/stylesheets/chartist.css" media="screen" rel="stylesheet" type="text/css" />
 {{/head}}
 
 {{$content}}
@@ -83,6 +84,27 @@
 
   </div>
 
+  <div class="legal-division--bottom">
+
+    <h2 class="heading-large">About this title</h2>
+
+    <div class="grid-row">
+      <div class="column-third">
+        <h3 class="font-small">Changes to this title</h3>
+        <div id="graph-1" class="ct-chart ct-perfect-fifth"></div>
+      </div>
+      <div class="column-third">
+        <h3 class="font-small">Recorded sale prices</h3>
+        <div id="graph-2" class="ct-chart ct-perfect-fifth"></div>
+      </div>
+      <div class="column-third">
+        <h3 class="font-small">Changes of ownership</h3>
+        <div id="graph-3" class="ct-chart ct-perfect-fifth"></div>
+      </div>
+    </div>
+
+  </div>
+
   <div class="callout--download">
     <a href="#">Download a full copy</a> of this title<!-- and associated documents-->
   </div>
@@ -116,6 +138,63 @@
       GOVUK.stopScrollingAtFooter.addEl($('.js-stick-at-top-when-scrolling'), $('.js-stick-at-top-when-scrolling').height());
 
     });
+  </script>
+  <script type="text/javascript" src="/public/vendor/chartist/chartist.js"></script>
+  <script type="text/javascript">
+    var data1 = {
+      // A labels array that can contain any sort of values
+      labels: ['1950', '1960', '1970', '1980', '1990', '2000', '2010'],
+      // Our series array that contains series objects or in this case series data arrays
+      series: [
+        [0, 2, 4, 2, 1, 6, 3, 3]
+      ]
+    };
+
+    var data2 = {
+      labels: ['1950', '1960', '1970', '1980', '1990', '2000', '2010'],
+      series: [
+        [25000, 27000, 30000, 50000, 80000, 100000, 110000, 100000]
+      ]
+    };
+
+    var data3 = {
+      labels: ['1950', '1960', '1970', '1980', '1990', '2000', '2010'],
+      series: [
+        [1, 1, 1, 1, 1, 5, 5, 1]
+      ]
+    };
+
+    var options = {
+      axisX: {
+        // The offset of the chart drawing area to the border of the container
+        offset: 20
+      },
+      // Options for Y-Axis
+      axisY: {
+        offset: 0
+      },
+      // If the line should be drawn or not
+      showLine: false,
+      // If dots should be drawn or not
+      showPoint: false,
+      // If the line chart should draw an area
+      showArea: true,
+    };
+
+    var barOptions = {
+      axisX: {
+        // The offset of the chart drawing area to the border of the container
+        offset: 20
+      },
+      // Options for Y-Axis
+      axisY: {
+        offset: 20
+      }
+    };
+
+    new Chartist.Line('#graph-1', data1, options);
+    new Chartist.Line('#graph-2', data2, options);
+    new Chartist.Bar('#graph-3', data3, barOptions);
   </script>
 
 {{/bodyEnd}}
