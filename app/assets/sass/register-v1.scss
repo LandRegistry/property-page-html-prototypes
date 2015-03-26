@@ -64,9 +64,9 @@
 
 
 .register-datestamp {
-  display: block;
-  border-left: 3px solid $grey-3;
-  padding-left: 8px;
+  display: inline-block;
+  border-top: 1px solid $grey-3;
+  padding-top: 6px;
   margin: $gutter 0 $gutter-half;
   color: $grey-1;
 }
@@ -78,3 +78,9 @@
     margin-bottom: 8px;
   }
 }
+
+.help-indent {
+  padding-left: 1em;
+  border-left: 3px solid $grey-3;
+}
+
