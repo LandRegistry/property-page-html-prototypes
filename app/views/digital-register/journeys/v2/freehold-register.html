@@ -9,6 +9,14 @@
   <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/register-v1.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    table td {
+      font-size: 19px;
+      vertical-align: top;
+      border-bottom: none;
+    }
+  </style>
 {{/head}}
 
 {{$content}}
@@ -137,13 +145,15 @@
           <li>
             <p>
               <a href="/digital-register/register-view/digital-register-full-v2">3a Mandela Way</a><br>
-              Ground floor flat
+              Ground floor flat<br>
+              HP725748
             </p>
           </li>
           <li>
             <p>
               <a href="#">3b Mandela Way</a><br>
-              First floor flat
+              First floor flat<br>
+              HP725749
             </p>
           </li>
         </ul>
@@ -179,23 +189,33 @@
         <p>Proprietor: Barclays Bank PLC (Co. Regn. No. 1026167) of Canary Wharf, 5 The North Colonnade, London E14 4BB.</p>
         
         <small class="register-datestamp">10 January 2009</small>
-        <h3 class="heading-medium collapse-top">Schedule of properties</h3>
-        <ul>
-          <li>
-            <p>
-              <a href="/digital-register/register-view/digital-register-full-v2">Ground floor flat</a><br>
-              HP725748<br>
-              99 years from 3 October 2012
-            </p>
-          </li>
-          <li>
-            <p>
-              <a href="/digital-register/register-view/digital-register-full-v2">First floor flat</a><br>
-              HP725749<br>
-              99 years from 3 October 2012
-            </p>
-          </li>
-        </ul>
+        <h3 class="heading-small collapse-top">Schedule of notices of leases</h3>
+        <table class="lease-table">
+          <thead class="visuallyhidden">
+            <tr>
+              <th>Title</th>
+              <th>Lease details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a href="/digital-register/register-view/digital-register-full-v2">3a Mandela Way</a><br>
+                Ground floor flat<br>
+                HP725748
+              </td>
+              <td>99 years from 3 October 2012</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="/digital-register/register-view/digital-register-full-v2">3b Mandela Way</a><br>
+                First floor flat<br>
+                HP725749<br>
+              </td>
+              <td>99 years from 3 October 2012</td>
+            </tr>
+          </tbody>
+        </table>
 
       </section>
 
