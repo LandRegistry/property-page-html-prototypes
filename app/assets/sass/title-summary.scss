@@ -1,0 +1,31 @@
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "measurements";
+
+
+.title-address {
+  margin-bottom: $gutter;
+}
+
+.document-selection {
+
+  label {
+    display: inline-block;
+    border: 1px solid $grey-3;
+    padding: 15px 15px 12px 8px;
+    margin-bottom: 7px;
+
+    &:hover {
+      border-color: $black;
+    }
+  }
+
+  input[type='checkbox'] {
+    position: relative;
+    top: -2px;
+  }
+
+  & > p {
+    margin-bottom: 30px;
+  }
+}

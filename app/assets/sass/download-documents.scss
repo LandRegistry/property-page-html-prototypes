@@ -1,0 +1,29 @@
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "measurements";
+
+.document-link {
+  display: block;
+  //text-align: center;
+  text-decoration: none;
+  padding: 15px 0;
+
+  img {
+    //margin: 0 auto 15px auto;
+    margin-bottom: $gutter-half;
+    width: 180px;
+    box-shadow: 0 1px 3px $grey-2;
+  }
+
+  span {
+    display: block;
+  }
+
+  &:hover {
+    text-decoration: underline;
+
+    img {
+      outline: 3px solid $grey-2;
+    }
+  }
+}
