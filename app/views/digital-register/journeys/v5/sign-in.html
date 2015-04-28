@@ -16,9 +16,50 @@
 {{$content}}
 
 <main id="content" role="main">
-  <form action="create-account" action="get">
-    <button class="button">New Account</button>
-  </form>
+
+    {{>digital-register/includes/banner}}
+
+    <div class="global-breadcrumb">
+      <nav role="navigation">
+        <ol>
+          <li><a href="search-page">Find a title</a></li>
+          <li><a href="search-results">Search results</a></li>
+          <li><a href="title-summary">Summary of title</a></li>
+          <li><a href="purchase-documents">Documents for purchase</a></li>
+          <li><strong>Sign in</strong></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="grid-row">
+      <section>
+        <div class="column-half">
+          <h1 class="heading-xlarge">Sign in</h1>
+          <p>Sign in or <a href="create-account">create an account</a>.</p>
+          <form class="form" action="#" action="get">
+            <div class="form-group">
+              <label class="form-label" for="email-address">Email address</label>
+              <input class="form-control" type="text" id="email-address">
+            </div><!-- form-group -->
+            <div class="form-group">
+              <label class="form-label" for"password">Password</label>
+              <input class="form-control" type="password" id="password">
+              <p><a href="#">I can't access my account</a></p>
+            </div><!-- form-group -->
+            <button class="button">Sign in</button>
+          </form>
+        </div><!-- column-half -->
+      </section>
+    </div><!-- grid-row -->
+
+    <div class="grid-row">
+      <section>
+        <div class="column-half">
+          <h1 class="heading-large">Create an account</h1>
+          <p>This is a new service, you must create an account if you've not used it before. <a href="create-account">Create an account</a></p>
+        </div><!-- column-half -->
+      </section>
+    </div><!-- grid-row -->
 </main>
 
 {{/content}}
