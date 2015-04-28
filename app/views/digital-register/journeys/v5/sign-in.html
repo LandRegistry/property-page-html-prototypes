@@ -31,35 +31,35 @@
       </nav>
     </div><!-- global-breadcrumb -->
 
-    <div class="grid-row">
-      <section>
-        <div class="column-half">
-          <h1 class="heading-xlarge">Sign in</h1>
-          <p>Sign in or <a href="create-account">create an account</a>.</p>
-          <form class="form" action="#" action="get">
-            <div class="form-group">
-              <label class="form-label" for="email-address">Email address</label>
-              <input class="form-control" type="text" id="email-address">
-            </div><!-- form-group -->
-            <div class="form-group">
-              <label class="form-label" for"password">Password</label>
-              <input class="form-control" type="password" id="password">
-              <p><a href="#">I can't access my account</a></p>
-            </div><!-- form-group -->
-            <button class="button">Sign in</button>
-          </form>
-        </div><!-- column-half -->
-      </section>
-    </div><!-- grid-row -->
+    <section>
+      <h1 class="heading-xlarge">Sign in</h1>
 
-    <div class="grid-row">
-      <section>
-        <div class="column-half">
-          <h1 class="heading-large">Create an account</h1>
-          <p>This is a new service, you must create an account if you've not used it before. <a href="create-account">Create an account</a></p>
-        </div><!-- column-half -->
-      </section>
-    </div><!-- grid-row -->
+      <p>Sign in or <a href="create-account">create an account</a>.</p>
+
+      <form class="form" action="payment-page" action="get">
+
+        <div class="form-group">
+          <label class="form-label" for="email-address">Email address</label>
+          <input class="form-control" type="email" id="email-address" required>
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label class="form-label" for"password">Password</label>
+          <input class="form-control" type="password" id="password" required>
+          <p><a href="#">I can't access my account</a></p>
+        </div><!-- form-group -->
+
+        <button class="button">Sign in</button>
+
+      </form>
+    </section>
+
+    <section>
+      <h1 class="heading-large">Create an account</h1>
+      <p>This is a new service, you must create an account if you've not used it before.</p> 
+      <a href="create-account">Create an account</a>
+    </section>
+
 </main>
 
 {{/content}}
