@@ -16,7 +16,107 @@
 {{$content}}
 
 <main id="content" role="main">
-  <form action="account-confirmation" action="get">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="search-page">Find a title</a></li>
+        <li><a href="search-results">Search results</a></li>
+        <li><a href="title-summary">Summary of title</a></li>
+        <li><a href="purchase-documents">Documents for purchase</a></li>
+        <li><a href="sign-in">Sign in</a></p>
+        <li><strong>Create an account</strong></li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+  <h1 class="heading-xlarge">Create an account</h1>
+
+  <form class="form" action="account-confirmation" action="get">
+    <fieldset>
+      <legend class="heading-medium">Contact details</legend>
+
+      <div class="form-group">
+        <label class="form-label" for="individual-name">Your name</label>
+        <input class="form-control" type="text" id="individual-name" required>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="business-name">Business name (optional)</label>
+        <p class="form-hint">The name of the company you work for</p>
+        <input class="form-control" type="text" id="business-name">
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="email-address">Email address</label>
+        <input class="form-control" type="email" id="email-address" value="#" required>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="email-confirmation">Confirm email address</label>
+        <input class="form-control" type="email" id="email-confirmation" required>
+      </div><!-- form-gorup -->
+
+      <div class="form-group">
+        <label class="form-label" for="telephone">Telephone (optional)</label>
+        <input class="form-control-1-10" type="number" id="telephone">
+      </div><!-- form-group -->
+    </fieldset>
+
+    <fieldset>
+      <legend class="heading-medium">Address</legend>
+
+      <div class="form-group">
+        <label class="form-label" for="address-1">Address line 1</label>
+        <input class="form-control" type="text" id="address-1" required>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="address-2">Address line 2 (optional)</label>
+        <input class="form-control" type="text" id="address-2">
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="address-3">Address line 3 (optional)</label>
+        <input class="form-control" type="text" id="address-3">
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="town">Town or city</label>
+        <input class="form-control" type="text" id="town" required>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="postcode">Postcode</label>
+        <input class="form-control-1-4" type="text" id="postcode" required>
+      </div><!-- form-group -->
+    </fieldset>
+
+    <fieldset>
+      <legend class="heading-medium">Create a password</legend>
+
+      <div class="form-group">
+        <details>
+          <summary>Password guidance</summary>
+          <div class="help-indent">
+            <p>Try to choose a password at least six characters long, that contains letters and numbers.</p>
+          </div><!-- help-indent -->
+        </details>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" id="password" required>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="password-confirmation">Confirm password</label>
+        <input class="form-control" type="password" id="password-confirmation" required>
+      </div><!-- form-group -->
+    </fieldset>
+
     <button class="button">Create Account</button>
   </form>
 </main>
