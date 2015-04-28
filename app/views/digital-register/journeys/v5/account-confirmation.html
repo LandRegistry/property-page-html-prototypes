@@ -16,9 +16,22 @@
 {{$content}}
 
 <main id="content" role="main">
-  <form action="payment-page" action="get">
-    <button class="button">Continue</button>
-  </form>
+
+  {{>digital-register/includes/banner}}
+
+  <h1 class="heading-xlarge">Account created</h1>
+  <div class="column-half">
+    <p>Your account has been created.</p>
+
+    <div class="panel-indent footnote">
+      <p>Make a note of your password - you will need this and your email address to sign-in in the future.</p>
+    </div><!-- panel-indent footnote -->
+
+    <form action="payment-page" method="get">
+      <button class="button">Continue</button>
+    </form>
+  </div><!-- column-half -->
+
 </main>
 
 {{/content}}
