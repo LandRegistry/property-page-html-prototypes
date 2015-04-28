@@ -15,6 +15,7 @@
 <main id="content" role="main">
 
   {{>digital-register/includes/banner}}
+  {{>digital-register/includes/login}}
 
   <h1 class="heading-xlarge">Purchase complete</h1>
 
@@ -25,30 +26,10 @@
     <p>Download your documents now:</p>
   </div>
 
-  <div class="grid-row">
-    <div class="column-quarter">
-      <a href="/public/downloads/pdf/register-new-transport.pdf" class="document-link register">
-        <img src="/public/images/icon-register-document.png">
-        Title register
-        <span class="footnote">PDF document, 169kb</span>
-      </a>
-    </div>
-
-    <div class="column-quarter">
-      <a href="/public/downloads/pdf/title-plan.pdf" class="document-link plan">
-        <img src="/public/images/icon-plan-document.png">
-        Title plan
-        <span class="footnote">PDF document, 175kb</span>
-      </a>
-    </div>
-
-    <div class="column-quarter">
-      <a href="/public/downloads/pdf/example-flood-risk.pdf" class="document-link flood">
-        <img src="/public/images/icon-flood-document.png">
-        Flood risk indicator
-        <span class="footnote">PDF document, 152kb</span>
-      </a>
-    </div>
+  <div class="form-download">
+    <p><a href="/public/downloads/pdf/register-new-transport.pdf">Download title register (PDF, 1.6MB)</a></p>
+    <p><a href="/public/downloads/pdf/title-plan.pdf">Download title plan (PDF, 1.7MB)</a></p>
+    <p><a href="/public/downloads/pdf/example-flood-risk.pdf">Download flood risk indicator (PDF, 1.5MB)</a></p>
   </div>
 
   <div class="text">
@@ -61,7 +42,7 @@
       <p>If you have any problems with your purchase, you can call the Land Registry on <b>0300 006 0411</b>.</p>
       <p>For more contact methods, visit <a href="https://www.gov.uk/government/organisations/land-registry">https://www.gov.uk/government/organisations/land-registry</a></p>
     </div>
-  </h3>
+  </div><!-- text -->
 
 </main>
 
