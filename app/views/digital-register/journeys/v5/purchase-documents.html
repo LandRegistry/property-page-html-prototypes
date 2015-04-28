@@ -11,14 +11,53 @@
   <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/title-summary.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/search-results.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/purchase-documents.css" media="screen" rel="stylesheet" type="text/css" />
 {{/head}}
 
 {{$content}}
 
 <main id="content" role="main">
-  <form action="sign-in" action="get">
-    <button class="button">Buy Now</button>
-  </form>
+
+  {{>digital-register/includes/banner}}
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="search-page">Find a title</a></li>
+        <li><a href="search-results">Search results</a></li>
+        <li><a href="title-summary">Summary of title</a></li>
+        <li><strong>Documents for purchase</strong></li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+  <h1 class="heading-xlarge">Documents for purchase</h1>
+
+  <h2 class="heading-small">3a Mandela Way, Southampton, SO15 SR2</h2>
+  <p>Title number HP725748</p>
+
+  <h2 class="heading-medium">Your basket:</h2>
+
+  <ul>
+    <div class=form-group>
+      <li><span class="document-checkout font-medium">Title register - £3</span><a href="#">(remove)</a></li>
+    </div><!-- form-group -->
+    <div class="form-group">
+      <li><span class="document-checkout font-medium">Title plan - £3</span><a href="#">(remove)</a></li>
+    </div><!-- form-group -->
+    <div class="form-group">
+      <li><span class="document-checkout font-medium">Flood risk indicator - £10.80</span><a href="#">(remove)</a></li>
+    </div><!-- form-group -->
+  </ul>
+
+  <div class="form-group">
+    <form action="sign-in" method="get">
+      <button class="button">Buy now</button>
+    </form>
+  </div><!-- form-group -->
+
+  <a href="search-page">Find another title</a>
+
 </main>
 
 {{/content}}
