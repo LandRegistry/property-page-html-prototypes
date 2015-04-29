@@ -19,35 +19,40 @@
 
     {{>digital-register/includes/banner}}
     {{>digital-register/includes/login}}
+    <div class="grid-row">
+      <div class="column-half">
+        <section>
+          <h1 class="heading-large">Sign in</h1>
 
-    <section>
-      <h1 class="heading-xlarge">Sign in</h1>
+          <p>Sign in or <a href="create-account">create an account</a>.</p>
 
-      <p>Sign in or <a href="create-account">create an account</a>.</p>
+          <form class="form" action="payment-page" method="get">
 
-      <form class="form" action="payment-page" method="get">
+            <div class="form-group">
+              <label class="form-label" for="email-address">Email address</label>
+              <input class="form-control" type="email" id="email-address" required>
+            </div><!-- form-group -->
 
-        <div class="form-group">
-          <label class="form-label" for="email-address">Email address</label>
-          <input class="form-control" type="email" id="email-address" required>
-        </div><!-- form-group -->
+            <div class="form-group">
+              <label class="form-label" for"password">Password</label>
+              <input class="form-control" type="password" id="password" required>
+              <p><a href="#">I can't access my account</a></p>
+            </div><!-- form-group -->
 
-        <div class="form-group">
-          <label class="form-label" for"password">Password</label>
-          <input class="form-control" type="password" id="password" required>
-          <p><a href="#">I can't access my account</a></p>
-        </div><!-- form-group -->
+            <button class="button">Sign in</button>
 
-        <button class="button">Sign in</button>
+          </form>
+        </section>
+      </div><!-- column-half -->
 
-      </form>
-    </section>
-
-    <section>
-      <h1 class="heading-large">Create an account</h1>
-      <p>This is a new service, you must create an account if you've not used it before.</p>
-      <a href="create-account">Create an account</a>
-    </section>
+      <div class="column-half">
+        <section>
+          <h1 class="heading-large">Create an account</h1>
+          <p>This is a new service, you must create an account if you've not used it before.</p>
+          <a href="create-account">Create an account</a>
+        </section>
+      </div><!-- column-half -->
+    </div><!-- grid-row -->
 
 </main>
 
