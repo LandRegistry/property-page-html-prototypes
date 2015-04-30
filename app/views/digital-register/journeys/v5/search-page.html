@@ -15,7 +15,15 @@
 <main id="content" role="main">
 
   {{>digital-register/includes/banner}}
-  {{>digital-register/includes/login}}
+  
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      &nbsp;
+    </div>
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div>
+  </div>
 
   <form class="form" action="search-results" method="get">
     <h1 class="heading-xlarge form-title">Find a title</h1>

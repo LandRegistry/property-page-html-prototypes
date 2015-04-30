@@ -18,17 +18,22 @@
 <main id="content" role="main">
 
   {{>digital-register/includes/banner}}
-  {{>digital-register/includes/login}}
 
-  <div class="global-breadcrumb">
-    <nav role="navigation">
-      <ol>
-        <li><a href="search-page">Find a title</a></li>
-        <li><a href="search-results">Search results</a></li>
-        <li><strong>Summary of title</strong></li>
-      </ol>
-    </nav>
-  </div>
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+        <ol>
+          <li><a href="search-page">Find a title</a></li>
+          <li><a href="search-results">Search results</a></li>
+          <li><strong>Summary of title</strong></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div><!-- column-third -->
+  </div><!-- grid-row -->
 
   <section>
     <h1 class="heading-xlarge">Summary of title</h1>

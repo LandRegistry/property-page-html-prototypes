@@ -19,18 +19,23 @@
 <main id="content" role="main">
 
   {{>digital-register/includes/banner}}
-  {{>digital-register/includes/login}}
 
-  <div class="global-breadcrumb">
-    <nav role="navigation">
-      <ol>
-        <li><a href="search-page">Find a title</a></li>
-        <li><a href="search-results">Search results</a></li>
-        <li><a href="title-summary">Summary of title</a></li>
-        <li><strong>Documents for purchase</strong></li>
-      </ol>
-    </nav>
-  </div><!-- global-breadcrumb -->
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+        <ol>
+          <li><a href="search-page">Find a title</a></li>
+          <li><a href="search-results">Search results</a></li>
+          <li><a href="title-summary">Summary of title</a></li>
+          <li><strong>Documents for purchase</strong></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div><!-- column-third -->
+  </div><!-- grid-row -->
 
   <h1 class="heading-xlarge">Documents for purchase</h1>
 
