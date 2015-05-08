@@ -1,0 +1,54 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Account confirmation
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/title-summary.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/search-results.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      &nbsp;
+    </div>
+    <div class="column-third">
+      {{>digital-register/includes/sign-out}}
+    </div>
+  </div>
+
+  <h1 class="heading-xlarge">Account created</h1>
+  <div class="grid-row">
+    <div class="column-half">
+      <p>Your account has been created.</p>
+
+      <div class="panel-indent footnote">
+        <p>Make a note of your password - you will need this and your email address to sign-in in the future.</p>
+      </div><!-- panel-indent footnote -->
+
+      <form action="payment-page" method="get">
+        <button class="button">Continue</button>
+      </form>
+    </div><!-- column-half -->
+  </div><!-- grid-row -->
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{/govuk_template}}
