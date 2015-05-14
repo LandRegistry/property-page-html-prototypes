@@ -34,3 +34,9 @@
   padding-left: 1em;
   border-left: 3px solid $grey-3;
 }
+
+table tr.total {
+  td {
+    border-bottom: 0;
+  }
+}
