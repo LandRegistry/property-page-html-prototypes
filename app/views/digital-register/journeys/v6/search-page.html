@@ -1,0 +1,54 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Find a title
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+  
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      &nbsp;
+    </div>
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div>
+  </div>
+
+  <form class="form" action="search-results" method="get">
+    <h1 class="heading-xlarge form-title">Find a title</h1>
+    <div class="form-group">
+      <div class="text">
+        <p class="lede"><label for="search-terms">Search for the title of any property in England and Wales, even if you don’t own it.</label></p>
+      </div>
+      <p class="form-hint">For example a postcode, street name or title number</p>
+      <input type="text" class="form-control" name="s" id="search-terms">
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Search" class="button">
+    </div>
+  </form>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

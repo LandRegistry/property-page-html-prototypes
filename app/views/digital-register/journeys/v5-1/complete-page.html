@@ -1,0 +1,67 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Purchase complete
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/download-documents.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      &nbsp;
+    </div>
+    <div class="column-third">
+      {{>digital-register/includes/sign-out}}
+    </div>
+  </div>
+
+  <h1 class="heading-xlarge">Purchase complete</h1>
+
+  <h2 class="heading-medium">Reference: PAY123456</h2>
+
+  <div class="text">
+    <p>A confirmation email has been sent to <b>darcybloggs@gmail.com</b></p>
+    <p>Download your documents now:</p>
+  </div>
+
+  <div class="form-download">
+    <p><a href="/public/downloads/pdf/register-new-transport.pdf">Download title register (PDF, 1.6MB)</a></p>
+    <p><a href="/public/downloads/pdf/title-plan.pdf">Download title plan (PDF, 1.7MB)</a></p>
+    <p><a href="/public/downloads/pdf/example-flood-risk.pdf">Download flood risk indicator (PDF, 1.5MB)</a></p>
+  </div>
+
+  <div class="text">
+    <h3 class="heading-medium division--top">Next steps</h3>
+    <ul class="list-bullet">
+      <li>We’ve sent you a confirmation email</li>
+      <li>Your documents are available to download for 30 days</li>
+    </ul>
+    <div class="panel-indent">
+      <p>If you have any problems with your purchase, you can call the Land Registry on <b>0300 006 0411</b>.</p>
+      <p>For more contact methods, visit <a href="https://www.gov.uk/government/organisations/land-registry">https://www.gov.uk/government/organisations/land-registry</a></p>
+    </div>
+  </div><!-- text -->
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
