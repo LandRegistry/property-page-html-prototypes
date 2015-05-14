@@ -1,0 +1,66 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Sign in
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+    {{>digital-register/includes/banner}}
+
+    <div class="grid-row">
+      <div class="column-half">
+
+        <section>
+          <h1 class="heading-xlarge">Sign in</h1>
+
+          <form class="form" action="create-account" method="get">
+
+            <div class="form-group">
+              <label class="form-label-bold" for="email">Your email address</label>
+              <input class="form-control-3-4" type="email" name="email" id="email" required>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <p class="form-label-bold" style="margin-bottom: 8px;">Do you have a password?</p>
+              <label class="form-label">
+                <input type="radio" name="existing" value="false">
+                No, I need to create an account
+              </label>
+
+              <label class="form-label">
+                <input type="radio" name="existing" value="true" checked>
+                Yes, my password is
+              </label>
+              <input class="form-control-3-4" type="password" id="password" style="margin-left: 30px;">
+              
+            </div><!-- form-group -->
+
+            <button class="button">Sign in</button>
+
+            <div class="panel-indent">
+              <p><a href="#">I’ve forgotten my password</a></p>
+            </div>
+
+          </form>
+        </section>
+      </div><!-- column-half -->
+    </div><!-- grid-row -->
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

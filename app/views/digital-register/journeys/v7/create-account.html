@@ -1,0 +1,89 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Create an account
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/title-summary.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/search-results.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <h1 class="heading-xlarge">Create an account</h1>
+
+  <form class="form" action="purchase-documents" method="get">
+    <fieldset>
+      <legend class="heading-medium">Contact details</legend>
+
+      <div class="form-group">
+        <label class="form-label" for="individual-name">Your name</label>
+        <input class="form-control" type="text" id="individual-name" required>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="email-address">Email address</label>
+        <input class="form-control" type="email" id="email-address" required value="{{ email }}">
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="email-confirmation">Confirm email address</label>
+        <input class="form-control" type="email" id="email-confirmation" required>
+      </div><!-- form-gorup -->
+
+      <div class="form-group">
+        <label class="form-label" for="business-name">Business name (optional)</label>
+        <p class="form-hint">The name of the company you represent.</p>
+        <input class="form-control" type="text" id="business-name">
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="address">Address</label>
+        <textarea class="form-control" id="address" rows="6" required></textarea>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="telephone">Telephone (optional)</label>
+        <input class="form-control-1-10" type="number" id="telephone">
+      </div><!-- form-group -->
+
+    </fieldset>
+
+    <fieldset>
+      <legend class="heading-medium">Create a password</legend>
+
+      <div class="form-group">
+        <p class="form-hint">Try to choose a password at least six characters long, that contains letters and numbers.</p>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" id="password" required>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label" for="password-confirmation">Confirm password</label>
+        <input class="form-control" type="password" id="password-confirmation" required>
+      </div><!-- form-group -->
+    </fieldset>
+
+    <button class="button">Create account</button>
+  </form>
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{/govuk_template}}
