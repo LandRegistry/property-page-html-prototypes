@@ -27,12 +27,12 @@
 
       <div class="form-group">
         <label class="form-label" for="individual-name">Your name</label>
-        <input class="form-control" type="text" id="individual-name" required>
+        <input class="form-control" type="text" id="individual-name" name="name" required>
       </div><!-- form-group -->
 
       <div class="form-group">
         <label class="form-label" for="email-address">Email address</label>
-        <input class="form-control" type="email" id="email-address" required value="{{ email }}">
+        <input class="form-control" type="email" id="email-address" name="email" required value="{{ email }}">
       </div><!-- form-group -->
 
       <div class="form-group">
@@ -48,7 +48,7 @@
 
       <div class="form-group">
         <label class="form-label" for="address">Address</label>
-        <textarea class="form-control" id="address" rows="6" required></textarea>
+        <textarea class="form-control" id="address" name="address" rows="6" required></textarea>
       </div><!-- form-group -->
 
       <div class="form-group">

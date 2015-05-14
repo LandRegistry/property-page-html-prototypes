@@ -14,6 +14,14 @@ module.exports = {
     app.get('/digital-register/journeys/v7/create-account', function(req, res) {
       res.render('digital-register/journeys/v7/create-account', {'email' : req.query.email});
     });
+    // Prepopulate fields in purchase screen (v7)
+    app.get('/digital-register/journeys/v7/purchase-documents', function(req, res) {
+      res.render('digital-register/journeys/v7/purchase-documents', {
+        'name' : req.query.name,
+        'address' : req.query.address,
+        'email' : req.query.email
+      });
+    });
 
   }
 };

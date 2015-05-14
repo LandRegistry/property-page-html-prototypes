@@ -21,134 +21,108 @@
   {{>digital-register/includes/banner}}
 
   <div class="grid-row">
-    <div class="global-breadcrumb column-two-thirds">
-      <nav role="navigation">
-        <ol>
-          <li><a href="search-page">Find a title</a></li>
-          <li><a href="search-results">Search results</a></li>
-          <li><a href="title-summary">Summary of title</a></li>
-          <li><strong>Documents for purchase</strong></li>
-        </ol>
-      </nav>
-    </div><!-- global-breadcrumb -->
-
-    <div class="column-third">
-      {{>digital-register/includes/login}}
-    </div><!-- column-third -->
-  </div><!-- grid-row -->
-
-  <h1 class="heading-xlarge">Documents for purchase</h1>
-
-  <h2 class="heading-small">3a Mandela Way, Southampton, SO15 SR2</h2>
-  <p>Title number HP725748</p>
-
-  <h2 class="heading-medium">Your basket:</h2>
-  <div class="form-group">
     <div class="column-two-thirds">
-      <table>
-        <tr>
-          <th>Document</th>
-          <th class="numeric">Price</th>
-          <th></th>
-        </tr>
-        <tr>
-          <td>Title register</td>
-          <td class="numeric">£3.00</td>
-          <td><a href="#">(remove)</a></td>
-        </tr>
-        <tr>
-          <td>Title plan</td>
-          <td class="numeric">£3.00</td>
-          <td><a href="#">(remove)</a></td>
-        </tr>
-      </table>
-    </div><!-- column-two-thirds -->
-  </div><!-- form-group -->
-
-  <form class="form" action="complete-page" method="get">
-    <h1 class="heading-xlarge">Payment</h1>
-
-    <fieldset>
-      <legend class="heading-medium">Card details</legend>
-
-      <div class="form-group">
-        <label class="form-label" for="card-number">Card number</label>
-        <input class="form-control" type="number" id="card-number">
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="card-code">Security code</label>
-        <input class="form-control-1-8" type="number" id="card-code">
-      </div>
-
-      <div class="form-group">
-        <div class="form-date">
-          <label class="form-label" for="dob-month">Expiry date</label>
-          <p class="form-hint">For example, 4 2017</p>
-          <div class="form-group form-group-month">
-            <label for="dob-month">Month</label>
-            <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
-          </div>
-          <div class="form-group form-group-year">
-            <label for="dob-year">Year</label>
-            <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="3000">
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="card-name">Cardholder name</label>
-        <input class="form-control" type="text" id="card-name">
-      </div>
-
-    </fieldset>
-
-    <fieldset>
-      <legend class="heading-medium">Cardholder details</legend>
-
-      <div class="form-group">
-        <label class="form-label" for="address-1">Address line 1</label>
-        <input class="form-control" type="text" id="address-1">
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="address-2">Address line 2 (optional)</label>
-        <input class="form-control" type="text" id="address-2">
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="address-3">Address line 3 (optional)</label>
-        <input class="form-control" type="text" id="address-3">
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="town">Town or city</label>
-        <input class="form-control" type="text" id="town">
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="postcode">Postcode</label>
-        <input class="form-control-1-4" type="text" id="postcode">
-      </div>
-
-      <!--
-      <div class="form-group">
-        <label class="form-label" for="country">Country</label>
-        <input class="form-control" type="text" id="country">
-      </div>
-      -->
-
-      <div class="form-group">
-        <label class="form-label" for="email-address">Email address</label>
-        <input class="form-control" type="email" id="email-address">
-      </div>
-
-    </fieldset>
-
-    <div class="form-group">
-      <input type="submit" value="Pay now" class="button">
+      &nbsp;
     </div>
-  </form>
+    <div class="column-third">
+      {{>digital-register/includes/sign-out}}
+    </div>
+  </div>
+
+  <h1 class="heading-xlarge">Purchase title documents</h1>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form class="form" action="register-view" method="get">
+
+        <fieldset>
+          <legend class="heading-medium">Card details</legend>
+
+          <div class="form-group">
+            <label class="form-label" for="card-number" autocomplete="off">Card number</label>
+            <input class="form-control-3-4" type="number" id="card-number">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="card-code">Security code</label>
+            <input class="form-control-1-4" type="number" id="card-code">
+          </div>
+
+          <div class="form-group">
+            <div class="form-date">
+              <label class="form-label" for="dob-month">Expiry date</label>
+              <p class="form-hint">For example, 4 2017</p>
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label>
+                <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+              </div>
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label>
+                <input class="form-control" id="dob-year" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="card-name">Cardholder name</label>
+            <input class="form-control" type="text" id="card-name" value="{{ name }}">
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend class="heading-medium">Cardholder details</legend>
+
+          <div class="form-group">
+            <label class="form-label" for="address">Address</label>
+            <textarea class="form-control" id="address" rows="6" required>{{ address }}</textarea>
+          </div><!-- form-group -->
+
+          <div class="form-group">
+            <label class="form-label" for="email-address">Email address</label>
+            <input class="form-control" type="email" id="email-address" value="{{ email }}">
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" value="Pay now" class="button">
+        </div>
+      </form>
+    </div>
+
+    <div class="column-third footnote">
+
+      <table>
+        <thead>
+          <tr>
+            <td colspan="2">
+              Title number HP725748<br><br>
+              3a Mandela Way<br>
+              Southampton<br>
+              SO15 SR2
+            </th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Total:</th>
+            <th class="numeric">£6.00</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>Title register</td>
+            <td class="numeric">£3.00</td>
+          </tr>
+          <tr>
+            <td>Title plan</td>
+            <td class="numeric">£3.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 </main>
 
