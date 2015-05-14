@@ -1,0 +1,75 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Sign in
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/title-summary.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/search-results.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+    {{>digital-register/includes/banner}}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        &nbsp;
+      </div>
+      <div class="column-third">
+        {{>digital-register/includes/login}}
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-half">
+
+        <section>
+          <h1 class="heading-large">Sign in</h1>
+
+          <p>Sign in or <a href="create-account">create an account</a>.</p>
+
+          <form class="form" action="payment-page" method="get">
+
+            <div class="form-group">
+              <label class="form-label" for="email-address">Email address</label>
+              <input class="form-control-3-4" type="email" id="email-address" required>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="form-label" for"password">Password</label>
+              <input class="form-control-3-4" type="password" id="password" required>
+              <p><a href="#">I can't access my account</a></p>
+            </div><!-- form-group -->
+
+            <button class="button">Sign in</button>
+
+          </form>
+        </section>
+      </div><!-- column-half -->
+
+      <div class="column-half">
+        <section>
+          <h1 class="heading-large">Create an account</h1>
+          <p>This is a new service, you must create an account if you've not used it before.</p>
+          <a href="create-account">Create an account</a>
+        </section>
+      </div><!-- column-half -->
+    </div><!-- grid-row -->
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{/govuk_template}}

@@ -1,0 +1,88 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Documents for purchase
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/title-summary.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/search-results.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/purchase-documents.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+        <ol>
+          <li><a href="search-page">Find a title</a></li>
+          <li><a href="search-results">Search results</a></li>
+          <li><a href="title-summary">Summary of title</a></li>
+          <li><strong>Documents for purchase</strong></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div><!-- column-third -->
+  </div><!-- grid-row -->
+
+  <h1 class="heading-xlarge">Documents for purchase</h1>
+
+  <h2 class="heading-small">3a Mandela Way, Southampton, SO15 SR2</h2>
+  <p>Title number HP725748</p>
+
+  <h2 class="heading-medium">Your order:</h2>
+  <div class="form-group">
+    <div class="column-two-thirds">
+      <table>
+        <tr>
+          <th>Document</th>
+          <th class="numeric">Price</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>Title register</td>
+          <td class="numeric">£3.00</td>
+          <td><a href="#">(remove)</a></td>
+        </tr>
+        <tr>
+          <td>Title plan</td>
+          <td class="numeric">£3.00</td>
+          <td><a href="#">(remove)</a></td>
+        </tr>
+        <tr class="total">
+          <td><strong>Total</strong></td>
+          <td class="numeric">£6.00</td>
+          <td></td>
+        </tr>
+      </table>
+    </div><!-- column-two-thirds -->
+  </div><!-- form-group -->
+
+  <div class="form-group">
+    <form action="sign-in" method="get">
+      <button class="button">Buy now</button>
+    </form>
+  </div><!-- form-group -->
+
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{/govuk_template}}

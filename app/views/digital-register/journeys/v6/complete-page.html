@@ -1,0 +1,222 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/register-v1.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/download-documents-v6.css" media="screen" rel="stylesheet" type="text/css" />
+
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+      <ol>
+          <li><a href="search-page">Find a title</a></li>
+          <li><a href="#">My orders</a></li>
+          <li><strong>HP725748</strong></li>          
+        </ol>
+    </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-third">
+      <div class="login-signout-header">
+        <div class="login-signout-header">
+        <p>Darcy Bloggs | <a href="#" title="signin-create-account">Sign out</a></p>
+      </div>
+      </div>
+    </div><!-- column-third -->
+  </div>
+  <!-- <div class="grid-row">
+    <div class="column-two-thirds payment">
+      <h2 class="heading-medium">Payment reference: PAY123456</h2>
+      <div class="text">
+        <p>A confirmation email has been sent to <b>darcybloggs@gmail.com</b></p>
+  </div> -->
+
+  </div>
+</div>
+
+  <div class="callout callout--summary collapse-top">
+
+    <h1 class="heading-large first-heading">
+      Summary of title 
+    </h1>
+
+    <p>
+      This title was last changed on <b>15 October 2012</b> at <b>11:21:18</b>
+    </p>
+
+    <div class="lede grid-row">
+
+      <div class="column-half">
+
+        <div itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">
+            3a Mandela Way<br>
+          </span>
+          <span itemprop="addressLocality">Southampton</span><br>
+          <span itemprop="postalCode">SO15 5RZ</span>
+        </div>
+
+      </div>
+
+      <figure class="column-half">
+        <div class="title-plan" id="map-location">
+          <img src="http://placehold.it/276x184" alt="Map showing location of title address">
+        </div>
+      </figure>
+
+    </div>
+
+    <dl class="definition-tabular--b">
+      <dt>Title number</dt>
+      <dd>HP725748</dd>
+      
+      <dt>Owner(s)</dt>
+      <dd>
+        <!-- if there's only 1 registered owner, don't wrap a <ul> -->
+        <!--<ul class="collapse">-->
+          Darcy Bloggs
+      </dd>
+
+      <dt>Lender(s)</dt>
+      <dd>Abbey National PLC</dd>
+
+      <dt>Tenure type</dt>
+      <dd>Leasehold</dd>
+
+      <dt>Price paid</dt>
+      <dd>&pound;188,000 on 3 October 2012</dd>
+
+      <dt>Title quality</dt>
+      <dd>Absolute</dd>
+
+    </dl>
+
+  </div><!-- end summary -->
+
+  <div class="block-2 heading-block">
+    <div class="inner-block">
+    <section class="attachment-full-width grid-row">
+      <div class="head-section column-third">
+        <h1 class="heading-medium document-title">Documents</h1>
+      </div>
+      <div class="content column-two-thirds">
+        <article>
+          <div class="govspeak">
+            <section class="attachment embedded">
+              <div class="document-link register">
+                <img src="/public/images/icon-register-document.png"> 
+                <!-- <a href="#" class="title">Title register</a> -->
+                <span class="title">Title register</span>
+                <span class="footnote">PDF document, 169kb</span>
+                <p class="actions">                  
+                  <strong>
+                    <a href="/public/downloads/pdf/official-register-new-transport.pdf">View online</a><span class="separator"> | </span>
+                    <a href="#"><strong>Download</strong></a><span class="separator"> | </span>
+                    <a href="#"><strong>Print</strong></a>
+                  </strong>                
+                  <div class="accessibility-warning">This file may not be suitable for users of assistive technology. <a href="#">Request a different format.</a>
+                  </div>
+                </p>                
+              </div>
+              <div href="/public/downloads/pdf/title-plan.pdf" class="document-link plan">                
+                <img src="/public/images/icon-plan-document.png">
+                <!-- <a href="#" class="title">Title register</a> -->
+                <span class="title">Title plan</span>
+                <span class="footnote">PDF document, 346kb</span>
+                <p class="actions">                  
+                  <strong>
+                    <a href="/public/downloads/pdf/title-plan.pdf">View online</a><span class="separator"> | </span>
+                    <a href="#"><strong>Download</strong></a><span class="separator"> | </span>
+                    <a href="#"><strong>Print</strong></a>
+                  </strong>                
+                  <div class="accessibility-warning">This file may not be suitable for users of assistive technology. <a href="#">Request a different format.</a>
+                  </div>
+                </p>                              
+              </div>
+            </section>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="text">
+    <h3 class="heading-medium division--top">Next steps</h3>
+    <ul class="list-bullet">
+      <li>The reference for your purchase is <strong>PAY123456</strong></h2></li>
+      <li>We’ve sent you a confirmation email to <b>darcybloggs@gmail.com</b></li>
+      <li>Your documents are available to download for 30 days</li>
+    </ul>
+    <div class="panel-indent">
+      <p>If you have any problems with your purchase, you can call Land Registry on <b>0300 006 0411</b>.</p>
+      <p>For more contact methods, visit <a href="https://www.gov.uk/government/organisations/land-registry">https://www.gov.uk/government/organisations/land-registry</a></p>
+    </div>
+  </h3>
+</div>
+
+  <!-- <div class="grid-row">
+    <div class="form-download">
+      <p><a href="/public/downloads/pdf/register-new-transport.pdf" class="download" style="
+      text-decoration: initial;">Title register (PDF, 1.6MB)</a>   <a href="">View</a> | <a href="">Print</a> | <a href="">Download</a></p>
+      <p><a href="/public/downloads/pdf/title-plan.pdf" class="download">Title plan (PDF, 1.7MB)</a><a href="">View</a> | <a href="">Print</a> | <a href="">Download</a></p>    
+    </div>
+  </div> -->
+
+  
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  
+  <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
+  <script type="text/javascript">
+
+    // initialise map
+    var map = L.map('map-location', {
+      scrollWheelZoom: false
+    }).setView([50.908876, -1.4153305], 19);
+
+    L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 22
+    }).addTo(map);
+
+    var polygon = L.polygon(
+      [
+        [50.908898, -1.41543],
+        [50.908915, -1.4153305],
+        [50.908855, -1.415305],
+        [50.908837, -1.415402],
+        [50.908876, -1.415423]
+      ],
+      {
+        color: '#fff',
+        weight: 3,
+        opacity: 1,
+        fillColor: '#ffbf47',
+        fillOpacity: 1,
+        clickable: false
+      }
+    ).addTo(map);
+
+  </script>
+
+{{/bodyEnd}}
+
+{{/govuk_template}}
