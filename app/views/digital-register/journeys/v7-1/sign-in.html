@@ -18,37 +18,35 @@
 
     <div class="grid-row">
       <div class="column-half">
-
         <section>
-          <h1 class="heading-xlarge">Sign in</h1>
-
+          <h1 class="heading-large">Create an account</h1>
+          <p>This is a new service, you must create an account if you've not used it before.</p>
           <form class="form" action="create-account" method="get">
+            <button href="create-account" class="button">Create an account</button>
+          </form>
+        </section>
+      </div><!-- column-half -->
+
+      <div class="column-half">
+        <section>
+          <h1 class="heading-large">Sign in</h1>
+
+          <p>Sign in if you already have an account.</p>
+
+          <form class="form" action="payment-page" method="get">
 
             <div class="form-group">
-              <label class="form-label-bold" for="email">Your email address</label>
-              <input class="form-control-3-4" type="email" name="email" id="email" required>
+              <label class="form-label" for="email">Email address</label>
+              <input class="form-control-3-4" type="email" id="email" required>
             </div><!-- form-group -->
 
             <div class="form-group">
-              <p class="form-label-bold" style="margin-bottom: 8px;">Do you have a password?</p>
-              <label class="form-label">
-                <input type="radio" name="existing" value="false">
-                No, I need to create an account
-              </label>
-
-              <label class="form-label">
-                <input type="radio" name="existing" value="true">
-                Yes, my password is
-              </label>
-              <input class="form-control-3-4" type="password" id="password" style="margin-left: 30px;">
-              
+              <label class="form-label" for"password">Password</label>
+              <input class="form-control-3-4" type="password" id="password" required>
+              <p><a href="#">I’ve forgotten my password</a></p>
             </div><!-- form-group -->
 
             <button class="button">Sign in</button>
-
-            <div class="panel-indent">
-              <p><a href="#">I’ve forgotten my password</a></p>
-            </div>
 
           </form>
         </section>
