@@ -1,0 +1,142 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Documents for purchase
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/title-summary.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/search-results.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/purchase-documents.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      &nbsp;
+    </div>
+    <div class="column-third">
+      {{>digital-register/includes/sign-out}}
+    </div>
+  </div>
+
+  <div class="panel-indent">
+    <div class="text">
+      <strong class="">Account created</strong>
+      <p>Make a note of your password - you will need this and your email address to sign-in in the future.</p>
+    </div>
+  </div>
+
+  <h1 class="heading-xlarge">Purchase title documents</h1>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form class="form" action="register-view" method="get">
+
+        <fieldset>
+          <legend class="heading-medium">Card details</legend>
+
+          <div class="form-group">
+            <label class="form-label" for="card-number" autocomplete="off">Card number</label>
+            <input class="form-control-3-4" type="number" id="card-number">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="card-code">Security code</label>
+            <input class="form-control-1-4" type="number" id="card-code">
+          </div>
+
+          <div class="form-group">
+            <div class="form-date">
+              <label class="form-label" for="dob-month">Expiry date</label>
+              <p class="form-hint">For example, 4 2017</p>
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label>
+                <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+              </div>
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label>
+                <input class="form-control" id="dob-year" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="card-name">Cardholder name</label>
+            <input class="form-control" type="text" id="card-name" value="{{ name }}">
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend class="heading-medium">Cardholder details</legend>
+
+          <div class="form-group">
+            <label class="form-label" for="address">Address</label>
+            <textarea class="form-control" id="address" rows="6" required>{{ address }}</textarea>
+          </div><!-- form-group -->
+
+          <div class="form-group">
+            <label class="form-label" for="email-address">Email address</label>
+            <input class="form-control" type="email" id="email-address" value="{{ email }}">
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" value="Pay now" class="button">
+        </div>
+      </form>
+    </div>
+
+    <div class="column-third footnote">
+
+      <table>
+        <thead>
+          <tr>
+            <td colspan="2">
+              Title number HP725748<br><br>
+              3a Mandela Way<br>
+              Southampton<br>
+              SO15 SR2
+            </th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Total:</th>
+            <th class="numeric">£6.00</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>Title register</td>
+            <td class="numeric">£3.00</td>
+          </tr>
+          <tr>
+            <td>Title plan</td>
+            <td class="numeric">£3.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{/govuk_template}}
