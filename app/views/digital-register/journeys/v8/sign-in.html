@@ -15,43 +15,28 @@
 <main id="content" role="main">
 
     {{>digital-register/includes/banner}}
+    
 
-    <div class="grid-row">
-      <div class="column-half">
-        <section>
-          <h1 class="heading-large">Create an account</h1>
-          <p>This is a new service, you must create an account if you've not used it before.</p>
-          <form class="form" action="create-account" method="get">
-            <button href="create-account" class="button">Create an account</button>
-          </form>
-        </section>
-      </div><!-- column-half -->
+    <div class="text">
+      <h1 class="heading-large">Sign in</h1>
 
-      <div class="column-half">
-        <section>
-          <h1 class="heading-large">Sign in</h1>
+      <form class="form" action="payment-page" method="get">
 
-          <p>Sign in if you already have an account.</p>
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <input class="form-control-3-4" type="email" id="email" required>
+        </div><!-- form-group -->
 
-          <form class="form" action="payment-page" method="get">
+        <div class="form-group">
+          <label class="form-label" for"password">Password</label>
+          <input class="form-control-3-4" type="password" id="password" required>
+          <p><a href="#">I’ve forgotten my password</a></p>
+        </div><!-- form-group -->
 
-            <div class="form-group">
-              <label class="form-label" for="email">Email address</label>
-              <input class="form-control-3-4" type="email" id="email" required>
-            </div><!-- form-group -->
+        <button class="button">Sign in</button>
 
-            <div class="form-group">
-              <label class="form-label" for"password">Password</label>
-              <input class="form-control-3-4" type="password" id="password" required>
-              <p><a href="#">I’ve forgotten my password</a></p>
-            </div><!-- form-group -->
-
-            <button class="button">Sign in</button>
-
-          </form>
-        </section>
-      </div><!-- column-half -->
-    </div><!-- grid-row -->
+      </form>
+    </div>
 
 </main>
 

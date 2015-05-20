@@ -14,6 +14,17 @@ module.exports = {
       res.render('digital-register/journeys/v8/search-results', {'terms' : req.query.s});
     });
 
+    // Make a decision based on submission from /pre-sign-in - "Do you have an account?"
+    app.get('/digital-register/journeys/v8/check-sign-in', function(req, res) {
+      var reg = req.query.registered;
+      if (reg == 'yes') {
+        res.render('digital-register/journeys/v8/sign-in');
+      } else {
+        res.render('digital-register/journeys/v8/create-account');
+      }
+    });
+
+
     // -------------------------------------------------------- //
 
     // /v7/ routes
