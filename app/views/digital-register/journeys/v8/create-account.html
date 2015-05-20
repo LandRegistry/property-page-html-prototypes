@@ -19,22 +19,28 @@
 
   <h1 class="heading-xlarge">Create an account</h1>
 
-  <form class="form" action="purchase-documents" method="post">
+  <div class="text">
+    
+    <form class="form" action="create-account-2" method="post">
 
-    <div class="form-group">
-      <label class="form-label-bold" for="email-address">Email address</label>
-      <input class="form-control" type="email" id="email-address" name="email" required>
-    </div><!-- form-group -->
+      <div class="form-group">
+        <label class="form-label-bold" for="email-address">Email address</label>
+        <input class="form-control" type="email" id="email-address" name="email" required>
+      </div><!-- form-group -->
 
-    <div class="form-group">
-      <label class="form-label-bold" for="password">Create a password</label>
-      <p class="form-hint text">Your password must have at least six characters.</p>
-      <input class="form-control" type="password" id="password" required>
-      <p><a href="#" id="passwordToggle">Show typing</a></p>
-    </div><!-- form-group -->
+      <div class="form-group">
+        <label class="form-label-bold" for="password">
+          Create a password
+          <span class="form-hint">Your password must have at least six characters.</span>
+        </label>
+        <input class="form-control" type="password" id="password" minlength="6" required>
+        <p><a href="#" id="passwordToggle">Show typing</a></p>
+      </div><!-- form-group -->
 
-    <button class="button">Continue</button>
-  </form>
+      <button class="button">Continue</button>
+    </form>
+
+  </div>
 </main>
 
 {{/content}}

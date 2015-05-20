@@ -24,6 +24,16 @@ module.exports = {
       }
     });
 
+    // Accept a POST to stage 2 of account creation (so no password etc is in a query string)
+    app.post('/digital-register/journeys/v8/create-account-2', function(req, res) {
+      res.render('digital-register/journeys/v8/create-account-2');
+    });
+
+    // Accept a POST to account creation confirmation (so nothing in a query string)
+    app.post('/digital-register/journeys/v8/account-created', function(req, res) {
+      res.render('digital-register/journeys/v8/account-created');
+    });
+
 
     // -------------------------------------------------------- //
 
