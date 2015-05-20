@@ -5,10 +5,13 @@ module.exports = {
       res.render('index');
     });
 
-    // demo URL - essentially describing what the URL structure could be
-    app.get('/property/PL20_7HE/25_UNDERWAYS_YELVERTON', function (req, res) {
-      res.render('property-page/demo/index');
-    });
+    // -------------------------------------------------------- //
+
+    // /v8/ routes
+
+    // -------------------------------------------------------- //
+
+    // /v7/ routes
 
     // Prepopulate email field in Create account screen (v7)
     app.get('/digital-register/journeys/v7/create-account', function(req, res) {
@@ -33,6 +36,13 @@ module.exports = {
         'address' : req.query.address,
         'email' : req.query.email
       });
+    });
+
+    // -------------------------------------------------------- //
+
+    // demo URL - essentially describing what the URL structure could be
+    app.get('/property/PL20_7HE/25_UNDERWAYS_YELVERTON', function (req, res) {
+      res.render('property-page/demo/index');
     });
 
   }
