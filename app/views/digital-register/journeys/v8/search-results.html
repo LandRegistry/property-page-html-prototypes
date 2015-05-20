@@ -36,10 +36,10 @@
     <div class="form-group">
       <label for="search-terms">
         <h1 class="heading-medium">
-          Search results for <span class="visuallyhidden"></span>
+          Search results for <span class="visuallyhidden">{{ terms }}</span>
         </h1>
       </label>
-      <input type="text" class="form-control" name="s" id="search-terms" value="">
+      <input type="text" class="form-control" name="s" id="search-terms" value="{{ terms }}">
       <input type="submit" value="Search" class="button" style="padding-top: 0.35em; padding-bottom: 0.15em;">
     </div>
   </form>
