@@ -1,0 +1,202 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Search results | Find a title
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/search-results.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+        <ol>
+          <li><a href="search-page">Find a title</a></li>
+          <li><strong>Search results</strong></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div><!-- column-third -->
+  </div><!--grid-row -->
+
+  <form class="form" action="search-results" method="get">
+    <div class="form-group">
+      <label for="search-terms">
+        <h1 class="heading-medium">
+          Search results for <span class="visuallyhidden"></span>
+        </h1>
+      </label>
+      <input type="text" class="form-control" name="s" id="search-terms" value="">
+      <input type="submit" value="Search" class="button" style="padding-top: 0.35em; padding-bottom: 0.15em;">
+    </div>
+  </form>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="font-xsmall expand-bottom-half">30 results found</h2>
+      <ol>
+        <li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">1 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b>
+          </div>
+        </li>
+        <li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">2 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b>
+          </div>
+        </li>
+        <li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">3 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725747<br>
+            <b>Freehold</b>
+          </div>
+
+          <ol class="children">
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                <a href="title-summary">3a Mandela Way, Southampton, SO15 5RZ</a>
+              </h2>
+              <div class="font-xsmall">
+                Title number HP725748<br>
+                <b>Leasehold</b>
+              </div>
+            </li>
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                <a href="#">3b Mandela Way, Southampton, SO15 5RZ</a>
+              </h2>
+              <div class="font-xsmall">
+                Title number HP725748<br>
+                <b>Leasehold</b>
+              </div>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">4 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b>
+          </div>
+        </li>
+        <li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">5 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b>
+          </div>
+        </li>
+        <li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">6 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b>
+          </div>
+
+          <ol class="children">
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                <a href="#">Flat 1, 6 Mandela Way, Southampton, SO15 5RZ</a>
+              </h2>
+              <div class="font-xsmall">
+                Title number HP725748<br>
+                <b>Leasehold</b>
+              </div>
+            </li>
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                <a href="#">Flat 2, 6 Mandela Way, Southampton, SO15 5RZ</a>
+              </h2>
+              <div class="font-xsmall">
+                Title number HP725748<br>
+                <b>Leasehold</b>
+              </div>
+            </li>
+          </ol>
+        </li>
+        <li class="no-postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Land at Mandela Way, Southampton</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b>
+          </div>
+        </li>
+        <li class="no-postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Land west of 1 Mandela Way, Southampton, SO15 5RZ</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b>
+          </div>
+        </li>
+        <li class="no-postal">
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Langstone Court, Hayling Court and Shoring Court, Southampton</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number HP725748<br>
+            <b>Freehold</b>
+          </div>
+        </li>
+      </ol>
+
+      <div class="govuk-previous-and-next-navigation">
+        <ul>
+          <li class="next-page">
+            <a href="#">
+              <span class="pagination-label">Next <span class="visuallyhidden">page</span></span>
+              <span>2 of 2</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

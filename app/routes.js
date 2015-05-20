@@ -9,6 +9,11 @@ module.exports = {
 
     // /v8/ routes
 
+    // Carry through search terms into results page
+    app.get('/digital-register/journeys/v8/search-results', function(req, res) {
+      res.render('digital-register/journeys/v8/search-results', {'terms' : req.query.s});
+    });
+
     // -------------------------------------------------------- //
 
     // /v7/ routes
