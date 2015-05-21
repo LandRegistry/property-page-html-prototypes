@@ -70,8 +70,14 @@
 
     <form class="form text document-selection" action="pre-sign-in" method="get">
 
+      {{#error}}
+      <div class="validation-summary" tabindex="0" id="errors">
+        <div class="validation-message"><b>Please choose which documents you want to buy.</b></div>
+      </div>
+      {{/error}}
+
       <label for="box-1" class="bold-medium">
-        <input type="checkbox" id="box-1">
+        <input type="checkbox" id="box-1" name="register">
         Title register <span>&pound;3</span>
       </label>
       <p>
@@ -79,7 +85,7 @@
       </p>
 
       <label for="box-2" class="bold-medium">
-        <input type="checkbox" id="box-2">
+        <input type="checkbox" id="box-2" name="plan">
         Title plan <span>&pound;3</span>
       </label>
       <p>
