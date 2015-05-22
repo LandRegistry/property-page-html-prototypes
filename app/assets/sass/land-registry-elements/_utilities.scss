@@ -37,6 +37,10 @@
   margin-bottom: $gutter-half;
 }
 
+.expand-bottom-quarter {
+  margin-bottom: $gutter-half/2;
+}
+
 .division--top {
   margin-top: $gutter;
   padding-top: $gutter;
@@ -74,3 +78,14 @@
   font-size: 16px;
   text-align: right;
 }
+
+.column-three-quarters {
+  @include grid-column( 3/4 );
+}
+
+.column-flip {
+  @include media(tablet) {
+    float: right;
+  }
+}
+

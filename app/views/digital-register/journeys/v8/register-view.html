@@ -1,0 +1,222 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/digital-register-journey-8.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+
+    <div class="column-quarter column-flip">
+      <div class="account">
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+
+    <!--
+    <div class="column-three-quarters">
+      <div class="global-breadcrumb">
+        <nav role="navigation">
+          <ol>
+            <li><a href="#">My documents</a></li>
+            <li><strong>HP725748</strong></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    -->
+
+  </div>
+
+  <h1 class="heading-xlarge collapse-bottom">Title HP725748</h1>
+  <p class="expand-bottom">This title was last changed on <b>15 October 2012</b> at <b>11:21:18</b></p>
+
+  <div class="lede grid-row">
+
+    <div class="column-third">
+
+      <div itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">
+          3a Mandela Way<br>
+        </span>
+        <span itemprop="addressLocality">Southampton</span><br>
+        <span itemprop="postalCode">SO15 5RZ</span>
+      </div>
+
+    </div>
+
+    <figure class="column-two-thirds">
+      <div id="map-location">
+        <img src="http://placehold.it/276x184" alt="Map showing location of title address">
+      </div>
+    </figure>
+
+  </div>
+
+  <div class="download-documents">
+
+    <h3 class="heading-large collapse-top">Title documents</h3>
+
+    <div class="grid-row">
+
+      <div class="document-item column-half">
+        <a href="/public/downloads/pdf/official-register-new-transport.pdf" class="image">
+          <img src="/public/images/icon-register-document.png">
+        </a>
+        <span class="title">Title register</span>
+        <span class="footnote">PDF document, 169kb</span>
+        <p>                  
+          <a href="/public/downloads/pdf/official-register-new-transport.pdf"><b>Download</b></a> or <a href="/public/downloads/pdf/official-register-new-transport.pdf" class="font-bold"><b>print</b></a>
+        </p>
+      </div>
+      
+      <div class="document-item column-half">
+        <a href="/public/downloads/pdf/title-plan.pdf" class="image">           
+          <img src="/public/images/icon-plan-document.png">
+        </a>
+        <span class="title">Title plan</span>
+        <span class="footnote">PDF document, 346kb</span>
+        <p>
+          <a href="/public/downloads/pdf/title-plan.pdf"><b>Download</b></a> or <a href="/public/downloads/pdf/title-plan.pdf" class="font-bold"><b>print</b></a>
+        </p>                              
+      </div>
+
+    </div>
+
+  </div>
+
+  <h4 class="heading-large">Summary</h4>
+
+  <dl class="definition-tabular">
+    <dt>Owner</dt>
+    <dd>
+      <h5 class="heading-small collapse-top expand-bottom-half">Darcy Bloggs</h5>
+      <div class="grid-row expand-bottom-half">
+        <div class="column-half">
+          3a Mandela Way<br>
+          Southampton<br>
+          SO15 5RZ
+        </div>
+        <!--
+        <div class="column-half">
+          4 Mandela Way<br>
+          Southampton<br>
+          SO15 5RZ
+        </div>
+        -->
+      </div>
+    </dd>
+
+    <dt>Lender</dt>
+    <dd>
+      <h5 class="heading-small collapse-top expand-bottom-half">
+        Abbey National PLC<br>
+        <span class="font-small">Company registration number 3131313<!-- company_reg_num --></span>
+      </h5>
+      <div class="grid-row expand-bottom-half">
+        <div class="column-half">
+          101 Midsummer Boulevard<br>
+          Milton Keynes<br>
+          MK9 1AA
+        </div>
+      </div>
+      <div class="heading-small expand-bottom-half">
+        Registered charge <span class="font-small">dated 12 January 2014</span>
+      </div>
+    </dd>
+
+    <dt>Tenure type</dt>
+    <dd><b>Leasehold</b></dd>
+
+    <dt>Price paid</dt>
+    <dd><b>&pound;188,000 on 3 October 2012</b></dd>
+
+    <dt>Title quality</dt>
+    <dd><b>Absolute</b></dd>
+  </dl>
+
+
+  <div class="text division--top">
+    <ul class="list-bullet">
+      <li>The reference for your purchase is <strong>PAY123456</strong></h2></li>
+      <li>We’ve sent a confirmation email to <b>darcybloggs@gmail.com</b></li>
+    </ul>
+    <div class="panel-indent">
+      <p>If you have any problems with your purchase, you can call Land Registry on <b>0300 006 0411</b>.</p>
+      <p>For more contact methods, visit <a href="https://www.gov.uk/government/organisations/land-registry">https://www.gov.uk/government/organisations/land-registry</a></p>
+    </div>
+  </div>
+
+
+  <div class="text division--top">
+    
+    <h6 class="heading-small">What next</h6>
+
+    <ul>
+      <li><a href="search-page">Search for another title using this service</a></li>
+      <li><a href="#">Return to GOV.UK</a></li>
+    </ul>
+
+  </div>
+
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+
+  <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
+  <script type="text/javascript">
+
+    // initialise map
+    var map = L.map('map-location', {
+      scrollWheelZoom: false
+    }).setView([50.908876, -1.4153305], 19);
+
+    L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 22
+    }).addTo(map);
+
+    var polygon = L.polygon(
+      [
+        [50.908898, -1.41543],
+        [50.908915, -1.4153305],
+        [50.908855, -1.415305],
+        [50.908837, -1.415402],
+        [50.908876, -1.415423]
+      ],
+      {
+        color: '#fff',
+        weight: 3,
+        opacity: 1,
+        fillColor: '#ffbf47',
+        fillOpacity: 1,
+        clickable: false
+      }
+    ).addTo(map);
+
+  </script>
+
+{{/bodyEnd}}
+
+{{/govuk_template}}

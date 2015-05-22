@@ -1,0 +1,136 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Summary of title
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/title-summary.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+        <ol>
+          <li><a href="search-page">Find a title</a></li>
+          <li><a href="search-results">Search results</a></li>
+          <li><strong>Summary of title</strong></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div><!-- column-third -->
+  </div><!-- grid-row -->
+
+  <section>
+    <h1 class="heading-xlarge">Summary of title</h1>
+
+    <div class="grid-row">
+      <div class="column-half">
+
+        <div class="title-address lede" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">
+            3a Mandela Way<br>
+          </span>
+          <span itemprop="addressLocality">Southampton</span><br>
+          <span itemprop="postalCode">SO15 5RZ</span>
+        </div>
+
+        <dl class="definition-tabular--b">
+          <dt>Title number</dt>
+          <dd>HP725748</dd>
+
+          <dt>Tenure type</dt>
+          <dd>Leasehold</dd>
+
+          <dt>Price paid</dt>
+          <dd>&pound;188,000 on 3 October 2012</dd>
+        </dl>
+
+        <p class="footnote expand-bottom">This title was last changed on <b>15 October 2012</b> at <b>11:21:18</b></p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+    <h2 class="heading-large collapse-top">Available documents</h2>
+
+    <form class="form text document-selection" action="title-summary" method="post">
+
+      {{#errors}}
+      <div class="validation-summary" tabindex="0" id="errors">
+        <div class="validation-message"><b>Please choose which documents you want to buy.</b></div>
+      </div>
+      {{/errors}}
+
+      <label for="box-1" class="bold-medium">
+        <input type="checkbox" id="box-1" name="documents" value="register">
+        Title register <span>&pound;3</span>
+      </label>
+      <p>
+        Full details about the property or land, including who owns it and any rights of way.<br>
+      </p>
+
+      <label for="box-2" class="bold-medium">
+        <input type="checkbox" id="box-2" name="documents" value="plan">
+        Title plan <span>&pound;3</span>
+      </label>
+      <p>
+        The property’s location and general boundaries, prepared on the latest Ordnance Survey map available at the time of registration.<br>
+      </p>
+
+      <button class="button">Buy selected documents</button>
+
+    </form>
+
+
+  </section>
+
+  <section class="grid-row">
+    <div class="column-two-thirds">
+      <div class="legal-division--top">
+        <h2 class="heading-medium collapse-top">Related titles</h2>
+        <div class="panel-indent footnote text">
+          <p>For example, a related title could be the freehold building which contains several leasehold flats.</p>
+        </div>
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">3 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Title number HP725747<br>
+              <b>Freehold</b>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

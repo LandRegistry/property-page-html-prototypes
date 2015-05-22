@@ -152,6 +152,12 @@
   }
 }
 
+// Form elements
+
+.form-label-bold {
+  @include bold-19;
+}
+
 // Images / media
 
 img {
