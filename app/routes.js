@@ -28,21 +28,7 @@ module.exports = {
         });
       }
 
-      //res.render('digital-register/journeys/v8/pre-sign-in');
-
     });
-
-    /*app.get('/digital-register/journeys/v8/pre-sign-in', function(req, res) {
-      var register = req.query.register;
-      var plan = req.query.plan;
-
-      if (typeof register !== 'undefined' || typeof plan !== 'undefined') {
-        res.render('digital-register/journeys/v8/pre-sign-in');
-      } else {
-        res.render('digital-register/journeys/v8/title-summary', {'error' : true});
-      }
-  
-    });*/
 
     // Make a decision based on submission from /pre-sign-in - "Do you have an account?"
     app.get('/digital-register/journeys/v8/check-sign-in', function(req, res) {
