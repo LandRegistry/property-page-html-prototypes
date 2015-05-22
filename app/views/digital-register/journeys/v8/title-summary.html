@@ -68,16 +68,16 @@
   <section>
     <h2 class="heading-large collapse-top">Available documents</h2>
 
-    <form class="form text document-selection" action="pre-sign-in" method="get">
+    <form class="form text document-selection" action="title-summary" method="post">
 
-      {{#error}}
+      {{#errors}}
       <div class="validation-summary" tabindex="0" id="errors">
         <div class="validation-message"><b>Please choose which documents you want to buy.</b></div>
       </div>
-      {{/error}}
+      {{/errors}}
 
       <label for="box-1" class="bold-medium">
-        <input type="checkbox" id="box-1" name="register">
+        <input type="checkbox" id="box-1" name="documents" value="register">
         Title register <span>&pound;3</span>
       </label>
       <p>
@@ -85,7 +85,7 @@
       </p>
 
       <label for="box-2" class="bold-medium">
-        <input type="checkbox" id="box-2" name="plan">
+        <input type="checkbox" id="box-2" name="documents" value="plan">
         Title plan <span>&pound;3</span>
       </label>
       <p>

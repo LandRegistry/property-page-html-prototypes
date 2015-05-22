@@ -23,9 +23,8 @@
     "grunt-nodemon": "0.3.0",
     "grunt-sass": "0.16.1",
     "grunt-text-replace": "0.3.12",
-    "grunt-concurrent": "0.4.3"
-  },
-  "devDependencies": {
+    "grunt-concurrent": "0.4.3",
+    "body-parser": "^1.12.4",
     "express-validator": "^2.10.0"
   }
 }

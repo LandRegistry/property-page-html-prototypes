@@ -14,7 +14,25 @@ module.exports = {
       res.render('digital-register/journeys/v8/search-results', {'terms' : req.query.s});
     });
 
-    app.get('/digital-register/journeys/v8/pre-sign-in', function(req, res) {
+    // Handle submissions from title-summary - document selection
+    app.post('/digital-register/journeys/v8/title-summary', function(req, res) {
+      
+      req.checkBody('documents', 'This is an error message').notEmpty();
+      var errors = req.validationErrors();  
+      
+      if(!errors) {
+        res.render('digital-register/journeys/v8/pre-sign-in');
+      } else {
+        res.render('digital-register/journeys/v8/title-summary', {
+          errors: errors
+        });
+      }
+
+      //res.render('digital-register/journeys/v8/pre-sign-in');
+
+    });
+
+    /*app.get('/digital-register/journeys/v8/pre-sign-in', function(req, res) {
       var register = req.query.register;
       var plan = req.query.plan;
 
@@ -24,7 +42,7 @@ module.exports = {
         res.render('digital-register/journeys/v8/title-summary', {'error' : true});
       }
   
-    });
+    });*/
 
     // Make a decision based on submission from /pre-sign-in - "Do you have an account?"
     app.get('/digital-register/journeys/v8/check-sign-in', function(req, res) {
