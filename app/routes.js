@@ -9,9 +9,12 @@ module.exports = {
 
     // /v8/ routes
 
-    // Carry through search terms into results page
+    // Carry through search terms into results pages
     app.get('/digital-register/journeys/v8/search-results', function(req, res) {
       res.render('digital-register/journeys/v8/search-results', {'terms' : req.query.s});
+    });
+    app.get('/digital-register/journeys/v8/search-results-2', function(req, res) {
+      res.render('digital-register/journeys/v8/search-results-2', {'terms' : req.query.s});
     });
 
     // Handle submissions from title-summary - document selection
