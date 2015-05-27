@@ -19,6 +19,14 @@
   background-color: $bg-colour;
 }
 
+.alert-flag-hi-viz {
+  @include highlight-tag($yellow-25, $black);
+
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
 .alert-flag {
   @include highlight-tag($black, $yellow-25);
 
