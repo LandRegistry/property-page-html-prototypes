@@ -10,92 +10,6 @@
   <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/digital-register-journey-8.css" media="screen" rel="stylesheet" type="text/css" />
-
-  <style type="text/css">
-
-  /* Rough example print styles */
-
-  @media print {
-
-    .phase-banner,
-    .account,
-    #map-location > img,
-    .leaflet-control-zoom,
-    .document-item .image,
-    .printhidden {
-      display: none;
-    }
-
-    .heading-xlarge {
-      font-size: 2.5em;
-    }
-    .heading-large {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
-    .heading-small {
-      margin-bottom: 0;
-      margin-top: 0;
-    }
-
-    .print-grid-row {
-      display: table;
-      width: 100%;
-    }
-      .print-grid-row [class*="column-"] {
-        display: table-cell;
-        vertical-align: top;
-      }
-      .print-grid-row .column-third {
-        width: 33.33%
-      }
-      .print-grid-row .column-two-thirds {
-        width: 66.66%
-      }
-
-    #map-location {
-      width: 100%;
-      height: 200px;
-      margin: 0;
-    }
-    .leaflet-container .leaflet-control-attribution,
-    .leaflet-container .leaflet-control-scale {
-      font-size: 9pt;
-    }
-
-    .document-item p {
-      margin-top: 0;
-      margin-bottom: 0.75em;
-    }
-
-
-    dl.definition-tabular {
-      display: block;
-      width: 100%;
-      overflow: auto;
-    }
-      .definition-tabular dt {
-        float: left;
-        width: 15%;
-        padding-bottom: 8pt;
-      }
-      .definition-tabular dd {
-        float: left;
-        width: 85%;
-        clear: right;
-        margin: 0;
-        padding-bottom: 8pt;
-      }
-
-    .division--top {
-      clear: both;
-      border-top:1pt solid;
-      margin-top: 15pt;
-      padding-top: 8pt;
-    }
-
-  }
-  </style>
 {{/head}}
 
 {{$content}}
@@ -112,49 +26,12 @@
       </div>
     </div>
 
-    <!--
-    <div class="column-three-quarters">
-      <div class="global-breadcrumb">
-        <nav role="navigation">
-          <ol>
-            <li><a href="#">My documents</a></li>
-            <li><strong>HP725748</strong></li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-    -->
-
   </div>
 
-  <h1 class="heading-xlarge collapse-bottom">Title HP725748</h1>
+  <h1 class="heading-xlarge collapse-bottom">Title documents for HP725748</h1>
   <p class="expand-bottom">This title was last changed on <b>15 October 2012</b> at <b>11:21:18</b></p>
 
-  <div class="lede grid-row print-grid-row">
-
-    <div class="column-third">
-
-      <div itemscope itemtype="http://schema.org/PostalAddress">
-        <span itemprop="streetAddress">
-          14a Mandela Way<br>
-        </span>
-        <span itemprop="addressLocality">Southampton</span><br>
-        <span itemprop="postalCode">SO15 5RZ</span>
-      </div>
-
-    </div>
-
-    <figure class="column-two-thirds">
-      <div id="map-location">
-        <img src="http://placehold.it/276x184" alt="Map showing location of title address">
-      </div>
-    </figure>
-
-  </div>
-
   <div class="download-documents">
-
-    <h3 class="heading-large collapse-top">Title documents</h3>
 
     <div class="grid-row">
 
@@ -196,51 +73,8 @@
 
   </div>
 
-  <h4 class="heading-large">Summary</h4>
 
-  <dl class="definition-tabular">
-    <dt>Owner</dt>
-    <dd>
-      <h5 class="heading-small collapse-top expand-bottom-half">Darcy Bloggs</h5>
-      <div class="grid-row expand-bottom-half">
-        <div class="column-half">
-          14a Mandela Way<br>
-          Southampton<br>
-          SO15 5RZ
-        </div>
-      </div>
-    </dd>
-
-    <dt>Lender</dt>
-    <dd>
-      <h5 class="heading-small collapse-top expand-bottom-half">
-        Abbey National PLC<br>
-        <span class="font-small">Company registration number 3131313<!-- company_reg_num --></span>
-      </h5>
-      <div class="grid-row expand-bottom-half">
-        <div class="column-half">
-          101 Midsummer Boulevard<br>
-          Milton Keynes<br>
-          MK9 1AA
-        </div>
-      </div>
-      <div class="heading-small expand-bottom-half">
-        Registered charge <span class="font-small">dated 12 January 2014</span>
-      </div>
-    </dd>
-
-    <dt>Tenure type</dt>
-    <dd><b>Leasehold</b></dd>
-
-    <dt>Price paid</dt>
-    <dd><b>&pound;188,000 on 3 October 2012</b></dd>
-
-    <dt>Title quality</dt>
-    <dd><b>Absolute</b></dd>
-  </dl>
-
-
-  <div class="text division--top">
+  <div class="text">
     <ul class="list-bullet">
       <li>The reference for your purchase is <strong>PAY123456</strong></h2></li>
       <li>We’ve sent a confirmation email to <b>darcybloggs@gmail.com</b></li>
