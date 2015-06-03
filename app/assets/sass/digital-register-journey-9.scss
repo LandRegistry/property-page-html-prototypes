@@ -1,0 +1,49 @@
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "measurements";
+@import "conditionals";
+@import "typography";
+
+// Sign out area
+
+.account {
+  @include core-16;
+  padding: 0.75em 0 0 0;
+
+  @include media(tablet) {
+    padding: 0.75em 0 $gutter 0;
+    text-align: right;
+  }
+  
+}
+
+// Extent preview (leaflet area)
+
+#map-location {
+  height: 420px;
+}
+
+// Document downloads area
+
+.download-documents {
+  margin: $gutter*1.5 0;
+  padding: $gutter;
+  border: 10px solid $grey-3;
+}
+
+.document-item {
+  .image {
+    margin-bottom: $gutter-half;
+    width: 100px;
+    box-shadow: 0 1px 3px $grey-2;
+
+    @include media(tablet) {
+      float: left;
+      margin-right: 30px;
+    }
+
+    &:hover {
+      outline: 3px solid $yellow;
+    }
+  }
+}

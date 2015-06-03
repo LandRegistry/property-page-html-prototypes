@@ -89,3 +89,9 @@
   background-origin: content-box;
   text-indent: 1.8em;
 }
+
+// see v8 and v9
+.payment-summary {
+  padding: 15px;
+  border: 8px solid $grey-3;
+}

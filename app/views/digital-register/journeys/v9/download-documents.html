@@ -1,0 +1,147 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen, print" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/digital-register-journey-9.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+
+    <div class="column-quarter column-flip">
+      <div class="account">
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+
+  </div>
+
+  <h1 class="heading-xlarge collapse-bottom">Documents for title HP725748</h1>
+  <p class="expand-bottom">This title was last changed on <b>15 October 2012</b> at <b>11:21:18</b></p>
+
+  <div class="download-documents">
+
+    <div class="grid-row">
+
+      <div class="document-item column-half">
+        <a href="/public/downloads/pdf/official-register-new-transport.pdf" class="image">
+          <img src="/public/images/icon-register-document.png">
+        </a>
+        <span class="title">Title register</span>
+        <span class="footnote">PDF document, 169kb</span>
+        <p>                  
+          <a href="/public/downloads/pdf/official-register-new-transport.pdf"><b>Download</b></a>
+          <span class="printhidden">
+            &nbsp;or&nbsp;
+            <a href="/public/downloads/pdf/official-register-new-transport-autoprint.pdf" target="_blank">
+              <b>print</b>
+            </a>
+          </span>
+        </p>
+      </div>
+      
+      <div class="document-item column-half">
+        <a href="/public/downloads/pdf/title-plan.pdf" class="image">           
+          <img src="/public/images/icon-plan-document.png">
+        </a>
+        <span class="title">Title plan</span>
+        <span class="footnote">PDF document, 346kb</span>
+        <p>
+          <a href="/public/downloads/pdf/title-plan.pdf"><b>Download</b></a>
+          <span class="printhidden">
+            &nbsp;or&nbsp;
+            <a href="/public/downloads/pdf/title-plan-autoprint.pdf" target="_blank">
+              <b>print</b>
+            </a>
+          </span>
+        </p>                              
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="text">
+    <ul class="list-bullet">
+      <li>The reference for your purchase is <strong>PAY123456</strong></h2></li>
+      <li>We’ve sent a confirmation email to <b>darcybloggs@gmail.com</b></li>
+    </ul>
+    <div class="panel-indent">
+      <p>If you have any problems with your purchase, you can call Land Registry on <b>0300 006 0411</b>.</p>
+      <p>For more contact methods, visit <a href="https://www.gov.uk/government/organisations/land-registry">https://www.gov.uk/government/organisations/land-registry</a></p>
+    </div>
+  </div>
+
+
+  <div class="text division--top printhidden">
+    
+    <h6 class="heading-small">What next</h6>
+
+    <ul>
+      <li><a href="search-page">Search for another title using this service</a></li>
+      <li><a href="#">Return to GOV.UK</a></li>
+    </ul>
+
+  </div>
+
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+
+  <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
+  <script type="text/javascript">
+
+    // initialise map
+    var map = L.map('map-location', {
+      scrollWheelZoom: false
+    }).setView([50.908876, -1.4153305], 19);
+
+    L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 22
+    }).addTo(map);
+
+    var polygon = L.polygon(
+      [
+        [50.908898, -1.41543],
+        [50.908915, -1.4153305],
+        [50.908855, -1.415305],
+        [50.908837, -1.415402],
+        [50.908876, -1.415423]
+      ],
+      {
+        color: '#fff',
+        weight: 3,
+        opacity: 1,
+        fillColor: '#ffbf47',
+        fillOpacity: 1,
+        clickable: false
+      }
+    ).addTo(map);
+
+  </script>
+
+{{/bodyEnd}}
+
+{{/govuk_template}}

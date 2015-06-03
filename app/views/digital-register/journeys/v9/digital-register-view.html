@@ -1,0 +1,279 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen, print" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/digital-register-journey-9.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+
+  /* Rough example print styles */
+
+  @media print {
+
+    .phase-banner,
+    .account,
+    /*#map-location > img,*/
+    .leaflet-control-zoom,
+    .printhidden {
+      display: none;
+    }
+
+    .heading-xlarge {
+      font-size: 2.5em;
+    }
+    .heading-large {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    #map-container {
+      height: 210px;
+    }
+    #map-location {
+      transform-origin: 0 0;
+      transform: scale(0.5);
+    }
+      #map-location a:after {
+        content: '';
+      }
+      .leaflet-container .leaflet-control-attribution,
+      .leaflet-container .leaflet-control-scale {
+        font-size: 6pt;
+      }
+
+
+    dl.definition-tabular {
+      display: block;
+      width: 100%;
+      overflow: auto;
+    }
+      .definition-tabular dt {
+        float: left;
+        width: 15%;
+        padding-bottom: 8pt;
+      }
+      .definition-tabular dd {
+        float: left;
+        width: 85%;
+        clear: right;
+        margin: 0;
+        padding-bottom: 8pt;
+      }
+        .definition-tabular .heading-small {
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+
+    .legal-division--top {
+      clear: both;
+      width: 50%;
+      border-top: 1pt solid;
+      margin-top: 15pt;
+      padding-top: 8pt;
+    }
+
+  }
+  </style>
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+
+    <div class="column-quarter column-flip">
+      <div class="account">
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+
+  </div>
+
+  <h1 class="heading-xlarge collapse-bottom">Summary of title HP725748</h1>
+  <p class="expand-bottom">This title was last changed on <b>15 October 2012</b> at <b>11:21:18</b></p>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <p class="lede collapse-top">
+        14a Mandela Way<br>
+        Southampton<br>
+        SO15 5RZ
+      </p>
+
+      <div id="map-container" class="expand-bottom">
+        <div id="map-location">
+          <img src="http://placehold.it/630x420" alt="Map showing location of title address">
+        </div>
+      </div>
+
+      <dl class="definition-tabular">
+        <dt>Owner</dt>
+        <dd>
+          <h5 class="heading-small collapse-top expand-bottom-half">Darcy Bloggs</h5>
+          <div class="grid-row expand-bottom-half">
+            <div class="column-half">
+              14a Mandela Way<br>
+              Southampton<br>
+              SO15 5RZ
+            </div>
+          </div>
+        </dd>
+
+        <dt>Lender</dt>
+        <dd>
+          <h5 class="heading-small collapse-top expand-bottom-half">
+            Abbey National PLC<br>
+            <span class="font-small">Company registration number 3131313<!-- company_reg_num --></span>
+          </h5>
+          <div class="grid-row expand-bottom-half">
+            <div class="column-half">
+              101 Midsummer Boulevard<br>
+              Milton Keynes<br>
+              MK9 1AA
+            </div>
+          </div>
+          <div class="heading-small expand-bottom-half">
+            Registered charge <span class="font-small">dated 12 January 2014</span>
+          </div>
+        </dd>
+
+        <dt>Tenure type</dt>
+        <dd><b>Leasehold</b></dd>
+
+        <dt>Price paid</dt>
+        <dd><b>&pound;188,000 on 3 October 2012</b></dd>
+
+        <dt>Title quality</dt>
+        <dd><b>Absolute</b></dd>
+      </dl>
+
+    </div>
+
+    <div class="column-third printhidden">
+
+      <div class="payment-summary js-stick-at-top-when-scrolling">
+        <div class="icon-print">
+          <a href="javascript:window.print();">Print this page</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="legal-division--top legal-division--bottom">
+        <div class="text">
+
+          <ul class="list-bullet">
+            <li>The reference for your purchase is <strong>PAY123456</strong></h2></li>
+            <li>We’ve sent a confirmation email to <b>darcybloggs@gmail.com</b></li>
+          </ul>
+
+          <p>If you have any problems with your purchase, you can call Land Registry on <b>0300 006 0411</b>.</p>
+          <p>For more contact methods, visit <a href="https://www.gov.uk/government/organisations/land-registry">https://www.gov.uk/government/organisations/land-registry</a></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="text printhidden">
+    
+    <h6 class="heading-medium">What next</h6>
+
+    <div class="payment-summary expand-bottom">
+      <p><a href="select-documents">Purchase full title documents</a></p>
+      <details>
+        <summary>
+          What are full title documents?
+        </summary>
+        <p>
+          Full title documents are available in PDF format to download and keep. They are a full copy of the title held by the government, containing:
+        </p>
+        <ul class="list-bullet">
+          <li>Complete details about the property or land, including any rights of way or restrictions on its use.</li>
+          <li>The property’s location and general boundaries, prepared on the latest Ordnance Survey map available at the time of registration.</li>
+        </ul>
+      </details>
+    </div>
+
+    <ul>
+      <li><a href="search-page">Search for another title using this service</a></li>
+      <li><a href="#">Return to GOV.UK</a></li>
+    </ul>
+
+  </div>
+
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+
+  <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
+  <script type="text/javascript">
+
+    // initialise map
+    var map = L.map('map-location', {
+      scrollWheelZoom: false
+    }).setView([50.908876, -1.4153305], 19);
+
+    L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, &copy; <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 22
+    }).addTo(map);
+
+    var polygon = L.polygon(
+      [
+        [50.908898, -1.41543],
+        [50.908915, -1.4153305],
+        [50.908855, -1.415305],
+        [50.908837, -1.415402],
+        [50.908876, -1.415423]
+      ],
+      {
+        color: '#fff',
+        weight: 3,
+        opacity: 1,
+        fillColor: '#ffbf47',
+        fillOpacity: 1,
+        clickable: false
+      }
+    ).addTo(map);
+
+  </script>
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript" src="/public/javascripts/stick-at-top-when-scrolling.js"></script>
+  <script type="text/javascript" src="/public/javascripts/stop-scrolling-at-footer.js"></script>
+  <script type="text/javascript">
+    $(function() {
+
+      // stop the position:fixed subnav rolling into footer
+      GOVUK.stopScrollingAtFooter.addEl($('.js-stick-at-top-when-scrolling'), $('.js-stick-at-top-when-scrolling').height());
+
+    });
+  </script>
+
+{{/bodyEnd}}
+
+{{/govuk_template}}
