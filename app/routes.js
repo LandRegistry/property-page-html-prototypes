@@ -41,7 +41,7 @@ module.exports = {
       if(!errors) {
         if (req.body.accessType == 'summary') {
           v9.buyingSummary = true;
-          res.render('digital-register/journeys/v9/pre-sign-in');
+          res.redirect('digital-register/journeys/v9/pre-sign-in');
         } else {
           v9.buyingSummary = false;
           res.redirect('digital-register/journeys/v9/select-documents');
@@ -54,6 +54,14 @@ module.exports = {
 
     });
 
+    // Handle visits to Select Documents from a summary page
+    app.get('/digital-register/journeys/v9/select-documents', function(req, res) {
+      if (req.query.refer) {
+        v9.boughtSummaryFirst = true;
+      }
+      res.render('digital-register/journeys/v9/select-documents');
+    });
+
     // Handle submissions from document selection page
     app.post('/digital-register/journeys/v9/select-documents', function(req, res) {
       
@@ -61,7 +69,11 @@ module.exports = {
       var errors = req.validationErrors();
 
       if(!errors) {
-        res.render('digital-register/journeys/v9/pre-sign-in');
+        if (v9.signedIn == true) {
+          res.redirect('digital-register/journeys/v9/payment');
+        } else {
+          res.redirect('digital-register/journeys/v9/pre-sign-in');
+        }
       } else {
         res.render('digital-register/journeys/v9/select-documents', {
           errors: errors
@@ -94,6 +106,9 @@ module.exports = {
     app.get('/digital-register/journeys/v9/payment', function(req, res) {
       // to get to payment you MUST have an account and be signed in, so
       v9.signedIn = true;
+      if (v9.boughtSummaryFirst == true) {
+        v9.buyingSummary = false;
+      }
       res.render('digital-register/journeys/v9/payment', {
         "buyingSummary": v9.buyingSummary
       });

@@ -1,7 +1,7 @@
 {{<govuk_template}}
 
 {{$pageTitle}}
-  Search results | Find a title
+  Search results
 {{/pageTitle}}
 
 {{$head}}
@@ -26,9 +26,11 @@
       </nav>
     </div><!-- global-breadcrumb -->
 
-    <div class="column-third">
-      {{>digital-register/includes/login}}
-    </div><!-- column-third -->
+    <div class="column-quarter column-flip">
+      <div class="account">
+        <a href="sign-in">Sign in or create an account</a>
+      </div>
+    </div>
   </div><!--grid-row -->
 
   <form class="form" action="search-results" method="get">

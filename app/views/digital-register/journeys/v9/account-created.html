@@ -1,12 +1,11 @@
 {{<govuk_template}}
 
 {{$pageTitle}}
-  Create an account
+  Account created
 {{/pageTitle}}
 
 {{$head}}
   {{>includes/head}}
-  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
 {{/head}}
@@ -18,12 +17,13 @@
   {{>digital-register/includes/banner}}
 
   <div class="grid-row">
-    <div class="column-two-thirds">
-      &nbsp;
+
+    <div class="column-quarter column-flip">
+      <div class="account">
+        <a href="search-page">Sign out</a>
+      </div>
     </div>
-    <div class="column-third">
-      {{>digital-register/v9/includes/sign-out}}
-    </div>
+
   </div>
 
   <h1 class="heading-xlarge">Account created</h1>
