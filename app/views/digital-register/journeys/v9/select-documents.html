@@ -1,0 +1,77 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Summary of title
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/title-summary.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+        <ol>
+          <li><a href="search-page">Find a title</a></li>
+          <li><a href="search-results">Search results</a></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div><!-- column-third -->
+  </div><!-- grid-row -->
+
+  <h1 class="heading-xlarge">Available documents</h1>
+
+  <form class="form text document-selection" method="post">
+
+    {{#errors}}
+    <div class="validation-summary" tabindex="0" id="errors">
+      <div class="validation-message"><b>Please choose which documents you want to buy.</b></div>
+    </div>
+    {{/errors}}
+
+    <label for="box-1" class="bold-medium">
+      <input type="checkbox" id="box-1" name="documents" value="register">
+      Title register <span>&pound;3.00</span>
+    </label>
+    <p>
+      Full details about the property or land, including who owns it and any rights of way.
+    </p>
+
+    <label for="box-2" class="bold-medium">
+      <input type="checkbox" id="box-2" name="documents" value="plan">
+      Title plan <span>&pound;3.00</span>
+    </label>
+    <p>
+      The property’s location and general boundaries, prepared on the latest Ordnance Survey map available at the time of registration.<br>
+    </p>
+
+    <button class="button">Buy selected documents</button>
+
+  </form>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -1,0 +1,113 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Summary of title
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+        <ol>
+          <li><a href="search-page">Find a title</a></li>
+          <li><a href="search-results">Search results</a></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div><!-- column-third -->
+  </div><!-- grid-row -->
+  
+  <div class="text">
+    <h1 class="heading-large">How would you like to view this information?</h1>
+  </div>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <form class="form text document-selection" method="post">
+
+        {{#errors}}
+        <div class="validation-summary" tabindex="0" id="errors">
+          <div class="validation-message"><b>Please choose whether to access a summary or purchase documents.</b></div>
+        </div>
+        {{/errors}}
+
+        <label for="box-1" class="bold-medium">
+          <input type="radio" id="box-1" name="accessType" value="summary">
+          Summary view &mdash; <span>&pound;1.00</span>
+        </label>
+        <details>
+          <summary>
+            What is in the summary view?
+          </summary>
+          <p>
+            The summary view of the title contains:
+          </p>
+          <ul class="list-bullet">
+            <li>Address and title number</li>
+            <li>Owner name and address details</li>
+            <li>Lender name and address details</li>
+            <li>Tenure, quality and price paid details</li>
+            <li>An indication of the location and size of the land</li>
+          </ul>
+        </details>
+
+        <label for="box-2" class="bold-medium">
+          <input type="radio" id="box-2" name="accessType" value="documents">
+          Full title documents &mdash; <span>from &pound;3.00</span>
+        </label>
+        <details>
+          <summary>
+            What are full title documents?
+          </summary>
+          <p>
+            Full title documents are available in PDF format to download and keep. They are a full copy of the title held by the government, containing:
+          </p>
+          <ul class="list-bullet">
+            <li>Complete details about the property or land, including any rights of way or restrictions on its use.</li>
+            <li>The property’s location and general boundaries, prepared on the latest Ordnance Survey map available at the time of registration.</li>
+          </ul>
+        </details>
+
+        <button class="button">Next</button>
+
+      </form>
+    </div>
+
+    <div class="column-third">
+      <div class="payment-summary">
+        14a Mandela Way<br>
+        Southampton<br>
+        SO15 5RZ
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -9,13 +9,6 @@
   <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
-
-  <style type="text/css">
-  .payment-summary {
-    padding: 15px;
-    border: 8px solid #DEE0E2;
-  }
-  </style>
 {{/head}}
 
 {{$content}}
@@ -24,11 +17,16 @@
 
   {{>digital-register/includes/banner}}
 
-  <h1 class="heading-xlarge">Purchase title documents</h1>
+  {{#buyingSummary}}
+    <h1 class="heading-xlarge">Purchase summary view</h1>
+  {{/buyingSummary}}
+  {{^buyingSummary}}
+    <h1 class="heading-xlarge">Purchase full title documents</h1>
+  {{/buyingSummary}}
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <form class="form" action="register-view" method="get">
+      <form class="form" action="view-router" method="get">
 
         <fieldset>
           <legend class="heading-large">Card information</legend>
@@ -132,9 +130,15 @@
           <tfoot>
             <tr>
               <td style="vertical-align: top;">Total to pay:</td>
+              {{#buyingSummary}}
+              <td class="numeric"><span class="bold-large">£1.00</span></td>
+              {{/buyingSummary}}
+              {{^buyingSummary}}
               <td class="numeric"><span class="bold-large">£6.00</span></td>
+              {{/buyingSummary}}
             </tr>
           </tfoot>
+          {{^buyingSummary}}
           <tbody>
             <tr>
               <td>Title register</td>
@@ -145,6 +149,7 @@
               <td class="numeric">£3.00</td>
             </tr>
           </tbody>
+          {{/buyingSummary}}
         </table>
 
       </div>
