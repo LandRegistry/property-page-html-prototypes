@@ -36,33 +36,48 @@
 
   <h1 class="heading-xlarge">Available documents</h1>
 
-  <form class="form text document-selection" method="post">
+  <div class="grid-row">
+    <div class="column-two-thirds">
 
-    {{#errors}}
-    <div class="validation-summary" tabindex="0" id="errors">
-      <div class="validation-message"><b>Please choose which documents you want to buy.</b></div>
+      <form class="form document-selection" method="post">
+
+        {{#errors}}
+        <div class="validation-summary" tabindex="0" id="errors">
+          <div class="validation-message"><b>Please choose which documents you want to buy.</b></div>
+        </div>
+        {{/errors}}
+
+        <label for="box-1" class="bold-medium">
+          <input type="checkbox" id="box-1" name="documents" value="register">
+          Title register <span>&pound;3.00</span>
+        </label>
+        <p>
+          Full details about the property or land, including who owns it and any rights of way.
+        </p>
+
+        <label for="box-2" class="bold-medium">
+          <input type="checkbox" id="box-2" name="documents" value="plan">
+          Title plan <span>&pound;3.00</span>
+        </label>
+        <p>
+          The property’s location and general boundaries, prepared on the latest Ordnance Survey map available at the time of registration.<br>
+        </p>
+
+        <button class="button">Buy selected documents</button>
+
+      </form>
+
     </div>
-    {{/errors}}
-
-    <label for="box-1" class="bold-medium">
-      <input type="checkbox" id="box-1" name="documents" value="register">
-      Title register <span>&pound;3.00</span>
-    </label>
-    <p>
-      Full details about the property or land, including who owns it and any rights of way.
-    </p>
-
-    <label for="box-2" class="bold-medium">
-      <input type="checkbox" id="box-2" name="documents" value="plan">
-      Title plan <span>&pound;3.00</span>
-    </label>
-    <p>
-      The property’s location and general boundaries, prepared on the latest Ordnance Survey map available at the time of registration.<br>
-    </p>
-
-    <button class="button">Buy selected documents</button>
-
-  </form>
+    <div class="column-third">
+      <div class="payment-summary">
+        Title number {{title}}<br><br>
+        {{number}} Mandela Way<br>
+        Southampton<br>
+        SO15 5RZ<br><br>
+        <span style="text-transform: capitalize;">{{tenure}}</span>
+      </div>
+    </div>
+  </div>
 
 </main>
 

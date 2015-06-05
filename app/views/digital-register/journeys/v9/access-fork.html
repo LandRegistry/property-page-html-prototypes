@@ -1,3 +1,4 @@
+
 {{<govuk_template}}
 
 {{$pageTitle}}
@@ -28,7 +29,7 @@
 
     <div class="column-quarter column-flip">
       <div class="account">
-        <a href="sign-in">Sign in or create an account</a>
+        <a href="pre-sign-in">Sign in or create an account</a>
       </div>
     </div>
   </div><!-- grid-row -->
@@ -92,9 +93,11 @@
 
     <div class="column-third">
       <div class="payment-summary">
-        14a Mandela Way<br>
+        Title number {{title}}<br><br>
+        {{number}} Mandela Way<br>
         Southampton<br>
-        SO15 5RZ
+        SO15 5RZ<br><br>
+        <span style="text-transform: capitalize;">{{tenure}}</span>
       </div>
     </div>
 
