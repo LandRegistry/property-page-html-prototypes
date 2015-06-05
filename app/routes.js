@@ -7,29 +7,72 @@ module.exports = {
 
     // -------------------------------------------------------- //
 
-    // Journey v9 routes
+    // Journey v9 routes and variables
 
     var v9 = {
+
       buyingSummary: false,
-      boughtSummaryFirst: false,
-      signedIn: false
+      signedIn: false,
+      type: '',
+
+      fh: {
+        tenure: 'freehold',
+        number: '14',
+        title: 'HP725747'
+      },
+      lh: {
+        tenure: 'leasehold',
+        number: '14a',
+        title: 'HP725748'
+      }
+
     };
 
-    // v9 search page - reset everything:
-    app.get('/digital-register/journeys/v9/search-page', function(req, res) {
+    app.get('/digital-register/journeys/v9/*', function(req, res, next) {
+      console.log(v9);
+      console.log('\n\n');
+
+      next();
+    });
+
+
+
+    // ---------- 0. Reset page. Reset the prototype
+
+    app.get('/digital-register/journeys/v9/reset', function(req, res) {
       // make sure EVERYTHING is set to FALSE again
       v9.buyingSummary = false;
-      v9.boughtSummaryFirst = false;
       v9.signedIn = false;
-      res.render('digital-register/journeys/v9/search-page');
+      v9.type = '';
+      res.render('digital-register/journeys/v9/reset');
     });
+
+
+    // ---------- 1. Search page
+
+
+    // ---------- 2. Results page(s)
 
     // Carry through search terms into results pages
     app.get('/digital-register/journeys/v9/search-results', function(req, res) {
+      // reset v9.type to ''
+      v9.type = '';
       res.render('digital-register/journeys/v9/search-results', {'terms' : req.query.s});
     });
     app.get('/digital-register/journeys/v9/search-results-2', function(req, res) {
       res.render('digital-register/journeys/v9/search-results-2', {'terms' : req.query.s});
+    });
+
+    // ---------- 3. Access fork (summary or documents?)
+
+    // Handle entry to access-fork
+    app.get('/digital-register/journeys/v9/access-fork', function(req, res) {
+      v9.type = req.query.type;
+      res.render('digital-register/journeys/v9/access-fork', {
+        'tenure': v9[v9.type].tenure,
+        'number': v9[v9.type].number,
+        'title': v9[v9.type].title,
+      });
     });
 
     // Handle submissions from access-fork - access selection
@@ -41,25 +84,38 @@ module.exports = {
       if(!errors) {
         if (req.body.accessType == 'summary') {
           v9.buyingSummary = true;
-          res.redirect('digital-register/journeys/v9/pre-sign-in');
+          if (v9.signedIn == true) {
+            res.redirect('digital-register/journeys/v9/payment');
+          } else {
+            res.redirect('digital-register/journeys/v9/pre-sign-in');
+          }
         } else {
           v9.buyingSummary = false;
           res.redirect('digital-register/journeys/v9/select-documents');
         }
       } else {
         res.render('digital-register/journeys/v9/access-fork', {
-          errors: errors
+          errors: errors,
+          'tenure': v9[v9.type].tenure,
+          'number': v9[v9.type].number,
+          'title': v9[v9.type].title
         });
       }
 
     });
 
+    // ---------- Path B. Document selection
+
     // Handle visits to Select Documents from a summary page
     app.get('/digital-register/journeys/v9/select-documents', function(req, res) {
-      if (req.query.refer) {
-        v9.boughtSummaryFirst = true;
+      if (req.query.refer == 'registerView') {
+        v9.buyingSummary = false;
       }
-      res.render('digital-register/journeys/v9/select-documents');
+      res.render('digital-register/journeys/v9/select-documents', {
+        'tenure': v9[v9.type].tenure,
+        'number': v9[v9.type].number,
+        'title': v9[v9.type].title,
+      });
     });
 
     // Handle submissions from document selection page
@@ -76,7 +132,10 @@ module.exports = {
         }
       } else {
         res.render('digital-register/journeys/v9/select-documents', {
-          errors: errors
+          errors: errors,
+          'tenure': v9[v9.type].tenure,
+          'number': v9[v9.type].number,
+          'title': v9[v9.type].title
         });
       }
 
@@ -102,29 +161,45 @@ module.exports = {
       res.render('digital-register/journeys/v9/account-created');
     });
 
+
+    // ---------- ALL PATHS. Payment page
+
     // Payment page display
     app.get('/digital-register/journeys/v9/payment', function(req, res) {
       // to get to payment you MUST have an account and be signed in, so
       v9.signedIn = true;
-      if (v9.boughtSummaryFirst == true) {
-        v9.buyingSummary = false;
-      }
       res.render('digital-register/journeys/v9/payment', {
-        "buyingSummary": v9.buyingSummary
+        'buyingSummary': v9.buyingSummary,
+        'tenure': v9[v9.type].tenure,
+        'number': v9[v9.type].number,
+        'title': v9[v9.type].title
       });
     });
 
+    // ---------- ALL PATHS. View router
+
     // View router after payment - summary or download?
     app.get('/digital-register/journeys/v9/view-router', function(req, res) {
+      console.log(v9.buyingSummary);
+      console.log(v9.type);
       if (v9.buyingSummary == true) {
-        res.redirect('digital-register/journeys/v9/digital-register-view');
+        if (v9.type == 'fh') {
+          res.redirect('digital-register/journeys/v9/register-view-fh');
+        } else {
+          res.redirect('digital-register/journeys/v9/register-view-lh');
+        }
       } else {
-        res.redirect('digital-register/journeys/v9/download-documents');
+        res.render('digital-register/journeys/v9/download-documents', {
+          'tenure': v9[v9.type].tenure,
+          'number': v9[v9.type].number,
+          'title': v9[v9.type].title
+        });
       }
     });
 
 
-
+    // -------------------------------------------------------- //
+    // -------------------------------------------------------- //
     // -------------------------------------------------------- //
 
     // /v8 routes
