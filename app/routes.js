@@ -11,9 +11,9 @@ module.exports = {
 
     var v9 = {
 
-      buyingSummary: false,
+      /*buyingSummary: false,
       signedIn: false,
-      type: '',
+      type: '',*/
 
       fh: {
         tenure: 'freehold',
@@ -29,8 +29,15 @@ module.exports = {
     };
 
     app.get('/digital-register/journeys/v9/*', function(req, res, next) {
-      console.log(v9);
-      console.log('\n\n');
+      
+      var n = req.session.views || 0;
+      req.session.views = ++n;
+
+      console.log('views: ' + req.session.views);
+      console.log('signedIn: ' + req.session.signedIn);
+      console.log('tenureType: ' + req.session.type);
+      console.log('buyingSummary: ' + req.session.buyingSummary);
+      console.log('\n');
 
       next();
     });
@@ -40,10 +47,8 @@ module.exports = {
     // ---------- 0. Reset page. Reset the prototype
 
     app.get('/digital-register/journeys/v9/reset', function(req, res) {
-      // make sure EVERYTHING is set to FALSE again
-      v9.buyingSummary = false;
-      v9.signedIn = false;
-      v9.type = '';
+      // destroy the session:
+      req.session = null;
       res.render('digital-register/journeys/v9/reset');
     });
 
@@ -55,8 +60,8 @@ module.exports = {
 
     // Carry through search terms into results pages
     app.get('/digital-register/journeys/v9/search-results', function(req, res) {
-      // reset v9.type to ''
-      v9.type = '';
+      // reset type
+      req.session.type = null;
       res.render('digital-register/journeys/v9/search-results', {'terms' : req.query.s});
     });
     app.get('/digital-register/journeys/v9/search-results-2', function(req, res) {
@@ -67,11 +72,12 @@ module.exports = {
 
     // Handle entry to access-fork
     app.get('/digital-register/journeys/v9/access-fork', function(req, res) {
-      v9.type = req.query.type;
+      var tenureType = req.query.type;
+      req.session.type = tenureType;
       res.render('digital-register/journeys/v9/access-fork', {
-        'tenure': v9[v9.type].tenure,
-        'number': v9[v9.type].number,
-        'title': v9[v9.type].title,
+        'tenure': v9[tenureType].tenure,
+        'number': v9[tenureType].number,
+        'title': v9[tenureType].title,
       });
     });
 
@@ -83,22 +89,22 @@ module.exports = {
 
       if(!errors) {
         if (req.body.accessType == 'summary') {
-          v9.buyingSummary = true;
-          if (v9.signedIn == true) {
+          req.session.buyingSummary = true;
+          if (req.session.signedIn == true) {
             res.redirect('digital-register/journeys/v9/payment');
           } else {
             res.redirect('digital-register/journeys/v9/pre-sign-in');
           }
         } else {
-          v9.buyingSummary = false;
+          req.session.buyingSummary = false;
           res.redirect('digital-register/journeys/v9/select-documents');
         }
       } else {
         res.render('digital-register/journeys/v9/access-fork', {
           errors: errors,
-          'tenure': v9[v9.type].tenure,
-          'number': v9[v9.type].number,
-          'title': v9[v9.type].title
+          'tenure': v9[req.session.type].tenure,
+          'number': v9[req.session.type].number,
+          'title': v9[req.session.type].title
         });
       }
 
@@ -109,12 +115,12 @@ module.exports = {
     // Handle visits to Select Documents from a summary page
     app.get('/digital-register/journeys/v9/select-documents', function(req, res) {
       if (req.query.refer == 'registerView') {
-        v9.buyingSummary = false;
+        req.session.buyingSummary = false;
       }
       res.render('digital-register/journeys/v9/select-documents', {
-        'tenure': v9[v9.type].tenure,
-        'number': v9[v9.type].number,
-        'title': v9[v9.type].title,
+        'tenure': v9[req.session.type].tenure,
+        'number': v9[req.session.type].number,
+        'title': v9[req.session.type].title,
       });
     });
 
@@ -125,7 +131,7 @@ module.exports = {
       var errors = req.validationErrors();
 
       if(!errors) {
-        if (v9.signedIn == true) {
+        if (req.session.signedIn == true) {
           res.redirect('digital-register/journeys/v9/payment');
         } else {
           res.redirect('digital-register/journeys/v9/pre-sign-in');
@@ -133,9 +139,9 @@ module.exports = {
       } else {
         res.render('digital-register/journeys/v9/select-documents', {
           errors: errors,
-          'tenure': v9[v9.type].tenure,
-          'number': v9[v9.type].number,
-          'title': v9[v9.type].title
+          'tenure': v9[req.session.type].tenure,
+          'number': v9[req.session.type].number,
+          'title': v9[req.session.type].title
         });
       }
 
@@ -167,12 +173,12 @@ module.exports = {
     // Payment page display
     app.get('/digital-register/journeys/v9/payment', function(req, res) {
       // to get to payment you MUST have an account and be signed in, so
-      v9.signedIn = true;
+      req.session.signedIn = true;
       res.render('digital-register/journeys/v9/payment', {
-        'buyingSummary': v9.buyingSummary,
-        'tenure': v9[v9.type].tenure,
-        'number': v9[v9.type].number,
-        'title': v9[v9.type].title
+        'buyingSummary': req.session.buyingSummary,
+        'tenure': v9[req.session.type].tenure,
+        'number': v9[req.session.type].number,
+        'title': v9[req.session.type].title
       });
     });
 
@@ -180,19 +186,17 @@ module.exports = {
 
     // View router after payment - summary or download?
     app.get('/digital-register/journeys/v9/view-router', function(req, res) {
-      console.log(v9.buyingSummary);
-      console.log(v9.type);
-      if (v9.buyingSummary == true) {
-        if (v9.type == 'fh') {
+      if (req.session.buyingSummary == true) {
+        if (req.session.type == 'fh') {
           res.redirect('digital-register/journeys/v9/register-view-fh');
         } else {
           res.redirect('digital-register/journeys/v9/register-view-lh');
         }
       } else {
         res.render('digital-register/journeys/v9/download-documents', {
-          'tenure': v9[v9.type].tenure,
-          'number': v9[v9.type].number,
-          'title': v9[v9.type].title
+          'tenure': v9[req.session.type].tenure,
+          'number': v9[req.session.type].number,
+          'title': v9[req.session.type].title
         });
       }
     });
