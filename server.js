@@ -1,6 +1,7 @@
 var path = require('path'),
     express = require('express'),
     expressValidator = require('express-validator'),
+    session = require('cookie-session'),
     routes = require(__dirname + '/app/routes.js'),
     app = express(),
     port = (process.env.PORT || 3000),
@@ -29,6 +30,11 @@ app.set('views', __dirname + '/app/views');
 // Use express validator for forms
 app.use(express.bodyParser());
 app.use(expressValidator());
+
+// Use cookie-session
+app.use(session({
+  secret: 'REGISTER-PROTOTYPE-1234567890'
+}));
 
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
