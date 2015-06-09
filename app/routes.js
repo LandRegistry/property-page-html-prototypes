@@ -11,10 +11,6 @@ module.exports = {
 
     var v9 = {
 
-      /*buyingSummary: false,
-      signedIn: false,
-      type: '',*/
-
       fh: {
         tenure: 'freehold',
         number: '14',
