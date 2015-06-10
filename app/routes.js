@@ -68,12 +68,13 @@ module.exports = {
 
     // Handle entry to access-fork
     app.get('/digital-register/journeys/v9/access-fork', function(req, res) {
-      var tenureType = req.query.type;
-      req.session.type = tenureType;
+      if (req.query.type) {
+        req.session.type = req.query.type;
+      }
       res.render('digital-register/journeys/v9/access-fork', {
-        'tenure': v9[tenureType].tenure,
-        'number': v9[tenureType].number,
-        'title': v9[tenureType].title,
+        'tenure': v9[req.session.type].tenure,
+        'number': v9[req.session.type].number,
+        'title': v9[req.session.type].title,
       });
     });
 

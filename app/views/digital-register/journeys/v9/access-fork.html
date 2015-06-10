@@ -45,7 +45,7 @@
 
         {{#errors}}
         <div class="validation-summary" tabindex="0" id="errors">
-          <div class="validation-message"><b>Please choose whether to access a summary or purchase documents.</b></div>
+          <div class="validation-message"><b>Please choose a summary or purchase documents.</b></div>
         </div>
         {{/errors}}
 
@@ -58,31 +58,38 @@
             What is in the summary view?
           </summary>
           <p>
-            The summary view of the title contains:
+            The summary view contains:
           </p>
           <ul class="list-bullet">
-            <li>Address and title number</li>
-            <li>Owner name and address details</li>
-            <li>Lender name and address details</li>
-            <li>Tenure, quality and price paid details</li>
-            <li>An indication of the location and size of the land</li>
+            <li>address and title number</li>
+            <li>owner name and address details</li>
+            <li>any lender name and address details</li>
+            <li>tenure, title quality and price paid details</li>
+            <li>an indication of the location and general boundaries</li>
           </ul>
         </details>
 
         <label for="box-2" class="bold-medium">
           <input type="radio" id="box-2" name="accessType" value="documents">
-          Full title documents &mdash; <span>from &pound;3.00</span>
+          Title documents &mdash; <span>from &pound;3.00</span>
         </label>
         <details>
           <summary>
-            What are full title documents?
+            What are title documents?
           </summary>
-          <p>
-            Full title documents are available in PDF format to download and keep. They are a full copy of the title held by the government, containing:
-          </p>
+          <p>Title documents are available in PDF format to download and keep.</p>
+          <p>The <b>title register</b> has details about the property or land, including:</p>
           <ul class="list-bullet">
-            <li>Complete details about the property or land, including any rights of way or restrictions on its use.</li>
-            <li>The property’s location and general boundaries, prepared on the latest Ordnance Survey map available at the time of registration.</li>
+            <li>title number</li>
+            <li>who owns it</li>
+            <li>what they paid for it (properties only, if available)</li>
+            <li>any rights of way</li>
+            <li>whether a mortgage on it has been ‘discharged’, eg paid off</li>
+          </ul>
+          <p>The <b>title plan</b> includes details of:</p>
+          <ul class="list-bullet">
+            <li>the property’s location</li>
+            <li>the general boundaries</li>
           </ul>
         </details>
 
