@@ -1,0 +1,36 @@
+
+{{<govuk_template}}
+
+{{$pageTitle}}{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="text">
+    <h1 class="heading-xlarge">Map search</h1>
+    <ul class="list-bullet">
+      <li><a href="draw">Draw</a></li>
+      <li><a href="groups">Groups</a></li>
+    </ul>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

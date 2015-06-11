@@ -1,0 +1,106 @@
+
+{{<govuk_template}}
+
+{{$pageTitle}}{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen, print" rel="stylesheet" type="text/css" />
+  <link href="/public/vendor/leaflet.draw/leaflet.draw.css" media="screen, print" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    #map {
+      height: 420px;
+    }
+  </style>
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+        <ol>
+          <li><a href="#">Search the land and property register</a></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-quarter column-flip">
+      <div class="account">
+        <a href="#">Sign in or create an account</a>
+      </div>
+    </div>
+  </div><!-- grid-row -->
+
+  <div id="map-container">
+    <div id="map"></div>
+    <p class="font-xsmall"><a href="#" id="locateControl">Use my location</a></p>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
+  <script type="text/javascript" src="/public/vendor/leaflet.draw/leaflet.draw.js"></script>
+  <script type="text/javascript">
+
+    // create a map in the "map" div, set the view to a given place and zoom
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+    L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, &copy; <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 22
+    }).addTo(map);
+
+    // Initialise the FeatureGroup to store editable layers
+    var drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+
+    // Initialise the draw control and pass it the FeatureGroup of editable layers
+    var drawControl = new L.Control.Draw({
+      draw: {
+        polyline: false,
+        marker: false
+      },
+      edit: {
+        featureGroup: drawnItems,
+        edit: false
+      }
+    });
+    map.addControl(drawControl);
+
+    map.on('draw:created', function (e) {
+      var type = e.layerType;
+      var layer = e.layer;
+      drawnItems.addLayer(layer);
+    });
+
+    $(function() {
+
+      $('#locateControl').on('click', function(e) {
+        e.preventDefault();
+        map.locate({setView: true, maxZoom: 16});
+      });
+
+    });
+
+  </script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
