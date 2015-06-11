@@ -7,7 +7,8 @@
   {{>includes/head}}
   <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/vendor/leaflet/leaflet.css" media="screen, print" rel="stylesheet" type="text/css" />
-  <link href="/public/vendor/leaflet.draw/leaflet.draw.css" media="screen, print" rel="stylesheet" type="text/css" />
+  <link href="/public/vendor/leaflet.markercluster/markerCluster.css" media="screen, print" rel="stylesheet" type="text/css" />
+  <link href="/public/vendor/leaflet.markercluster/markerCluster.Default.css" media="screen, print" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
 
   <style type="text/css">
@@ -55,7 +56,7 @@
   {{>includes/scripts}}
 
   <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
-  <script type="text/javascript" src="/public/vendor/leaflet.draw/leaflet.draw.js"></script>
+  <script type="text/javascript" src="/public/vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
   <script type="text/javascript">
 
     // create a map in the "map" div, set the view to a given place and zoom
@@ -66,28 +67,11 @@
       maxZoom: 22
     }).addTo(map);
 
-    // Initialise the FeatureGroup to store editable layers
-    var drawnItems = new L.FeatureGroup();
-    map.addLayer(drawnItems);
+    var markers = new L.MarkerClusterGroup();
 
-    // Initialise the draw control and pass it the FeatureGroup of editable layers
-    var drawControl = new L.Control.Draw({
-      draw: {
-        polyline: false,
-        marker: false
-      },
-      edit: {
-        featureGroup: drawnItems,
-        edit: false
-      }
-    });
-    map.addControl(drawControl);
+    //markers.addLayer(new L.Marker(getRandomLatLng(map)));
 
-    map.on('draw:created', function (e) {
-      var type = e.layerType;
-      var layer = e.layer;
-      drawnItems.addLayer(layer);
-    });
+    map.addLayer(markers);
 
   </script>
 {{/bodyEnd}}
