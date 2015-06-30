@@ -21,17 +21,15 @@
     <div class="global-breadcrumb column-two-thirds">
       <nav role="navigation">
         <ol>
-          <li><a href="search-page">Search the land and property register</a></li>
+          <li><a href="search-page">Find a title</a></li>
+          <li><strong>Search results</strong></li>
         </ol>
       </nav>
     </div><!-- global-breadcrumb -->
 
-    <div class="column-quarter column-flip">
-      <div class="account">
-        <a href="pre-sign-in">Sign in or create an account</a>
-      </div>
-    </div>
-
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div><!-- column-third -->
   </div><!--grid-row -->
 
   <form class="form" action="search-results" method="get">

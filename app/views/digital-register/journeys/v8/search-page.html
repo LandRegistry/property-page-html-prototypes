@@ -1,7 +1,7 @@
 {{<govuk_template}}
 
 {{$pageTitle}}
-  Search the land and property register
+  Find a title
 {{/pageTitle}}
 
 {{$head}}
@@ -15,34 +15,29 @@
 <main id="content" role="main">
 
   {{>digital-register/includes/banner}}
-
+  
   <div class="grid-row">
-
-    <div class="column-quarter column-flip">
-      <div class="account">
-        <a href="pre-sign-in">Sign in or create an account</a>
-      </div>
+    <div class="column-two-thirds">
+      &nbsp;
     </div>
-
+    <div class="column-third">
+      {{>digital-register/includes/login}}
+    </div>
   </div>
 
-  <div class="text">
-
-    <form class="form" action="search-results" method="get">
-      <h1 class="heading-xlarge form-title">Search the land and property register</h1>
-      <div class="form-group">
-        <p class="lede"><label for="search-terms">You can get information about registered property or land in England and Wales, even if you don’t own it.</label></p>
-        <p class="form-hint">For example a postcode, street name or title number</p>
-        <input type="text" class="form-control" name="s" id="search-terms">
+  <form class="form" action="search-results" method="get">
+    <h1 class="heading-xlarge form-title">Find a title</h1>
+    <div class="form-group">
+      <div class="text">
+        <p class="lede"><label for="search-terms">Search for the title of any property in England and Wales, even if you don’t own it.</label></p>
       </div>
-      <div class="form-group">
-        <input type="submit" value="Search" class="button">
-      </div>
-    </form>
-
-    <!--<p><a href="https://www.gov.uk/government/organisations/land-registry/about">What is a title?</a></p>-->
-
-  </div>
+      <p class="form-hint">For example a postcode, street name or title number</p>
+      <input type="text" class="form-control" name="s" id="search-terms">
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Search" class="button">
+    </div>
+  </form>
 
 </main>
 
