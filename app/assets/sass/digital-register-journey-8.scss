@@ -28,7 +28,7 @@
 // Document downloads area
 
 .download-documents {
-  margin: $gutter*1.5 0;
+  margin: 0 0 $gutter*1.5 0;
   padding: $gutter;
   border: 10px solid $light-blue;
 }
@@ -37,16 +37,22 @@
   @extend %contain-floats;
 
   .image {
-    width: 100px;
-    box-shadow: 0 1px 3px $grey-2;
-
-    @include media(tablet) {
-      float: left;
-      margin-right: 30px;
-    }
+    display: inline-block;
 
     &:hover {
       outline: 3px solid $yellow;
     }
+
+    img {
+      height: 140px;
+      box-shadow: 0 1px 3px $grey-2;
+    }
+  }
+
+  .title {
+    margin-top: $gutter/4;
+  }
+  .footnote {
+    margin-bottom: $gutter/4;
   }
 }

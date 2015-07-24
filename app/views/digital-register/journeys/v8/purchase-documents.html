@@ -28,10 +28,10 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <form class="form" action="register-view" method="get">
+      <form class="form" action="payment-processing" method="get">
 
         <fieldset>
-          <legend class="heading-large">Card information</legend>
+          <legend class="heading-large">Payment information</legend>
 
           <div class="form-group">
             <label class="form-label-bold" for="card-name">
@@ -43,7 +43,7 @@
 
           <div class="form-group">
             <label class="form-label-bold" for="card-number" autocomplete="off">Card number</label>
-            <input class="form-control" type="number" id="card-number">
+            <input class="form-control" type="text" id="card-number">
           </div>
 
           <div class="form-group">
@@ -51,7 +51,7 @@
               Card security code
               <span class="form-hint">3 digits at the back or with Amex: 4 digits on the front.</span>
             </label>
-            <input class="form-control-1-4" type="number" id="card-code" pattern="[0-9]*" min="0" max="9999">
+            <input class="form-control-1-4" type="text" id="card-code">
             <img class="card-image" src="/public/images/card-security-code.png" style="display: inline; max-height: 38px; vertical-align: middle; margin-left: 8px;">
           </div>
 
@@ -61,11 +61,11 @@
               <p class="form-hint">For example, 4/17</p>
               <div class="form-group form-group-month">
                 <label for="dob-month">Month</label>
-                <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                <input class="form-control" id="dob-month" type="text">
               </div>
               <div class="form-group form-group-month">
                 <label for="dob-year">Year</label>
-                <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="99">
+                <input class="form-control" id="dob-year" type="text">
               </div>
             </div>
           </div>
@@ -73,28 +73,14 @@
         </fieldset>
 
         <fieldset>
-          <legend class="heading-large">Billing address</legend>
-
           <div class="form-group">
-            <label class="form-label-bold" for="address-1">Building and street</label>
-            <input type="text" class="form-control expand-bottom-quarter" id="address-1" name="address-1" required>
+            <label class="form-label-bold" for="address-1">Billing address</label>
+            <input type="text" class="form-control expand-bottom-quarter" id="address-1" name="address-1">
             <input type="text" class="form-control expand-bottom-quarter" id="address-2" name="address-2">
-            <input type="text" class="form-control" id="address-3" name="address-3">
-          </div><!-- form-group -->
-
-          <div class="form-group">
-            <label class="form-label-bold" for="address-4">Town or city</label>
-            <input type="text" class="form-control" id="address-4" name="address-4" required>
-          </div><!-- form-group -->
-
-          <div class="form-group">
-            <label class="form-label-bold" for="address-5">County (optional)</label>
-            <input type="text" class="form-control" id="address-5" name="address-5">
-          </div><!-- form-group -->
-
-          <div class="form-group">
-            <label class="form-label-bold" for="postcode">Postcode</label>
-            <input type="text" class="form-control-1-4" id="postcode" name="postcode" required>
+            <input type="text" class="form-control expand-bottom-quarter" id="address-3" name="address-3">
+            <input type="text" class="form-control expand-bottom-quarter" id="address-4" name="address-4">
+            <input type="text" class="form-control expand-bottom-quarter" id="address-5" name="address-5">
+            <input type="text" class="form-control expand-bottom-quarter" id="address-6" name="address-6">
           </div><!-- form-group -->
 
           <div class="form-group">
@@ -102,7 +88,7 @@
               Email
               <span class="form-hint">We need this to confirm the payment with you.</span>
             </label>
-            <input type="text" class="form-control" id="email" name="email" required>
+            <input type="text" class="form-control" id="email" name="email">
           </div><!-- form-group -->
 
         </fieldset>
