@@ -10,79 +10,6 @@
   <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/digital-register-journey-8.css" media="screen" rel="stylesheet" type="text/css" />
-
-  <style type="text/css">
-
-  /* Rough example print styles */
-
-  @media print {
-
-    .phase-banner,
-    .account,
-    #map-location > img,
-    .leaflet-control-zoom,
-    .document-item .image,
-    .printhidden {
-      display: none;
-    }
-
-    .heading-xlarge {
-      font-size: 2em;
-    }
-    .heading-large {
-      font-size: 1.8em;
-      margin-bottom: 0.5em;
-    }
-    .heading-small {
-      margin: 0;
-    }
-
-    figure {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    #map-location {
-      width: 500px;
-      height: 333px;
-    }
-    .leaflet-container .leaflet-control-attribution,
-    .leaflet-container .leaflet-control-scale {
-      font-size: 9pt;
-    }
-
-    .document-item p {
-      margin-top: 0;
-      margin-bottom: 0.75em;
-    }
-
-    dl.definition-tabular {
-      display: block;
-      width: 100%;
-      overflow: auto;
-    }
-      .definition-tabular dt {
-        float: left;
-        width: 15%;
-        padding-bottom: 8pt;
-      }
-      .definition-tabular dd {
-        float: left;
-        width: 85%;
-        clear: right;
-        margin: 0;
-        padding-bottom: 8pt;
-      }
-
-    .division--top {
-      clear: both;
-      border-top: 1pt solid;
-      margin-top: 15pt;
-      padding-top: 8pt;
-    }
-
-  }
-  </style>
 {{/head}}
 
 {{$content}}
@@ -112,94 +39,105 @@
   <h1 class="heading-xlarge collapse-bottom">Title HP725748</h1>
   <p class="expand-bottom">This title was last changed on <b>15 October 2012</b> at <b>11:21:18</b></p>
 
-  <div class="download-documents text">
-    <div class="document-item">
-      <a href="/public/downloads/pdf/documents.pdf" class="image">
-        <img src="/public/images/icon-register-document.png">
-      </a>
-      <span class="title">Title register and title plan</span><br>
-      <span class="footnote">PDF document, 515kb</span>
-      <p>
-        <a class="button" style="vertical-align: baseline;" href="/public/downloads/pdf/documents.pdf"><b>Download</b></a>
-        <span class="printhidden">
-          or&nbsp;
-          <a href="/public/downloads/pdf/documents-autoprint.pdf" target="_blank">
-            <b>print</b>
+  <div class="grid-row">
+
+    <div class="column-third column-flip">
+
+      <div class="download-documents js-stick-at-top-when-scrolling">
+        <div class="document-item">
+          <a href="/public/downloads/pdf/documents-14a.pdf" class="image" target="_blank">
+            <img src="/public/images/icon-register-document.png">
           </a>
-        </span>
-      </p>
-    </div>
-  </div>
-
-  <h2 class="heading-large">Document summary</h2>
-
-  <div class="text">
-    <div class="lede">
-      <div itemscope itemtype="http://schema.org/PostalAddress">
-        <span itemprop="streetAddress">
-          14a Mandela Way<br>
-        </span>
-        <span itemprop="addressLocality">Southampton</span><br>
-        <span itemprop="postalCode">SO15 5RZ</span>
+          <div class="title">Title register and title plan</div>
+          <div class="footnote">PDF document, 515kb</div>
+          <!--<p class="font-xsmall">Links open in a new window or tab</p>-->
+          <a class="button" target="_blank" style="vertical-align: baseline;" href="/public/downloads/pdf/documents-14a.pdf">
+            <b>Download</b>
+          </a>
+          <span class="printhidden">
+            or&nbsp;
+            <a href="/public/downloads/pdf/documents-autoprint-14a.pdf" target="_blank">
+              <b>print</b>
+            </a>
+          </span>
+        </div>
       </div>
+
     </div>
-  </div>
 
-  <div class="expand">
-    <figure>
-      <div id="map-location">
-        <img src="http://placehold.it/500x333" alt="Map showing location of title address">
-      </div>
-    </figure>
-  </div>
+    <div class="column-two-thirds">
 
-  <div class="text">
-
-    <dl class="definition-tabular">
-      <dt>Owner</dt>
-      <dd>
-        <h5 class="heading-small collapse-top expand-bottom-half">Darcy Bloggs</h5>
-        <div class="grid-row expand-bottom-half">
-          <div class="column-half">
-            14a Mandela Way<br>
-            Southampton<br>
-            SO15 5RZ
+      <div class="text">
+        <div class="lede">
+          <div itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="streetAddress">
+              14a Mandela Way<br>
+            </span>
+            <span itemprop="addressLocality">Southampton</span><br>
+            <span itemprop="postalCode">SO15 5RZ</span>
           </div>
         </div>
-      </dd>
+      </div>
 
-      <dt>Lender</dt>
-      <dd>
-        <h5 class="heading-small collapse-top expand-bottom-half">
-          Abbey National PLC<br>
-          <span class="font-small">Company registration number 3131313<!-- company_reg_num --></span>
-        </h5>
-        <div class="grid-row expand-bottom-half">
-          <div class="column-half">
-            101 Midsummer Boulevard<br>
-            Milton Keynes<br>
-            MK9 1AA
+      <div class="expand">
+        <figure>
+          <div id="map-location">
+            <img src="http://placehold.it/500x333" alt="Map showing location of title address">
           </div>
-        </div>
-        <div class="heading-small expand-bottom-half">
-          Registered charge <span class="font-small">dated 12 January 2014</span>
-        </div>
-      </dd>
+        </figure>
+      </div>
 
-      <dt>Tenure type</dt>
-      <dd><b>Leasehold,</b> 99 years from 3 October 2012</dd>
+      <div class="text">
 
-      <dt>Price paid</dt>
-      <dd><b>&pound;188,000 on 3 October 2012</b></dd>
+        <dl class="definition-tabular">
+          <dt>Owner</dt>
+          <dd>
+            <h5 class="heading-small collapse-top expand-bottom-half">Darcy Bloggs</h5>
+            <div class="grid-row expand-bottom-half">
+              <div class="column-half">
+                14a Mandela Way<br>
+                Southampton<br>
+                SO15 5RZ
+              </div>
+            </div>
+          </dd>
 
-      <dt>Title quality</dt>
-      <dd><b>Absolute</b></dd>
-    </dl>
+          <dt>Lender</dt>
+          <dd>
+            <h5 class="heading-small collapse-top expand-bottom-half">
+              Abbey National PLC<br>
+              <span class="font-small">Company registration number 3131313<!-- company_reg_num --></span>
+            </h5>
+            <div class="grid-row expand-bottom-half">
+              <div class="column-half">
+                101 Midsummer Boulevard<br>
+                Milton Keynes<br>
+                MK9 1AA
+              </div>
+            </div>
+            <div class="heading-small expand-bottom-half">
+              Registered charge <span class="font-small">dated 12 January 2014</span>
+            </div>
+          </dd>
+
+          <dt>Tenure type</dt>
+          <dd><b>Leasehold,</b> 99 years from 3 October 2012</dd>
+
+          <dt>Price paid</dt>
+          <dd><b>&pound;188,000 on 3 October 2012</b></dd>
+
+          <dt>Title quality</dt>
+          <dd><b>Absolute</b></dd>
+        </dl>
+
+      </div>
+
+    </div>
 
   </div>
 
 
-  <div class="text legal-division--top">
+  <div class="text legal-division--top font-xsmall">
     <ul class="list-bullet">
       <li>The reference for your purchase is <strong>PAY123456</strong></h2></li>
       <li>We’ve sent a confirmation email to <b>darcybloggs@gmail.com</b></li>
@@ -213,7 +151,7 @@
 
   <div class="text printhidden">
 
-    <h6 class="heading-small">What next</h6>
+    <h6 class="heading-medium">What next</h6>
 
     <ul>
       <li><a href="search-page">Search for another title using this service</a></li>
@@ -233,6 +171,18 @@
 
 {{$bodyEnd}}
   {{>includes/scripts}}
+
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript" src="/public/javascripts/stick-at-top-when-scrolling.js"></script>
+  <script type="text/javascript" src="/public/javascripts/stop-scrolling-at-footer.js"></script>
+  <script type="text/javascript">
+    $(function() {
+
+      // stop the position:fixed subnav rolling into footer
+      GOVUK.stopScrollingAtFooter.addEl($('.js-stick-at-top-when-scrolling'), $('.js-stick-at-top-when-scrolling').height());
+
+    });
+  </script>
 
   <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
   <script type="text/javascript">
