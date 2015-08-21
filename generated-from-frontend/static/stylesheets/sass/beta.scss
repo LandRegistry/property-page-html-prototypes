@@ -1,0 +1,26 @@
+@import "design-patterns/alpha-beta";
+
+.phase-banner {
+  @include phase-banner(beta);
+}
+
+// Document downloads area
+
+.download-documents {
+  padding: $gutter;
+  border: 10px solid $light-blue;
+}
+
+.document-item {
+  @extend %contain-floats;
+
+  .image img {
+    width: 100px;
+    box-shadow: 0 1px 3px $grey-2;
+    height: 140px;
+
+    &:hover {
+      outline: 3px solid $yellow;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.search-results-listing,
+.search-results-listing ol,
+.search-results-listing ol ol {
+  @extend .list-plain;
+}
+
+.search-results-listing .nested-child {
+  border-left: 1px dotted $grey-2;
+
+  li {
+    position: relative;
+    padding-left: $gutter;
+
+    &:before {
+      content: '';
+      left: 0;
+      top: 50%;
+      position: absolute;
+      border-top: 1px dotted $grey-2;
+      width: $gutter-half;
+    }
+    
+    &:last-child:after {
+      content: '';
+      left: -1px;
+      top: 50%;
+      bottom: 0;
+      position: absolute;
+      border-left: 1px solid $white;
+    }
+  }
+}

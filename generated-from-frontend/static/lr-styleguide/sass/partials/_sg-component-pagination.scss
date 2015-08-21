@@ -1,0 +1,73 @@
+// Pagination
+// ==========================================================================
+
+.pagination-prev-next {
+  margin: $gutter 0;
+
+  @extend %contain-floats;
+
+  ul {
+    @extend .list-plain;
+  }
+
+  li {
+    @include core-16($line-height: (20 / 16));
+    float: left;
+    width: 49%;
+
+    &.next-page {
+      float: right;
+      text-align: right;
+    }
+
+    .pagination-label {
+      @include core-27($line-height: (33.75 / 27));
+      margin-bottom: 0.1em;
+      display: block;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+
+      @include ie-lte(7) {
+        height: 4.5em;
+      }
+
+      &:hover,
+      &:active {
+        background-color: $canvas-colour;
+      }
+
+    }
+
+    &.next-page a:before,
+    &.previous-page a:before {
+      display: block;
+      width: 30px;
+      height: 38px;
+      content: " ";
+    }
+
+    &.next-page a:before {
+      background: transparent url("/static/lr-styleguide/images/sprite-pagination-arrow.png") no-repeat -102px -11px;
+      margin: -4px -32px 0 0;
+      float: right;
+    }
+
+    &.previous-page a:before {
+      background: transparent url("/static/lr-styleguide/images/sprite-pagination-arrow.png") no-repeat -20px -11px;
+      margin: -4px 0 0 -32px;
+      float: left;
+    }
+
+    &.previous-page a {
+      padding: 0.75em 0 0.75em 3em;
+    }
+    
+    &.next-page a {
+      padding: 0.75em 3em 0.75em 0;
+    }
+  }
+
+}

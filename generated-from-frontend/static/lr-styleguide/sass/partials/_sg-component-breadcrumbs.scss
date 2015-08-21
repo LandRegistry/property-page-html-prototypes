@@ -1,0 +1,50 @@
+// Breadcrumbs
+// ==========================================================================
+
+.global-breadcrumb {
+
+  ol {
+    margin: 0;
+    padding: 0.75em 0 $gutter 0;
+    @extend %contain-floats;
+    list-style: none;
+  }
+
+  li {
+    @include core-16;
+    float: left;
+
+    &:before {
+      content: '>';
+      color: $grey-2;
+      display: inline-block;
+      margin: 0 0.5em;
+    }
+
+    &:first-child:before {
+      content: '';
+      margin: 0;
+    }
+  }
+
+  a {
+    color: $text-colour;
+  }
+
+  strong {
+    font-weight: normal;
+  }
+}
+
+// Sign in / out area
+
+.account {
+  @include core-16;
+  padding: 0.75em 0 0 0;
+
+  @include media(tablet) {
+    padding: 0.75em 0 $gutter 0;
+    text-align: right;
+  }
+  
+}
