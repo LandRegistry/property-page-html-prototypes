@@ -72,6 +72,11 @@
   <!-- Consumable assets -->
   <script type="text/javascript" src="./static/lr-styleguide/js/styleguide-components.js?b3bc07fd"></script>
   
+  <link rel="stylesheet" href="./static/vendor/leaflet-0.7.3/leaflet.css" />
+  <script src="./static/vendor/leaflet-0.7.3/leaflet.js"></script><!-- Leaflet -->
+  <script src="./static/javascripts/proj4.js"></script><!-- proj4js -->
+  <script src="./static/javascripts/proj4leaflet.js"></script><!-- proj4leaflet -->
+
   
 
   </head>
@@ -126,6 +131,31 @@
     </div>
     <div class="grid-row">
       
+        <div class="column-two-thirds">
+          <div class="global-breadcrumb">
+            <nav role="navigation">
+              <ol>
+                
+                  
+                    <li><a href="/title-search">Search the land and property register</a></li>
+                  
+                  
+                
+                  
+                    <li><a href="/title-search/PLYMOUTH?page=1">Search results</a></li>
+                  
+                  
+                
+                  
+                  
+                    <li><strong>Viewing AGL1003</strong></li>
+                  
+                
+              </ol>
+            </nav>
+          </div>
+        </div>
+      
       <div class="column-quarter column-flip">
         <div class="account">
           
@@ -135,27 +165,135 @@
       </div>
     </div>
     
-  <div class="outer-block">
-    <div class="inner-block">
-      <form action="/title-search" method="post" role="form">
-        <div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="1440163709.1091473##0426f0687b79e43a5dd5299db27747ae361e19e9"></div>
-        <div class="form-group">
-          <div class="text">
-            <h1 class="heading-xlarge form-title">Search the land and property register</h1>
-            <p class="lede"><label for="search_term">You can get information about registered property or land in England and Wales, even if you don’t own it.</label></p>
+  
+  <h1 class="heading-xlarge collapse-bottom">Summary of title AGL1003</h1>
+  <p class="expand-bottom">This title was last changed on <b>28 August 2003</b> at <b>14:45:50</b></p>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <p class="lede collapse-top">
+        
+          23 Murhill Lane<br>Plymouth<br>PL9 7FN
+        
+      </p>
+
+      <div id="map">
+        <div class="panel-simple">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+      </div>
+
+      <dl class="definition-tabular expand-top-half">
+        <dt>Owners</dt>
+        <dd>
+          
+            <h5 class="expand-bottom-half ">
+              <span class="heading-small">HEATHER JONES</span>
+            </h5>
+            
+            
+              <div>21 Murhill Lane<br>Saltram Meadow<br>Plymouth<br>Devon<br>PL9 7FN</div>
+            
+          
+            <h5 class="expand-bottom-half  expand-top-half ">
+              <span class="heading-small">JOHN JONES</span>
+            </h5>
+            
+            
+              <div>8 Nowhere<br>Nowhere<br>NW2 1NW</div>
+            
+          
+            <h5 class="expand-bottom-half  expand-top-half ">
+              <span class="heading-small">HEATHER SMITH</span>
+            </h5>
+            
+            
+              <div>23 Nowhere Street<br>Nowhere</div>
+            
+          
+        </dd>
+        
+          <dt>Lender</dt>
+          <dd>
+            
+              <h5 class="expand-bottom-half ">
+                <span class="heading-small">BOS (Shared OMG Mortgages) No. 1234 PLC</span>
+              </h5>
+              
+              
+              
+                <div>Bank of Nowhere<br>Residential Stuff<br>Centrebank Division<br>66 Nowhere Gyle Street<br>Scotburgh<br>SB12 9DR</div>
+              
+            
+          </dd>
+        
+
+        
+          <dt>Tenure type</dt>
+          <dd><b>Freehold</b></dd>
+        
+
+        
+          <dt>Price paid/stated</dt>
+          <dd><b>The price stated to have been paid on 27 August 2004 was £300,000</b></dd>
+        
+      </dl>
+
+    </div>
+
+    <div class="column-third">
+
+      <div class="printhidden panel-simple">
+        <span class="print-page"></span>
+      </div>
+
+      
+        <div class="download-documents js-stick-at-top-when-scrolling">
+          <div class="document-item">
+            <a href="./display_title_pdf-AGL1003.pdf" class="image">
+              <img src="./static/images/icon-register-document.png">
+            </a>
+            <span class="title">Title register</span><br>
+            <span class="footnote">PDF document</span>
+            <p>
+              <a class="button" id="download-link" style="vertical-align: baseline;" href="./display_title_pdf-AGL1003.pdf" target="_blank"><b>Download</b></a>
+            </p>
           </div>
-          <p class="form-hint">For example a postcode, street name or title number</p>
-          <input type="text" class="form-control" name="search_term" id="search_term" required autofocus="autofocus">
         </div>
-        <div class="form-group">
-          <input id="search_button" type="submit" value="Search" class="button">
-        </div>
-      </form>
+      
+
     </div>
   </div>
 
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="text printhidden">
+        <h6 class="heading-medium">What next</h6>
+        <ul>
+          <li><a href="/title-search">Search for another title using this service</a></li>
+          <li><a href="https://gov.uk">Return to GOV.UK</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
     
-  <script src="./static/javascripts/ga_search.js"></script>
+  <script type='text/javascript'>
+    var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[461064.75, 153087.1], [461058.96, 153089.12], [461052.28, 153091.42], [461030.6, 153099.0], [461029.1, 153090.65], [461049.33, 153083.24], [461056.0, 153080.95], [461062.2, 153078.65], [461064.75, 153087.1]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"}
+  </script>
+  <script type='text/javascript'>
+    $(function() {
+      // stop the position:fixed subnav rolling into footer
+      GOVUK.stickAtTopWhenScrolling.init();
+      GOVUK.stopScrollingAtFooter.addEl($('.js-stick-at-top-when-scrolling'), $('.js-stick-at-top-when-scrolling').height());
+    });
+  </script>
+  <script src="./static/javascripts/map.js"></script>
 
   </main>
 
