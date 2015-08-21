@@ -1,0 +1,49 @@
+// Case list
+// ==========================================================================
+
+.case-list {
+
+  margin: $gutter 0;
+  border-bottom: 1px solid $border-colour;
+
+  th {
+    border-bottom: 0;
+  }
+  th:first-child {
+    padding-left: $gutter-half;
+  }
+
+  td {
+    vertical-align: top;
+    border-bottom: 0;
+    border-top: 1px solid $border-colour;
+  }
+
+  .summary td:first-child {
+    padding-left: $gutter-half;
+    font-weight: bold;
+  }
+
+  .details td {
+    padding-left: $gutter-half;
+    border-top: 0;
+  }
+
+  .actions,
+  .action-delete {
+    margin-bottom: $gutter-half;
+  }
+
+  .actions,
+  .action-delete {
+    a {
+      margin-right: $gutter-half;
+    }
+  }
+
+  .new-case,
+  .new-case + .details {
+    background-color: $yellow-25;
+  }
+
+}

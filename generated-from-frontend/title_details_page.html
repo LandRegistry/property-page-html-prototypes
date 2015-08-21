@@ -1,0 +1,336 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>GOV.UK - The best place to find government services and information</title>
+
+    <script type="text/javascript">
+      (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
+    </script>
+
+    <!--[if gt IE 8]><!--><link href="./static/govuk_template/stylesheets/govuk-template.css?0.13.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <!--[if IE 6]><link href="./static/govuk_template/stylesheets/govuk-template-ie6.css?0.13.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]><link href="./static/govuk_template/stylesheets/govuk-template-ie7.css?0.13.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]><link href="./static/govuk_template/stylesheets/govuk-template-ie8.css?0.13.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <link href="./static/govuk_template/stylesheets/govuk-template-print.css?0.13.0" media="print" rel="stylesheet" type="text/css" />
+
+    <!--[if IE 8]>
+    <script type="text/javascript">
+      (function(){if(window.opera){return;}
+       setTimeout(function(){var a=document,g,b={families:(g=
+       ["nta"]),urls:["./static/govuk_template/stylesheets/fonts-ie8.css?0.13.0"]},
+       c="./static/govuk_template/javascripts/vendor/goog/webfont-debug.js?0.13.0",d="script",
+       e=a.createElement(d),f=a.getElementsByTagName(d)[0],h=g.length;WebFontConfig
+       ={custom:b},e.src=c,f.parentNode.insertBefore(e,f);for(;h=h-1;a.documentElement
+       .className+=' wf-'+g[h].replace(/\s/g,'').toLowerCase()+'-n4-loading');},0)
+      })()
+    </script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+      <link href="./static/govuk_template/stylesheets/fonts.css?0.13.0" media="all" rel="stylesheet" type="text/css" />
+    <!--<![endif]-->
+
+
+    <!--[if lt IE 9]>
+      <script src="./static/govuk_template/javascripts/ie.js?0.13.0" type="text/javascript"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="./static/govuk_template/images/favicon.ico?0.13.0" type="image/x-icon" />
+
+    <!-- Size for iPad and iPad mini (high resolution) -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./static/govuk_template/images/apple-touch-icon-152x152.png?0.13.0">
+    <!-- Size for iPhone and iPod touch (high resolution) -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="./static/govuk_template/images/apple-touch-icon-120x120.png?0.13.0">
+    <!-- Size for iPad 2 and iPad mini (standard resolution) -->
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="./static/govuk_template/images/apple-touch-icon-76x76.png?0.13.0">
+    <!-- Default non-defined size, also used for Android 2.1+ devices -->
+    <link rel="apple-touch-icon-precomposed" href="./static/govuk_template/images/apple-touch-icon-60x60.png?0.13.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="./static/govuk_template/images/opengraph-image.png?0.13.0">
+
+    
+  <!-- Land Registry styleguide css -->
+  <!--[if gt IE 8]><!--><link href="./static/lr-styleguide/css/styleguide.css?06deb86f" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+  <!--[if IE 8]><link href="./static/lr-styleguide/css/styleguide-ie8.css?544e7450" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if IE 7]><link href="./static/lr-styleguide/css/styleguide-ie7.css?72eacbbb" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if IE 6]><link href="./static/lr-styleguide/css/styleguide-ie6.css?62efd68e" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+  <link href="./static/stylesheets/css/print.css?04ea3e88" media="print" rel="stylesheet" type="text/css" />
+  <link href="./static/stylesheets/css/beta.css?5406185d" media="screen" rel="stylesheet" type="text/css" />
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var googleAnalyticsApiKey = 'UA-59849906-2';
+  </script>
+  <script src="./static/javascripts/googleanalytics.js"></script>
+  <!-- Consumable assets -->
+  <script type="text/javascript" src="./static/lr-styleguide/js/styleguide-components.js?b3bc07fd"></script>
+  
+  <link rel="stylesheet" href="./static/vendor/leaflet-0.7.3/leaflet.css" />
+  <script src="./static/vendor/leaflet-0.7.3/leaflet.js"></script><!-- Leaflet -->
+  <script src="./static/javascripts/proj4.js"></script><!-- proj4js -->
+  <script src="./static/javascripts/proj4leaflet.js"></script><!-- proj4leaflet -->
+
+  
+
+  </head>
+
+  <body class="">
+    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink">Skip to main content</a>
+      </div>
+    </div>
+
+    <div id="global-cookie-message">
+      
+  <p>Land Registry uses cookies to make the site simpler. <a href="/cookies">Find out more about cookies</a></p>
+
+    </div>
+    <!--end global-cookie-message-->
+
+    <header role="banner" id="global-header" class="">
+      <div class="header-wrapper">
+        <div class="header-global">
+          <div class="header-logo">
+            <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+              <img src="./static/govuk_template/images/gov.uk_logotype_crown.png?0.13.0" width="35" height="31" alt=""> GOV.UK
+            </a>
+          </div>
+          
+        </div>
+        
+      </div>
+    </header>
+    <!--end header-->
+
+
+    
+
+    <div id="global-header-bar"></div>
+    <!--end global-header-bar-->
+
+    
+
+  <main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+        <strong class="phase-tag">BETA</strong>
+        <span>This service is in private beta. Please give us your <a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">Feedback</a>.</span>
+      </p>
+    </div>
+    <div class="grid-row">
+      
+        <div class="column-two-thirds">
+          <div class="global-breadcrumb">
+            <nav role="navigation">
+              <ol>
+                
+                  
+                    <li><a href="/title-search">Search the land and property register</a></li>
+                  
+                  
+                
+                  
+                    <li><a href="/title-search/PLYMOUTH?page=1">Search results</a></li>
+                  
+                  
+                
+                  
+                  
+                    <li><strong>Viewing AGL1003</strong></li>
+                  
+                
+              </ol>
+            </nav>
+          </div>
+        </div>
+      
+      <div class="column-quarter column-flip">
+        <div class="account">
+          
+            <a href="/logout" id="signout">Sign out</a>
+          
+        </div>
+      </div>
+    </div>
+    
+  
+  <h1 class="heading-xlarge collapse-bottom">Summary of title AGL1003</h1>
+  <p class="expand-bottom">This title was last changed on <b>28 August 2003</b> at <b>14:45:50</b></p>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <p class="lede collapse-top">
+        
+          23 Murhill Lane<br>Plymouth<br>PL9 7FN
+        
+      </p>
+
+      <div id="map">
+        <div class="panel-simple">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+      </div>
+
+      <dl class="definition-tabular expand-top-half">
+        <dt>Owners</dt>
+        <dd>
+          
+            <h5 class="expand-bottom-half ">
+              <span class="heading-small">HEATHER JONES</span>
+            </h5>
+            
+            
+              <div>21 Murhill Lane<br>Saltram Meadow<br>Plymouth<br>Devon<br>PL9 7FN</div>
+            
+          
+            <h5 class="expand-bottom-half  expand-top-half ">
+              <span class="heading-small">JOHN JONES</span>
+            </h5>
+            
+            
+              <div>8 Nowhere<br>Nowhere<br>NW2 1NW</div>
+            
+          
+            <h5 class="expand-bottom-half  expand-top-half ">
+              <span class="heading-small">HEATHER SMITH</span>
+            </h5>
+            
+            
+              <div>23 Nowhere Street<br>Nowhere</div>
+            
+          
+        </dd>
+        
+          <dt>Lender</dt>
+          <dd>
+            
+              <h5 class="expand-bottom-half ">
+                <span class="heading-small">BOS (Shared OMG Mortgages) No. 1234 PLC</span>
+              </h5>
+              
+              
+              
+                <div>Bank of Nowhere<br>Residential Stuff<br>Centrebank Division<br>66 Nowhere Gyle Street<br>Scotburgh<br>SB12 9DR</div>
+              
+            
+          </dd>
+        
+
+        
+          <dt>Tenure type</dt>
+          <dd><b>Freehold</b></dd>
+        
+
+        
+          <dt>Price paid/stated</dt>
+          <dd><b>The price stated to have been paid on 27 August 2004 was £300,000</b></dd>
+        
+      </dl>
+
+    </div>
+
+    <div class="column-third">
+
+      <div class="printhidden panel-simple">
+        <span class="print-page"></span>
+      </div>
+
+      
+        <div class="download-documents js-stick-at-top-when-scrolling">
+          <div class="document-item">
+            <a href="/titles/AGL1003.pdf" class="image">
+              <img src="./static/images/icon-register-document.png">
+            </a>
+            <span class="title">Title register</span><br>
+            <span class="footnote">PDF document</span>
+            <p>
+              <a class="button" id="download-link" style="vertical-align: baseline;" href="/titles/AGL1003.pdf" target="_blank"><b>Download</b></a>
+            </p>
+          </div>
+        </div>
+      
+
+    </div>
+  </div>
+
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="text printhidden">
+        <h6 class="heading-medium">What next</h6>
+        <ul>
+          <li><a href="/title-search">Search for another title using this service</a></li>
+          <li><a href="https://gov.uk">Return to GOV.UK</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    
+  <script type='text/javascript'>
+    var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[461064.75, 153087.1], [461058.96, 153089.12], [461052.28, 153091.42], [461030.6, 153099.0], [461029.1, 153090.65], [461049.33, 153083.24], [461056.0, 153080.95], [461062.2, 153078.65], [461064.75, 153087.1]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"}
+  </script>
+  <script type='text/javascript'>
+    $(function() {
+      // stop the position:fixed subnav rolling into footer
+      GOVUK.stickAtTopWhenScrolling.init();
+      GOVUK.stopScrollingAtFooter.addEl($('.js-stick-at-top-when-scrolling'), $('.js-stick-at-top-when-scrolling').height());
+    });
+  </script>
+  <script src="./static/javascripts/map.js"></script>
+
+  </main>
+
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+
+      <div class="footer-wrapper">
+        
+
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+            
+  <ul>
+    <li><a href="/cookies">Cookies</a></li>
+    <li>Built by <a href="https://www.gov.uk/government/organisations/land-registry">Land Registry</a></li>
+  </ul>
+
+
+            <div class="open-government-licence">
+              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+              <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="https://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">&copy; Crown copyright</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--end footer-->
+
+    <div id="global-app-error" class="app-error hidden"></div>
+
+    <script src="./static/govuk_template/javascripts/govuk-template.js?0.13.0" type="text/javascript"></script>
+
+    
+  </body>
+</html>

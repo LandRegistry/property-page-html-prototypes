@@ -1,0 +1,41 @@
+// ==========================================================================
+// GOV.UK front end toolkit (all)
+// ENSURE IMPORT PATHS ARE SET!
+@import 'colours';
+@import 'conditionals';
+@import 'css3';
+@import 'device-pixels';
+@import 'font_stack';
+@import 'grid_layout';
+@import 'measurements';
+@import 'shims';
+@import 'typography';
+@import 'url-helpers';
+@import 'design-patterns/alpha-beta';
+@import 'design-patterns/buttons';
+@import 'design-patterns/media-player';
+
+// ==========================================================================
+// Import styleguide partials
+// dependencies on GOV.UK front end toolkit
+// from: lr-styleguide/sass/
+
+@import 'partials/sg-helpers';
+@import 'partials/sg-reset';
+
+@import 'partials/sg-layout';
+@import 'partials/sg-typography';
+@import 'partials/sg-lists';
+@import 'partials/sg-details';
+@import 'partials/sg-tables';
+@import 'partials/sg-forms';
+@import 'partials/sg-buttons';
+@import 'partials/sg-panels';
+@import 'partials/sg-icons';
+@import 'partials/sg-utilities';
+
+@import 'partials/sg-component-breadcrumbs';
+@import 'partials/sg-component-case-list';
+@import 'partials/sg-component-pagination';
+@import 'partials/sg-component-search-results';
+
