@@ -5,6 +5,100 @@ module.exports = {
       res.render('index');
     });
 
+
+    // -------------------------------------------------------- //
+    // -------------------------------------------------------- //
+
+    // /v10 routes
+
+    // Carry through search terms into results pages
+    app.get('/digital-register/journeys/v10/search-results', function(req, res) {
+      res.render('digital-register/journeys/v10/search-results', {'terms' : req.query.s});
+    });
+    app.get('/digital-register/journeys/v10/search-results-2', function(req, res) {
+      res.render('digital-register/journeys/v10/search-results-2', {'terms' : req.query.s});
+    });
+
+    // Handle submissions from title-summary - document selection
+    app.post('/digital-register/journeys/v10/title-summary', function(req, res) {
+      
+      req.checkBody('documents', 'This is an error message').notEmpty();
+      var errors = req.validationErrors();  
+      
+      if(!errors) {
+        res.render('digital-register/journeys/v10/pre-sign-in');
+      } else {
+        res.render('digital-register/journeys/v10/title-summary', {
+          errors: errors
+        });
+      }
+
+    });
+
+    // Make a decision based on submission from /pre-sign-in - "Do you have an account?"
+    app.get('/digital-register/journeys/v10/check-sign-in', function(req, res) {
+      var reg = req.query.registered;
+      if (reg == 'yes') {
+        res.render('digital-register/journeys/v10/sign-in');
+      } else {
+        res.render('digital-register/journeys/v10/create-account');
+      }
+    });
+
+    // Accept a POST to stage 2 of account creation (so no password etc is in a query string)
+    app.post('/digital-register/journeys/v10/create-account-2', function(req, res) {
+      res.render('digital-register/journeys/v10/create-account-2');
+    });
+
+    // Accept a POST to account creation confirmation (so nothing in a query string)
+    app.post('/digital-register/journeys/v10/account-created', function(req, res) {
+      res.render('digital-register/journeys/v10/account-created');
+    });
+
+
+    // ---------- Caution titles
+
+    // Handle submissions from title-summary-caution - document selection
+    app.post('/digital-register/journeys/v10/title-summary-caution', function(req, res) {
+      
+      req.checkBody('documents', 'This is an error message').notEmpty();
+      var errors = req.validationErrors();  
+      
+      if(!errors) {
+        res.render('digital-register/journeys/v10/pre-sign-in-caution');
+      } else {
+        res.render('digital-register/journeys/v10/title-summary-caution', {
+          errors: errors
+        });
+      }
+
+    });
+
+    // Make a decision based on submission from /pre-sign-in-caution - "Do you have an account?"
+    app.get('/digital-register/journeys/v10/check-sign-in-caution', function(req, res) {
+      var reg = req.query.registered;
+      if (reg == 'yes') {
+        res.render('digital-register/journeys/v10/sign-in-caution');
+      } else {
+        res.render('digital-register/journeys/v10/create-account-caution');
+      }
+    });
+
+    // Accept a POST to stage 2 of account creation caution (so no password etc is in a query string)
+    app.post('/digital-register/journeys/v10/create-account-2-caution', function(req, res) {
+      res.render('digital-register/journeys/v10/create-account-2-caution');
+    });
+
+    // Accept a POST to account creation confirmation (so nothing in a query string)
+    app.post('/digital-register/journeys/v10/account-created-caution', function(req, res) {
+      res.render('digital-register/journeys/v10/account-created-caution');
+    });
+
+
+    // -------------------------------------------------------- //
+
+
+
     // -------------------------------------------------------- //
 
     // Journey v9 routes and variables

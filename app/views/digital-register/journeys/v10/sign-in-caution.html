@@ -1,0 +1,49 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Sign in
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+    {{>digital-register/includes/banner}}
+    
+
+    <div class="text">
+      <h1 class="heading-large">Sign in</h1>
+
+      <form class="form" action="purchase-documents-caution" method="get">
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <input class="form-control-3-4" type="email" id="email" required>
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label class="form-label" for"password">Password</label>
+          <input class="form-control-3-4" type="password" id="password" required>
+          <p><a href="#">I’ve forgotten my password</a></p>
+        </div><!-- form-group -->
+
+        <button class="button">Sign in</button>
+
+      </form>
+    </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

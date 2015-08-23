@@ -1,0 +1,60 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Buy land and property title documents
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+
+    <div class="column-quarter column-flip">
+      <div class="account">
+        <a href="pre-sign-in">Sign in or create an account</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text">
+
+    <form class="form" action="search-results" method="get">
+      <h1 class="heading-xlarge form-title">Buy title documents</h1>
+      <div class="form-group">
+        <p class="lede">You can get information about registered property or land in England and Wales, even if you don’t own it.</p>
+        <p class="lede"><label for="search-terms">Search for the property or land.</label></p>
+        <p class="form-hint">For example a postcode, street name or title number</p>
+        <input type="text" class="form-control" name="s" id="search-terms">
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Search" class="button">
+      </div>
+    </form>
+
+    <p><a href="https://www.gov.uk/government/organisations/land-registry/about">What is a title?</a></p>
+
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

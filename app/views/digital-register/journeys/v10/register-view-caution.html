@@ -1,0 +1,190 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Title documents and summary
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen, print" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/digital-register-journey-8.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+        <ol>
+          <li><a href="search-page">Search the land and property register</a></li>
+            <li><a href="search-results">Search results</a></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-quarter column-flip">
+      <div class="account">
+        <a href="search-page">Sign out</a>
+      </div>
+    </div>
+
+  </div><!--grid-row -->
+
+  <span class="alert-flag-hi-viz">Caution against first registration</span><br>
+  <h1 class="heading-xlarge collapse-bottom">Summary of caution title XX123456</h1>
+  <p class="expand-bottom">This caution was last changed on <b>2 January 1987</b> at <b>16:11:27</b></p>
+
+  <div class="grid-row">
+
+    <div class="column-third column-flip">
+
+      <div class="download-documents js-stick-at-top-when-scrolling">
+        <div class="document-item">
+          <a href="/public/downloads/pdf/documents-14a.pdf" class="image" target="_blank">
+            <img src="/public/images/icon-register-document.png">
+          </a>
+          <div class="title">Title register and title plan</div>
+          <div class="footnote">PDF document, 515kb</div>
+          <!--<p class="font-xsmall">Links open in a new window or tab</p>-->
+          <a class="button" target="_blank" style="vertical-align: baseline;" href="/public/downloads/pdf/documents-14a.pdf">
+            <b>Download</b>
+          </a>
+          <span class="printhidden">
+            or&nbsp;
+            <a href="/public/downloads/pdf/documents-autoprint-14a.pdf" target="_blank">
+              <b>print</b>
+            </a>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+        <div class="lede">
+          Land at Mandela Way<br>
+          Southampton
+        </div>
+      </div>
+
+
+<!--       <div class="expand">
+        <figure>
+          <div id="map-location">
+            <img src="http://placehold.it/500x333" alt="Map showing location of title address">
+          </div>
+        </figure>
+      </div> -->
+
+      <div class="expand">
+        <dl class="definition-tabular">
+          <dt>Cautioner</dt>
+          <dd>
+            <h5 class="heading-small collapse-top expand-bottom-half">Darcy Bloggs</h5>
+            <div class="grid-row expand-bottom-half">
+              <div class="column-half">
+                14a Mandela Way<br>
+                Southampton<br>
+                SO15 5RZ
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="text legal-division--top font-xsmall">
+    <ul class="list-bullet">
+      <li>The reference for your purchase is <strong>PAY123456</strong></h2></li>
+      <li>We have sent payment confirmation to <b>darcybloggs@gmail.com</b></li>
+    </ul>
+    <div class="panel-indent">
+      <p>If you have any problems with your purchase, you can call Land Registry on <b>0300 006 0411</b>.</p>
+      <p>For more contact methods, visit <a href="https://www.gov.uk/government/organisations/land-registry">www.gov.uk/government/organisations/land-registry</a></p>
+    </div>
+  </div>
+
+
+  <div class="text printhidden">
+
+    <h6 class="heading-medium">What next</h6>
+
+    <ul>
+      <li><a href="search-page">Search for another title using this service</a></li>
+      <li><a href="#">Return to GOV.UK</a></li>
+    </ul>
+
+  </div>
+
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript" src="/public/javascripts/stick-at-top-when-scrolling.js"></script>
+  <script type="text/javascript" src="/public/javascripts/stop-scrolling-at-footer.js"></script>
+  <script type="text/javascript">
+    $(function() {
+
+      // stop the position:fixed subnav rolling into footer
+      GOVUK.stopScrollingAtFooter.addEl($('.js-stick-at-top-when-scrolling'), $('.js-stick-at-top-when-scrolling').height());
+
+    });
+  </script>
+
+  <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
+  <script type="text/javascript">
+
+    // initialise map
+    var map = L.map('map-location', {
+      scrollWheelZoom: false
+    }).setView([50.908876, -1.4153305], 19);
+
+    L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 22
+    }).addTo(map);
+
+    var polygon = L.polygon(
+      [
+        [50.908898, -1.41543],
+        [50.908915, -1.4153305],
+        [50.908855, -1.415305],
+        [50.908837, -1.415402],
+        [50.908876, -1.415423]
+      ],
+      {
+        color: '#fff',
+        weight: 3,
+        opacity: 1,
+        fillColor: '#ffbf47',
+        fillOpacity: 1,
+        clickable: false
+      }
+    ).addTo(map);
+
+  </script>
+
+{{/bodyEnd}}
+
+{{/govuk_template}}

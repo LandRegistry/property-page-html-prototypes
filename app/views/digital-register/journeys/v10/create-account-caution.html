@@ -1,0 +1,71 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Create an account
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <h1 class="heading-xlarge">Create an account</h1>
+
+  <div class="text">
+    
+    <form class="form" action="create-account-2-caution" method="post">
+
+      <div class="form-group">
+        <label class="form-label-bold" for="email-address">Email address</label>
+        <input class="form-control" type="email" id="email-address" name="email" required>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label-bold" for="password">
+          Create a password
+          <span class="form-hint">Your password must have at least six characters.</span>
+        </label>
+        <input class="form-control" type="password" id="password" minlength="6" required>
+        <p><a href="#" id="passwordToggle">Show typing</a></p>
+      </div><!-- form-group -->
+
+      <button class="button">Continue</button>
+    </form>
+
+  </div>
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript">
+    var $link = $('#passwordToggle');
+    var $el = $('#password');
+    $link.on('click', function(e) {
+      e.preventDefault();
+      if ($el.attr('type') == 'password') {
+        $el.attr('type', 'text');
+        $link.text('Hide typing');
+      } else {
+        $el.attr('type', 'password');
+        $link.text('Show typing');
+      }
+    });
+  </script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

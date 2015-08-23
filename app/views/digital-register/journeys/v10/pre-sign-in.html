@@ -1,0 +1,56 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Sign in
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+    {{>digital-register/includes/banner}}
+
+    <div class="text">
+
+      <h1 class="heading-xlarge">Sign in</h1>
+
+      <p class="lede">Have you purchased documents using this service before?</p>
+
+      <form class="form" action="check-sign-in" method="get">
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <label class="block-label" for="radio-inline-1">
+              <input id="radio-inline-1" type="radio" name="registered" value="yes" required>
+              Yes
+            </label>
+            <label class="block-label" for="radio-inline-2">
+              <input id="radio-inline-2" type="radio" name="registered" value="no" required>
+              No
+            </label>
+          </fieldset>
+        </div>
+          
+        <div class="form-group">
+          <button class="button">Continue</button>
+        </div>
+
+      </form>
+
+    </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

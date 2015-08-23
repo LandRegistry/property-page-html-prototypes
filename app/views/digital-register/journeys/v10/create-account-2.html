@@ -1,0 +1,70 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Create an account
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <h1 class="heading-xlarge">Create an account</h1>
+
+  <div class="text">
+
+    <form class="form" action="account-created" method="post">
+
+      <div class="form-group">
+        <label class="form-label-bold" for="individual-name">Your name</label>
+        <input class="form-control" type="text" id="individual-name" name="name" required>
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label-bold" for="business-name">
+          Business name (optional)
+          <span class="form-hint">If you’re acting on behalf of a business.</span>
+        </label>
+        <input class="form-control" type="text" id="business-name" name="business">
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label-bold" for="telephone">Telephone number (optional)</label>
+        <input class="form-control" type="text" id="telephone" name="telephone">
+      </div><!-- form-group -->
+
+      <div class="form-group">
+        <label class="form-label-bold" for="address-1">Address</label>
+        <input type="text" class="form-control expand-bottom-quarter" id="address-1" name="address-1">
+        <input type="text" class="form-control expand-bottom-quarter" id="address-2" name="address-2">
+        <input type="text" class="form-control expand-bottom-quarter" id="address-3" name="address-3">
+        <input type="text" class="form-control expand-bottom-quarter" id="address-4" name="address-4">
+        <input type="text" class="form-control expand-bottom-quarter" id="address-5" name="address-5">
+        <input type="text" class="form-control expand-bottom-quarter" id="address-6" name="address-6">
+      </div><!-- form-group -->
+
+      <button class="button">Continue</button>
+    </form>
+
+  </div>
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
