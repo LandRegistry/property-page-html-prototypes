@@ -1,0 +1,51 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Create an account
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+
+    <div class="column-quarter column-flip">
+      <div class="account">
+        <a href="search-page">Sign out</a>
+      </div>
+    </div>
+
+  </div>
+
+  <h1 class="heading-xlarge">Account created</h1>
+
+  <div class="text">
+    <p>Thank you for registering. You will need your email address and password to sign-in in the future.</p>
+    <p>
+      <a href="purchase-documents" class="button">Continue</a>
+    </p>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

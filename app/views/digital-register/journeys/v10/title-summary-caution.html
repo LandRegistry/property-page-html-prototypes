@@ -1,0 +1,182 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Summary of title
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/title-summary.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="grid-row">
+    <div class="global-breadcrumb column-two-thirds">
+      <nav role="navigation">
+        <ol>
+          <li><a href="search-page">Search the land and property register</a></li>
+          <li><a href="search-results-2">Results</a></li>
+          <li><strong>Available documents</strong></li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <div class="column-quarter column-flip">
+      <div class="account">
+        <a href="pre-sign-in-caution">Sign in or create an account</a>
+      </div>
+    </div>
+
+  </div><!--grid-row -->
+
+  <!-- <h1 class="heading-xlarge">Available documents</h1> -->
+
+  <section>
+    <!-- <h2 class="heading-large">Property location</h2> -->
+
+    <div class="grid-row">
+
+      <div class="column-half">
+        <figure>
+          <div class="title-plan" id="map-location" style="width: 465px; height: 265px;">
+            <img src="http://placehold.it/465x265" alt="Map showing location of title address">
+          </div>
+        </figure>
+
+        <div class="text" style="margin-top:30px;">
+        <p>
+          <a href="search-results-2">Back to search results</a>
+        </p>
+        </div>
+      </div>  <!-- column-half -->
+
+      <div class="column-half">
+        <span style="margin-bottom:15px;" class="alert-flag-hi-viz">Caution against first registration</span>
+        <div class="title-address lede" itemscope itemtype="http://schema.org/PostalAddress">
+          <h2 class="heading-large collapse-top collapse-bottom" itemprop="streetAddress">
+            Land at Mandela Way
+          </h2>
+          <span itemprop="addressLocality">Southampton</span><br>
+        </div>
+
+
+        <dl class="definition-tabular--b">
+          <dt style="width:40%;">Caution title number</dt>
+          <dd style="width:34%;">XX123456</dd>
+
+<!--           <dt>Tenure type</dt>
+          <dd>Leasehold</dd> -->
+
+<!--           <dt>Last bought for</dt>
+          <dd>&pound;188,000 on 3 October 2012</dd> -->
+
+        </dl>
+
+        <h2 id="title_docs" class="heading-large">Title documents</h2>
+        <p class="footnote expand-bottom">This title was last changed on <b>2 January 1987</b> at <b>16:11:27</b></p>
+
+      <form class="form text document-selection" action="title-summary-caution" method="post">
+
+        {{#errors}}
+        <div class="validation-summary" tabindex="0" id="errors">
+          <div class="validation-message"><b>Please choose which documents you want to buy.</b></div>
+        </div>
+        {{/errors}}
+
+        <label for="box-1" class="bold-medium">
+          <input type="checkbox" id="box-1" name="documents" value="register">
+          Title register <span>&pound;3</span>
+        </label>
+        <details>
+          <summary>
+            What is the title register?
+          </summary>
+          <p>The <b>title register</b> contains details about the property or land, including:</p>
+          <ul class="list-bullet">
+            <li>title number</li>
+            <li>who owns it</li>
+            <li>what they paid for it (properties only, if available)</li>
+            <li>any rights of way</li>
+          </ul>
+        </details>
+
+        
+
+        <label for="box-2" class="bold-medium">
+          <input type="checkbox" id="box-2" name="documents" value="plan">
+          Title plan <span>&pound;3</span>
+        </label>
+        <details>
+          <summary>What is the title plan?</summary>
+          <p>The <b>title plan</b> includes details of:</p>
+          <ul class="list-bullet">
+            <li>the property’s location</li>
+            <li>the general boundaries</li>
+          </ul>
+        </details>
+
+        <button class="button">Buy selected documents</button>
+
+      </form>
+
+      </div> <!-- column-half -->
+
+
+    </div>  <!-- grid row -->
+
+  </section>
+
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+    <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
+  <script type="text/javascript">
+
+    // initialise map
+    var map = L.map('map-location', {
+      scrollWheelZoom: false
+    }).setView([50.908876, -1.4153305], 19);
+
+    L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 22
+    }).addTo(map);
+
+    var polygon = L.polygon(
+      [
+        [50.908898, -1.41543],
+        [50.908915, -1.4153305],
+        [50.908855, -1.415305],
+        [50.908837, -1.415402],
+        [50.908876, -1.415423]
+      ],
+      {
+        color: '#fff',
+        weight: 3,
+        opacity: 1,
+        fillColor: '#ffbf47',
+        fillOpacity: 1,
+        clickable: false
+      }
+    ).addTo(map);
+
+  </script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
